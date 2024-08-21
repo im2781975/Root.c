@@ -23,3 +23,18 @@ __main(){
     
     printf("\nAfter Copy Str is: %s", arr);
 }
+
+//print string
+#define SIZE 20
+__main(){
+    char str[SIZE];
+    char arr[] = "Here i am";
+    puts("Ente String: ");
+    //scanf("%19s", &str);
+    fgets(str, SIZE, stdin);
+    printf("string str[] is: %s", str);
+    printf("\nstring arr[] is: %s", arr);
+    puts("\nString with space between char is: ");
+    for(size_t i = 0; i < SIZE && str[i]!= '\0'; ++i)
+        printf("%c", str[i]);
+}
