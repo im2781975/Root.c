@@ -45,3 +45,24 @@ __main(){
     for(size_t i = 0; i < SIZE; i++)
         printf("%u ", arr[i]);
 }
+
+//Sort Elements
+#define SIZE 10
+__main(){
+    int arr[SIZE] = {2, 6, 4, 8, 10, 12, 89, 68, 45, 37};
+    puts("Elements Before Sort: ");
+    for(size_t i = 0; i < SIZE; i++)
+        printf("%d ", arr[i]);
+    for(unsigned int i = 1; i < SIZE; ++i){
+        for(unsigned int j = 0; j < SIZE - 1; ++j){
+            if(arr[j] > arr[j + 1]){
+                int tmp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = tmp;
+            }
+        }
+    }
+    puts("\nElements after sort: ");
+    for(size_t i = 0; i < SIZE; ++i)
+        printf("%d ", arr[i]);
+}
