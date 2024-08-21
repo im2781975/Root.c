@@ -1,3 +1,14 @@
+//use of sizeof keyword
+#define SIZE 20
+size_t GETSIZE(float *ptr){
+    return sizeof(*ptr);
+}
+__main(){
+    float arr[SIZE];
+    printf("size of arr is: %u", sizeof(arr));
+    printf("\nsizeof getsize is: %u", GETSIZE(arr));
+}
+
 //Access Element
 __main(){
     int arr[] = {2, 3, 1, 5};
