@@ -26,3 +26,18 @@ __main(){
     printf("\n&*ptr = %p", &*ptr);
     printf("\n*&ptr = %p", *&ptr);
 }
+
+//Find Fib series
+unsigned long long int fib(unsigned int n){
+    if(n == 0 || n == 1)
+        return n;
+    else
+        return fib(n - 1) + fib(n - 2);
+}
+__main(){
+    unsigned int num;
+    printf("Enter number: ");
+    scanf("%u", &num);
+    unsigned long long int res = fib(num);
+    printf("Fib[%u] = %llu ", num, res);
+}
