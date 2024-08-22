@@ -87,3 +87,14 @@ __main(){
     puts("Matrix is: ");
     print(matrix);
 }
+
+//Access Elements
+#define SIZE 5
+__main(){
+    int arr[SIZE] = {32, 27, 64, 18, 95};
+    /*for(size_t i = 0; i < SIZE; ++i)
+        arr[i] = 2 * i + 2;*/
+    printf("%s%13s", "Element", "value\n");
+    for(size_t i = 0; i < SIZE; ++i)
+        printf("%5u%12d\n", i, arr[i]);
+}
