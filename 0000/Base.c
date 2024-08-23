@@ -41,3 +41,14 @@ __main(){
     unsigned long long int res = fib(num);
     printf("Fib[%u] = %llu ", num, res);
 }
+
+//Factorial
+unsigned long long int fact(unsigned int n){
+    if(n <= 1)
+        return 1;
+    return (n * fact(n - 1));
+}
+__main(){
+    for(unsigned int i = 1; i <= 21; ++i)
+        printf("%u! = %llu\n", i, fact(i));
+}
