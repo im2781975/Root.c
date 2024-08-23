@@ -52,3 +52,20 @@ __main(){
     for(unsigned int i = 1; i <= 21; ++i)
         printf("%u! = %llu\n", i, fact(i));
 }
+
+//Enum
+enum week{sat, sun, mon, tue, wed, thu, fri};
+__main(){
+    for(int i = sat; i <= fri; i++){
+        printf("Enum value %d->", i);
+        switch(i){
+            case sat:printf("Saturday\n"); break;
+            case sun:printf("Sunday\n"); break;
+            case mon:printf("Monday\n"); break;
+            case tue:printf("Tuesday\n"); break;
+            case wed:printf("Wednesday\n"); break;
+            case thu:printf("Thursday\n"); break;
+            case fri:printf("Friday\n"); break;
+        }
+    }
+}
