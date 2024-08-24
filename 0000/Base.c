@@ -151,3 +151,15 @@ __main(){
             puts(" ");
     }
 }
+
+//Buildin Func
+int square(int x){
+    return x * x;
+}
+//log(x), log10(x), fabs(x), ceil(x), floor(x), pow(x, y),fmod(x, y), sin(x), cos(x), tan(x)
+__main(void){
+    printf("%s\t%5s\t%5s\t%4s\n", "num", "sqrt", "cbrt", "exp");
+    for(int i = 1; i <= 10; i++){
+        printf("%d\t %0.2f\t %0.2f\t %0.2f\n", i, sqrt(i), cbrt(i), exp(i));
+    }
+}
