@@ -84,3 +84,19 @@ __main(){
     for(size_t face = 1; face < SIZE; ++face)
         printf("%4d%17d\n", face, freq[face]);
 }
+
+//Tower Of Hanoi
+void Tower(int n, int start, int end, int tmp){
+    if(n == 1){
+        printf("%d -> %d\n", start, end);
+        return;
+    }
+    Tower(n - 1, start, tmp, end);
+    printf("%d -> %d\n", start, end);
+    Tower(n - 1, tmp, end, start);
+}
+__main(){
+    printf("Enter Starting number of Disk: ");
+    int n; scanf("%d", &n);
+    Tower(n, 1, 3, 2);
+}
