@@ -208,3 +208,14 @@ __main(){
     }while(x <= 99);
     printf("sum is: %d", sum);
 }
+
+__main(){
+    int sum, cnt = 0, n;
+    while(cnt < 5){
+        cnt++;
+        printf("Enter value: ");
+        scanf("%d", &n);
+        sum += n;
+    }
+    printf("sum is: %d", sum);
+}
