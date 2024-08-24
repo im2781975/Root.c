@@ -143,3 +143,11 @@ __main(){
     for(int i = 0; i <= n; ++i)
         printf("fib(%u) = %llu\n", i, fib(i));
 }
+
+__main(){
+    for(unsigned int i = 1; i <= 20; i++){
+        printf("%10d", 1 + (rand() % 6));
+        if(i % 5 == 0)
+            puts(" ");
+    }
+}
