@@ -163,3 +163,15 @@ __main(void){
         printf("%d\t %0.2f\t %0.2f\t %0.2f\n", i, sqrt(i), cbrt(i), exp(i));
     }
 }
+
+void Factorial(){
+    unsigned int n, fact;
+    scanf("%u", &n);
+    for(unsigned int i = 1; i <= n; i++){
+        fact = 1;
+        for(unsigned int j = 1; j <= n; j++){
+            fact *= j;
+        }
+    }
+    printf("%u!\t %u\n", n, fact);
+}
