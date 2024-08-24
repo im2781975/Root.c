@@ -191,3 +191,20 @@ void FindAvg(){
     else 
         puts("No values Entered");
 }
+
+__main(){
+    unsigned int x = 1;
+    while(x <= 20){
+        if(x % 5 == 0)
+            printf("%u\n", x++);
+        else 
+            printf("%u\t", x++);
+    }
+    x = 1;
+    unsigned int sum = 0;
+    do{
+        sum += x;
+        x += 2;
+    }while(x <= 99);
+    printf("sum is: %d", sum);
+}
