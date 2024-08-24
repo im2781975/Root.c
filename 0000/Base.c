@@ -84,6 +84,27 @@ __main(){
     for(size_t face = 1; face < SIZE; ++face)
         printf("%4d%17d\n", face, freq[face]);
 }
+__main(){
+    unsigned int freq1 = 0, freq2 = 0, freq3 = 0, freq4 = 0, freq5 = 0, freq6 = 0;
+    for(unsigned int roll = 1; roll <= 60000000; ++roll){
+        int face = 1 + rand() % 6;
+        switch(face){
+            case 1: ++freq1; break;
+            case 2: ++freq2; break;
+            case 3: ++freq3; break;
+            case 4: ++freq4; break;
+            case 5: ++freq5; break;
+            case 6: ++freq6; break;
+        }
+    }
+    printf("%s%8s\n", "Face", "Freq");
+    printf(" 1%13u\n", freq1);
+    printf(" 2%13u\n", freq2);
+    printf(" 3%13u\n", freq3);
+    printf(" 4%13u\n", freq4);
+    printf(" 5%13u\n", freq5);
+    printf(" 6%13u\n", freq6);
+}
 
 //Tower Of Hanoi
 void Tower(int n, int start, int end, int tmp){
