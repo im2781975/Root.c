@@ -100,3 +100,25 @@ __main(){
     int n; scanf("%d", &n);
     Tower(n, 1, 3, 2);
 }
+
+//Fib Series
+#define MAX 93
+unsigned long long int fib(unsigned int n){
+    unsigned long long int fib1 = 0, fib2 = 1;
+    for(unsigned int i = 2; i <= n; i++){
+        if(i % 2 == 0)
+            fib1 += fib2;
+        else
+            fib2 += fib1;
+    }
+    if(n % 2 == 0)
+        return fib1;
+    else return fib2;
+}
+__main(){
+    unsigned int n;
+    printf("Enter integer: ");
+    scanf("%u", &n);
+    for(int i = 0; i <= n; ++i)
+        printf("fib(%u) = %llu\n", i, fib(i));
+}
