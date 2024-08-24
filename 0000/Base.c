@@ -175,3 +175,19 @@ void Factorial(){
     }
     printf("%u!\t %u\n", n, fact);
 }
+
+void FindAvg(){
+    printf("Enter value(9999 to end): ");
+    int value; scanf("%d", &value);
+    unsigned int cnt = 0;
+    int total = 0;
+    while(value != 9999){
+        total += value; cnt++;
+        printf("Enter value(9999 to end): ");
+        scanf("%d", &value);
+    }
+    if(cnt != 0)
+        printf("Average is: %0.2f", (double)total/ cnt);
+    else 
+        puts("No values Entered");
+}
