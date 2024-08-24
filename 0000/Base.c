@@ -70,7 +70,7 @@ __main(){
     }
 }
 
-//
+//Access Random
 #define SIZE 7
 #define Lancia 6e7
 __main(){
