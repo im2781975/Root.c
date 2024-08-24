@@ -69,3 +69,18 @@ __main(){
         }
     }
 }
+
+//
+#define SIZE 7
+#define Lancia 6e7
+__main(){
+    int freq[SIZE] = {0};
+    srand(time(NULL));
+    for(size_t roll = 1; roll <= Lancia; ++roll){
+        size_t face = 1 + rand() % 6;
+        ++freq[face];
+    }
+    printf("%s%13s\n", "Face", "Freq");
+    for(size_t face = 1; face < SIZE; ++face)
+        printf("%4d%17d\n", face, freq[face]);
+}
