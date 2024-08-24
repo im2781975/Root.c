@@ -98,3 +98,31 @@ __main(){
     for(size_t i = 0; i < SIZE; ++i)
         printf("%5u%12d\n", i, arr[i]);
 }
+
+//static & nonStatic Arr
+void staticArr(){
+    static int arr[3];
+    puts("\nAfter Entering Static Func: ");
+    for(size_t i = 0; i <= 2; ++i)
+        printf("arr[%u] -> %d\n", i, arr[i]);
+    puts("\nBefore Exiting Static Func: ");
+    for(size_t i = 0; i <= 2; ++i)
+        printf("arr[%u] -> %d\n", i, arr[i] += 5);
+}
+void NonstaticArr(){
+    int arr[3] = {1, 2, 3};
+    puts("\nAfter Entering NonStatic Func: ");
+    for(size_t i = 0; i <= 2; ++i)
+        printf("arr[%u] -> %d\n", i, arr[i]);
+    puts("\nBefore Exiting NonStatic Func: ");
+    for(size_t i = 0; i <= 2; ++i)
+        printf("arr[%u] -> %d\n", i, arr[i] += 5);
+}
+__main(){
+    puts("First call ");
+    staticArr();
+    NonstaticArr();
+    puts("Second call ");
+    staticArr();
+    NonstaticArr();
+}
