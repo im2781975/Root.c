@@ -38,3 +38,22 @@ __main(){
     for(size_t i = 0; i < SIZE && str[i]!= '\0'; ++i)
         printf("%c", str[i]);
 }
+
+#define Size 80
+void ConCate(char *str, const char *Ing){
+    while(*str != '\0')
+        ++str;
+    for(;*str = *Ing; ++str, ++Ing){}
+    /*while(*Ing != '\0'){
+        *str = *Ing;
+        str++; Ing++;
+    }
+    *str = '\0';*/
+}
+__main(){
+    char str[Size], Ing[Size];
+    puts("Enter Strings: ");
+    scanf("%79s%79s", &str, &Ing);
+    ConCate(str, Ing);
+    printf("%s", str);
+}
