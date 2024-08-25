@@ -57,3 +57,36 @@ __main(){
     ConCate(str, Ing);
     printf("%s", str);
 }
+
+void GradeCount(){
+    unsigned int countA = 0, countB = 0, countC = 0, countD = 0, countF = 0;
+    puts("Enter Grade:('q' for Quit)");
+    int grade;
+    while((grade = getchar())!= 'q'){
+        switch(grade){
+            case 'A'://ignore
+            case 'a':++countA; break;
+            case 'B'://ignore
+            case 'b': ++countB; break;
+            case 'C'://ignore
+            case 'c':++countC; break;
+            case 'D'://ignore
+            case 'd': ++countD; break;
+            case 'F'://ignore
+            case 'f': ++countF; break;
+            case ' '://ignore
+            case 't'://ignore
+            case '\n': //ignore;
+                break;
+            default:
+                puts("Enter new grade");
+                break;
+        }
+    }
+    puts("Total for Each Letter are");
+    printf("A: %d\n", countA);
+    printf("B: %d\n", countB);
+    printf("C: %d\n", countC);
+    printf("D: %d\n", countD);
+    printf("F: %d\n", countF);
+}
