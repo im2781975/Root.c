@@ -247,3 +247,12 @@ __main(){
     }
     printf("sum is: %d", sum);
 }
+
+void print(){
+    unsigned int x = 1;
+    while(x <= 10){
+       // puts(x % 2 ? "*" : "+");
+        puts(x % 2 + 1 ? "*" : "+");
+        x++;
+    }
+}
