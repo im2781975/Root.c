@@ -6,6 +6,17 @@ void copy2(char *a, const char *b){
     /*for(int i = 0; (a[i] = b[i])!= '\0'; ++i){}*/
     for(;(*a = *b)!= '\0'; ++a, ++b){}
 }
+
+void printChar(){
+    char ch;
+    puts("Enter char: ('q' for quit)");
+    while((ch = getchar())!= 'q'){
+        if(ch != '\n'){
+            printf("Char is: %c", ch);
+            puts("\nEnter char: ");
+        }
+    }
+}
 __main(){
     char str[20];
     char *ing = "Hello";
