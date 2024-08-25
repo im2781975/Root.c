@@ -35,7 +35,7 @@ void pattern(){
     while(x <= 10){
         unsigned int y = 1;
         while(y <= 10){
-            printf("%d ", x*y);
+            printf("%d\t", x*y);
             y++;
         }
         printf("\n");
