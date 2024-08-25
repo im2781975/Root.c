@@ -256,3 +256,15 @@ void print(){
         x++;
     }
 }
+
+void BasePower(){
+    unsigned int x, y;
+    puts("Enter Base & power: ");
+    scanf("%d%d", &x, &y);
+    unsigned int i = 1, power = 1;
+    while(i <= y){
+        power *= x;
+        ++i;
+    }
+    printf("%u", power);
+}
