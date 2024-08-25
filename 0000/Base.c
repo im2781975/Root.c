@@ -30,6 +30,18 @@ void Pattern(){
         puts(" ");
     }
 }
+void pattern(){
+    unsigned int x = 1;
+    while(x <= 10){
+        unsigned int y = 1;
+        while(y <= 10){
+            printf("%d ", x*y);
+            y++;
+        }
+        printf("\n");
+        x++;
+    }
+}
 
 //Access Element
 __main(){
