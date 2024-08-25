@@ -15,6 +15,11 @@ __main(){
     printf("\nCube of(Byval): %d is %d", num, ans);
 }
 
+void floatSum(void){
+    float x, y;
+    scanf("%f%f", &x, &y);
+    printf("%0.2f + %0.2f = %0.2f", x, y, x + y);
+}
 void Pattern(){
     for(int i = 1; i <= 3; ++i){
         for(int j = 1; j <= 3; ++j){
