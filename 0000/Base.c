@@ -268,3 +268,42 @@ void BasePower(){
     }
     printf("%u", power);
 }
+
+void method(){
+int x = 5;
+    x++;
+    printf("x++: %d", x);
+    x--;
+    printf("\nx--: %d", x);
+    printf("\n++x: %d", ++x);
+    printf("\n--x: %d", --x);
+}
+void method(){
+    int x = 4, y = 5;
+    if(++x >= 5){
+        if(y-- >= 5)
+            puts("*");
+        else{
+            puts("+");
+            puts("#");
+        }
+    }
+}
+void method(){
+    int x = 4, y = 5;
+    if(++x >= 5){
+        if(y-- >= 5)
+            puts("*");
+        else
+            puts("+");
+        puts("#");
+    }
+}
+void method(){
+    int x = 4, y = 4;
+    printf("\nx == y: %d", x == y);
+    printf("\nx != y: %d", x != y);
+    x++;
+    printf("\nx == y: %d", x == y);
+    printf("\nx != y: %d", x != y);
+}
