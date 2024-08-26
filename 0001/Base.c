@@ -86,3 +86,12 @@ void FixedDeposite(){
         printf("%4u%21.2f\n", i, amount);
     }
 }
+void FixedDeposite(){
+    double principle = 1000.0;
+    double rate = 0.05;
+    puts(" Year\t\tamount");
+    for(unsigned int year = 1; year <= 10; ++year){
+        double amount = principle * pow(1.0 + rate, year);
+        printf("%4u%15.2f\n", year, amount);
+    }
+}
