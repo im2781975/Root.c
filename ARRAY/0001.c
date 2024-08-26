@@ -126,3 +126,29 @@ __main(){
     staticArr();
     NonstaticArr();
 }
+
+void print2Darray(){
+    int row, col;
+    scanf("%d%d", &row, &col);
+    int arr[row][col];
+    for(int i =0; i < row; i++){
+        for(int j = 0; j < col; j++)
+            scanf("%d", &arr[i][j]);
+    }
+    for(int i = 0; i < row; i++){
+        for(int j = 0; j < col; j++)
+            printf("%d ", arr[i][j]);
+        printf("\n");
+    }
+}
+void Printarray(){
+    int n; scanf("%d", &n);
+    int arr[n];
+    for(int i = 0; i < n; i++)
+        scanf("%d", &arr[i]);
+    printf("\nElements are: ");
+    for(int i = 0; i < n; i++)
+        printf("%d ", arr[i]);
+    printf("\nSum Of the First two elements are: %d", arr[0] + arr[1]);
+    printf("\nFirst Element is: %d", arr[0]);
+}
