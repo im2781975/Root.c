@@ -42,6 +42,29 @@ void Pattern(){
         puts(" ");
     }
 }
+void Operation(){
+    int x, y;
+    puts("Enter Integers: ");
+    scanf("%d%d", &x, &y);
+    printf("Sum of %d & %d is: %d", x, y, x + y);
+    printf("\nSub of %d & %d is: %d", x, y, x - y);
+    printf("\nMult of %d & %d is: %d", x, y, x*y);
+    printf("\nDiv of %d & %d is: %d", x, y, x/y);
+    printf("\nRemainder of %d & %d is: %d", x, y, x % y);
+    if(x == y)
+        printf("\n%d == %d", x, y);
+    if(x != y)
+        printf("\n%d != %d", x, y);
+    if(x < y)
+        printf("\n%d < %d", x, y);
+    if(x <= y)
+        printf("\n%d <= %d", x, y);
+    if(x > y)
+        printf("%d > %d", x, y);
+    if(x >= y)
+        printf("%d >= %d", x, y);
+        
+}
 void pattern(){
     unsigned int x = 1;
     while(x <= 10){
