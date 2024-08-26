@@ -25,6 +25,13 @@ void CountNumbers(){
     while(n <= 100)
         printf("%d ", n++);
 }
+void CountNumber(){
+    int product = 1;
+    while(product <= 100){
+        product *= 3;
+        printf("%d\t", product);
+    }
+}
 void Pattern(){
     for(int i = 1; i <= 3; ++i){
         for(int j = 1; j <= 3; ++j){
