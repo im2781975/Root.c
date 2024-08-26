@@ -76,3 +76,13 @@ void CalcAvg(){
     else
         printf("No Average found");
 }
+
+void FixedDeposite(){
+    double amount, capital = 1000.0, rate = 0.05;
+    unsigned int n = 1;
+    printf("%4s%21s\n", "Year", "Deposite");
+    for(int i = 1; i <= 10; ++i){
+        amount = capital * pow(1.0 + rate , i);
+        printf("%4u%21.2f\n", i, amount);
+    }
+}
