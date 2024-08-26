@@ -342,3 +342,18 @@ void method(){
     printf("\nx == y: %d", x == y);
     printf("\nx != y: %d", x != y);
 }
+
+__main(){
+    float num = 19.987654321;
+    printf("%f\t%0.2f\n%4.3f\t", num, num, num);
+    printf("%e\n%lf\t", num, num);
+    
+    //Typecst
+    int a, *p;
+    double b, *q;
+    b = (double)25/4;
+    p = &a;
+    q = (double *)q;
+    printf("\n%lf", b);
+    printf("\n%p\t%p", p, q);
+}
