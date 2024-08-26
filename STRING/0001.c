@@ -101,3 +101,9 @@ void GradeCount(){
     printf("D: %d\n", countD);
     printf("F: %d\n", countF);
 }
+
+void CharArr(){
+    char str[20];
+    scanf("%19s", str);
+    printf("%s", str);
+}
