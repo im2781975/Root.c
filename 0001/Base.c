@@ -13,3 +13,16 @@ __main(){
     if(pass > 8)
         puts("\nBonus To Instructor");
 }
+void CountGrade(){
+    int grade; puts("Enter Grade: ");
+    scanf("%d", &grade);
+    (grade >= 18)?puts("pass"):puts("fail");
+    if(grade >= 27) puts("A");
+    else if(grade >= 24) puts("B");
+    else if(grade >= 21) puts("C");
+    else if(grade >= 18) puts("D");
+    else{
+        puts("Fail");
+        puts("Must Take the course again");
+    }
+}
