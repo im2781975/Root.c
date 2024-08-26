@@ -20,6 +20,11 @@ void floatSum(void){
     scanf("%f%f", &x, &y);
     printf("%0.2f + %0.2f = %0.2f", x, y, x + y);
 }
+void CountNumbers(){
+    int n = 1;
+    while(n <= 100)
+        printf("%d ", n++);
+}
 void Pattern(){
     for(int i = 1; i <= 3; ++i){
         for(int j = 1; j <= 3; ++j){
