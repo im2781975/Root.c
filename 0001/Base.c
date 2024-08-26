@@ -26,3 +26,53 @@ void CountGrade(){
         puts("Must Take the course again");
     }
 }
+
+void CalcAvg(){
+    unsigned int count = 1;
+    int grade, total = 0, avg;
+    while(count <= 10){
+        printf("Enter Grade: ");
+        scanf("%d", &grade);
+        total += grade;
+        count++;
+    }
+    avg = total / 10;
+    printf("Average is: %d", avg);
+}
+void CalcAvg(){
+    unsigned int cnt = 0; 
+    int grade, total = 0;
+    float avg;
+    printf("Enter grade(-1 for exit): ");
+    scanf("%d", &grade);
+    while(grade != -1){
+        total += grade;
+        cnt++;
+        printf("Enter Grade(-1 for exit): ");
+        scanf("%d", &grade);
+    }
+    if(cnt != 0){
+        avg = (float)total/ cnt;
+        printf("Average is: %f", avg);
+    }
+    else
+        printf("No Average found");
+}
+void CalcAvg(){
+    unsigned int cnt = 0; 
+    int grade, total = 0, avg;
+    printf("Enter grade(-1 for exit): ");
+    scanf("%d", &grade);
+    while(grade != -1){
+        total += grade;
+        cnt++;
+        printf("Enter Grade(-1 for exit): ");
+        scanf("%d", &grade);
+    }
+    if(cnt != 0){
+        avg = total/ cnt;
+        printf("Average is: %d", avg);
+    }
+    else
+        printf("No Average found");
+}
