@@ -14,7 +14,17 @@ __main(){
     int ans = cubeByval(num);
     printf("\nCube of(Byval): %d is %d", num, ans);
 }
-
+void print(){
+    int arr[5] = {10, 20, 30, 40, 50};
+    int *ptr = arr;
+    printf("Initial Ptr is: %p\n", (void*)ptr);
+    //Increament the pointer by 4 to point to arr[4]
+    ptr += 4;
+    printf("ptr after incrementing: %p\n", (void*)ptr);
+    ptr -= 4;
+    printf("ptr after Subtract 4: %p\n", (void*)ptr);
+    printf("sizeof arr: %d\n", sizeof(arr));
+}
 void floatSum(void){
     float x, y;
     scanf("%f%f", &x, &y);
