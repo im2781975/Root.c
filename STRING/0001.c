@@ -17,6 +17,12 @@ void printChar(){
         }
     }
 }
+void CharArr(){
+    char str[20];
+    scanf("%19s", str);
+    printf("%s", str);
+}
+
 __main(){
     char str[20];
     char *ing = "Hello";
@@ -101,9 +107,29 @@ void GradeCount(){
     printf("D: %d\n", countD);
     printf("F: %d\n", countF);
 }
-
-void CharArr(){
-    char str[20];
-    scanf("%19s", str);
-    printf("%s", str);
+#define SIZE 80
+int TestPalindrome(char *arr, int left, int right){
+    if(left >= right)
+        return 1;
+    else if(arr[left]!= arr[right])
+        return 0;
+    else
+        return TestPalindrome(arr, left + 1, right - 1);
+}
+__main(){
+    char str[SIZE], ing[SIZE];
+    puts("Enter sentence: ");
+    char ch;
+    unsigned int cnt = 0;
+    while((ch = getchar())!= '\n' && cnt < SIZE - 1){
+        str[cnt++] = ch;
+    }
+    str[cnt] = '\0';
+    unsigned int copyCnt = 0;
+    for(unsigned int i = 0; str[i] != '\0'; ++i){
+        if(str[i]!= ' ' && str[i]!= ',' && str[i]!= '.' && str[i]!= '!')
+            ing[copyCnt++] = tolower(str[i]);
+    }
+    ing[copyCnt] = '\0';
+    (TestPalindrome(ing, 0, copyCnt - 1))? printf("%s is palindrome", str): printf("%s isn't palindrome", str);
 }
