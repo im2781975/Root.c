@@ -231,3 +231,34 @@ __main(void){
         printf("Your New Balance is: ", BankBalance);
     }
 }
+
+void Area(){
+    puts("Enter 1 for circle: ");
+    puts("Enter 2 for square: ");
+    puts("Enter 3 for sfear: ");
+    puts("Please Insert option: ");
+    unsigned int i; scanf("%u", &i);
+    float x, y;
+    switch(i):{
+        case 1:{
+            puts("Enter radius: ");
+            scanf("%f", &x);
+            printf("Area of circle is: ", 3.1416 * x * x);
+            break;
+        }
+        case 2:{
+            puts("Enter sides: ");
+            scanf("%f", &x);
+            printf("Area of square is: ", x *x );
+            break;
+        }
+        case 3:{
+            puts("Enter radius: ");
+            scanf("%f", &x);
+            printf("Area of sfear is: ", 4 * 3.1416 * x * x);
+            break;
+        }
+        default:
+            puts("Option not valid");
+    }
+}
