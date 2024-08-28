@@ -262,3 +262,32 @@ void Area(){
             puts("Option not valid");
     }
 }
+
+#include<stdio.h>
+int main(){
+    int x = 10, y = 1, a = 3, b = 3, g = 5, y = 1, i = 2, j = 9;
+    puts("!(x < 5) && !(y >= 7)");
+    if((!(x < 5) && !(y >= 7)) == (!((x < 5) || (y >= 7))))
+        puts("Equivalent");
+    else
+        puts("Not Equivalent");
+    puts("!((x < 5) || (y >= 7))");
+    puts("!(a == b) || !(g != 5)");
+    if((!(a == b) || !(g != 5)) == (!((a == b) && (g != 5))))
+        puts("Equivalent");
+    else
+        puts("Not Equivalent");
+    puts("!((a == b) && (g != 5))");
+    puts("!((x <= 8) && (h > 4))");
+    if(!((x <= 8) && (h > 4)) == (!(x <= 8) || !(h > 4)))
+        puts("Equivalent");
+    else
+        puts("Not Equivalent");
+    puts("(!(x <= 8) || (h > 4))");
+    puts("!((i > 4) || (j <= 6))");
+    if(!((i > 4) || (j <= 6)) ==(! (i > 4) && !(j <= 6))
+        puts("Equivalent");
+    else
+        puts("Not Equivalent");
+    puts("(!(i > 4) && !(j <= 6))")
+}
