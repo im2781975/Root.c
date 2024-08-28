@@ -95,3 +95,139 @@ void FixedDeposite(){
         printf("%4u%15.2f\n", year, amount);
     }
 }
+
+//Dice Game
+enum status{Continue, Won, Lost};
+int rollDice(void){
+    int Die1 = 1 + (rand() % 6);
+    int Die2 = 1 + (rand() % 6);
+    printf("Player rolled %d + %d = %d\n", Die1, Die2, Die1 + Die2);
+    return Die1 + Die2;
+}
+__main(void){
+    srand(time(NULL));
+    int MyPoint;
+    enum status GameStatus;
+    int sum = rollDice();
+    switch(sum){
+        case 7:
+        case 11:
+            GameStatus = Won;
+            break;
+        case 2:
+        case 3:
+        case 12:
+            GameStatus = Lost;
+            break;
+        default:
+            GameStatus = Continue;
+            MyPoint = sum;
+            printf("Point is: %d\n", MyPoint);
+            break;
+    }
+    while(Continue == GameStatus){
+        sum = rollDice();
+        if(sum == MyPoint)
+            GameStatus = Won;
+        else if(sum == 7)
+            GameStatus = Lost;
+    }
+    if(Won == GameStatus)
+        printf("Player won");
+    else
+        printf("Player Lose");
+}
+enum status{Continue, Won, Lost};
+int rollDice(void){
+    int Die1 = 1 + (rand() % 6);
+    int Die2 = 1 + (rand() % 6);
+    printf("Player rolled %d + %d = %d\n", Die1, Die2, Die1 + Die2);
+    return Die1 + Die2;
+}
+enum status craps(void){
+    int MyPoint;
+    enum status GameStatus;
+    int sum = rollDice();
+    switch(sum){
+        case 7:
+        case 11:
+            GameStatus = Won;
+            chatter();
+            break;
+        case 2:
+        case 3:
+        case 12:
+            GameStatus = Lost;
+            chatter();
+            break;
+        default:
+            GameStatus = Continue;
+            MyPoint = sum;
+            printf("Point is: %d\n", MyPoint);
+            chatter();
+            break;
+    }
+    while(Continue == GameStatus){
+        chatter();
+        sum = rollDice();
+        if(sum == MyPoint)
+            GameStatus = Won;
+        else if(sum == 7)
+            GameStatus = Lost;
+    }
+    if(Won == GameStatus){
+        printf("Player won");
+        return Won;
+    }
+    else{
+        printf("Player Lose");
+        return Lost;
+    }
+}
+void chatter(void){
+    int select = 1 + rand() % 6;
+    switch(select){
+        case 1:
+            puts("Going For broke");
+            break;
+        case 2:
+            puts("Take a chance");
+            break;
+        case 3:
+            printf("Break the bank");
+            break;
+        case 4:
+            puts("you are up big.Time to cash");
+            break;
+        case 5:
+            puts("Way to be lucky.dice have to loaded");
+            break;
+        case 6:
+            puts("Bet it all");
+            break;
+        default:
+            break;
+    }
+}
+__main(void){
+    srand(time(NULL));
+    int BankBalance = 1000;
+    printf("Your Balance is %d", BankBalance);
+    puts("Enter Wage: ");
+    int wager; scanf("%d", &wager);
+    while(wager <= 0 || wager >= 1000){
+        puts("Please Enter a valid amount");
+        scanf("%d", &wager);
+    }
+    enum status res = craps();
+    if(Lost == res){
+        BankBalance -= wager;
+        printf("Your New balance is: ", BankBalance);
+        if(BankBalance == 0)
+            printf("You are Busted.Thanks For Playing");
+    }
+    else{
+        BankBalance += wager;
+        printf("Your New Balance is: ", BankBalance);
+    }
+}
