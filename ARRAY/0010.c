@@ -130,3 +130,27 @@ void swaprow(){
             printf("\narr[%d][%d] = %d", i, j, arr[i][j]);
     }
 }
+void SwapCol(){
+    int row, col; scanf("%d%d", &row, &col);
+    int arr[row][col];
+    for(int i = 0; i < row; i++){
+        for(int j = 0; j < col; j++){
+            printf("arr[%d][%d] = ", i, j);
+            scanf("%d", &arr[i][j]);
+        }
+    }/*
+    for(int i = row - 1; i >= 0; i--){
+        for(int j = 0; j < col; j++)
+            printf("arr[%d][%d] = %d\n", i, j, arr[i][j]);
+    }*/
+    for(int i = 0; i < row; i++){
+        int tmp = arr[i][0];
+        arr[i][0] = arr[i][col - 1];
+        arr[i][col - 1] = tmp;
+    }
+    for(int i = 0; i < row; i++){
+        for(int j = 0; j < col; j++){
+            printf("arr[%d][%d] = %d\n", i, j, arr[i][j]);
+        }
+    }
+}
