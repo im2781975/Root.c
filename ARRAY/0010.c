@@ -34,3 +34,28 @@ void Leader(){
     }
 }
 /***/
+void MatrixSum(){
+    int row, col; scanf("%d%d", &row, &col);
+    int arr[row][col], sec[row][col], res[row][col];
+    puts("Enter First array: ");
+    for(int i = 0; i < row; i++){
+        for(int j = 0; j < col; j++){
+            printf("arr[%d][%d] = ", i, j);
+            scanf("%d", &arr[i][j]);
+        }
+    }
+    puts("Enter Second array: ");
+    for(int i = 0; i < row; i++){
+        for(int j = 0; j < col; j++){
+            printf("sec[%d][%d] = ", i, j);
+            scanf("%d", &sec[i][j]);
+        }
+    }
+    puts("Matrix sum is: ");
+    for(int i = 0; i < row; i++){
+        for(int j = 0; j < col; j++){
+            res[i][j] = arr[i][j] + sec[i][j];
+            printf("res[%d][%d] = %d\n", i, j, res[i][j]);
+        }
+    }
+}
