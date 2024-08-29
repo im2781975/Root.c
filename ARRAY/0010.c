@@ -104,3 +104,29 @@ __main(){
     else
         puts("____");
 }
+/***/
+void swaprow(){
+    int row, col; scanf("%d%d", &row, &col);
+    int arr[row][col];
+    for(int i = 0; i < row; i++){
+        for(int j = 0; j < col; j++){
+            printf("arr[%d][%d] = ", i, j);
+            scanf("%d", &arr[i][j]);
+        }
+    }/*
+    for(int i = 0; i < row; i++){
+        for(int j = col - 1; j >= 0; j--){
+            printf("\narr[%d][%d] = %d", i, j, arr[i][j]);
+        }
+    }*/
+    //swap 1st & last row
+    for(int j = 0; j < col; j++){
+        int tmp = arr[0][j];
+        arr[0][j] = arr[row - 1][j];
+        arr[row - 1][j] = tmp;
+    }
+    for(int i = 0; i < row; i++){
+        for(int j = 0; j < col; j++)
+            printf("\narr[%d][%d] = %d", i, j, arr[i][j]);
+    }
+}
