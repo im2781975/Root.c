@@ -75,3 +75,32 @@ void MatrixSum(){
         }
     }
 }
+/***/
+__main(){
+    int n, k; scanf("%d%d", &n, &k);
+    int x = n - k;
+    if(x > 0){
+        switch(x){
+            case 1:
+                puts("Diffrence Less than or equal to 5");
+                break;
+            case 2:
+                puts("Diffrence Less than or equal to 5");
+                break;
+            case 3:
+                puts("Diffrence Less than or equal to 5");
+                break;
+            case 4:
+                puts("Diffrence Less than or equal to 5");
+                break;
+            case 5:
+                puts("Diffrence Less than or equal to 5");
+                break;
+            default:
+                puts("x is greater than 5");
+                break;
+        }
+    }
+    else
+        puts("____");
+}
