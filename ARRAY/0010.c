@@ -59,3 +59,19 @@ void MatrixSum(){
         }
     }
 }
+void MatrixSum(){
+    int row, col; scanf("%d%d", &row, &col);
+    int arr[row][col], sum = 0;
+    for(int i = 0; i < row; i++){
+        for(int j = 0; j < col; j++){
+            printf("arr[%d][%d] = ", i, j);
+            scanf("%d", &arr[i][j]);
+        }
+    }
+    for(int i = 0; i < row; i++){
+        for(int j = 0; j < col; j++){
+            sum += arr[i][j];
+            printf("arr[%d][%d] = %d\n", i, j, sum);
+        }
+    }
+}
