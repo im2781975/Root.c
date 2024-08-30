@@ -154,3 +154,18 @@ void SwapCol(){
         }
     }
 }
+/***/
+int Oddsum(int *arr, int n){
+    int sum = 0;
+    for(int i = 0; i < n; i++){
+        if(*(arr + i) % 2 != 0)
+            sum += *(arr + i);
+    }
+    return sum;
+}
+__main(){
+    int arr[] = {10, 21, 35, 42, 57, 68, 73};
+    int n = sizeof(arr)/sizeof(arr[0]);
+    int sum = Oddsum(arr, n);
+    printf("oddSum is: %d", sum);
+}
