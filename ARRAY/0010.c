@@ -169,3 +169,32 @@ __main(){
     int sum = Oddsum(arr, n);
     printf("oddSum is: %d", sum);
 }
+/***/
+void SpiralMatrix(){
+    int row = 3, col = 4;
+    int arr[row + 2][col + 2];
+    for(int i = 0; i < row; i++){
+        for(int j = 0; j < col; j++)
+            scanf("%d", &arr[i][j]);
+    }
+    for(int i = 0; i < row; i++){
+        for(int j = 0; j < col; j++){
+            if(i == 0 && j != col - 1)
+                printf("%d ", arr[i][j]);
+            if(i!= row - 1 && j == col - 1)
+                printf("%d ", arr[i][j]);
+        }
+    }
+    for(int i = 0; i < row; i++){
+        for(int j = col - 1; j >= 0; j--){
+            if(i == row - 1)
+                printf("%d ", arr[i][j]);
+        }
+    }
+    for(int i = 0; i < row; i++){
+        for(int j = 0; j < col; j++){
+            if(i == row - 2 && j != col - 1 )
+                printf("%d ", arr[i][j]);
+        }
+    }
+}
