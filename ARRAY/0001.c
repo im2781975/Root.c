@@ -8,9 +8,8 @@ __main(){
     printf("size of arr is: %u", sizeof(arr));
     printf("\nsizeof getsize is: %u", GETSIZE(arr));
 }
-
-//Access Element
-__main(){
+/***/
+void AccessElement(){
     int arr[] = {2, 3, 1, 5};
     int *ptr = arr;
     for(size_t i = 0; i < SIZE; ++i)
@@ -24,8 +23,16 @@ __main(){
     for(size_t i = 0; i < SIZE; ++i)
         printf("(ptr + %u) = %d\n", (ptr + i), ptr[i]);
 }
-
-//Bubble Sort
+#define SIZE 5
+void AccessElement(){
+    int arr[SIZE] = {32, 27, 64, 18, 95};
+    /*for(size_t i = 0; i < SIZE; ++i)
+        arr[i] = 2 * i + 2;*/
+    printf("%s%13s", "Element", "value\n");
+    for(size_t i = 0; i < SIZE; ++i)
+        printf("%5u%12d\n", i, arr[i]);
+}
+/***/
 #define SIZE 10
 void swap(int *a, int *b){
     int tmp = *a;
@@ -45,10 +52,9 @@ __main(){
     for(size_t i = 0; i < SIZE; i++)
         printf("%u ", arr[i]);
 }
-
-//Sort Elements
+/***/
 #define SIZE 10
-__main(){
+void sortElement(){
     int arr[SIZE] = {2, 6, 4, 8, 10, 12, 89, 68, 45, 37};
     puts("Elements Before Sort: ");
     for(size_t i = 0; i < SIZE; i++)
@@ -66,7 +72,7 @@ __main(){
     for(size_t i = 0; i < SIZE; ++i)
         printf("%d ", arr[i]);
 }
-
+/***/
 //print 2D
 void print(int arr[][3]){
     for(size_t i = 0; i <= 1; i++){
@@ -87,19 +93,7 @@ __main(){
     puts("Matrix is: ");
     print(matrix);
 }
-
-//Access Elements
-#define SIZE 5
-__main(){
-    int arr[SIZE] = {32, 27, 64, 18, 95};
-    /*for(size_t i = 0; i < SIZE; ++i)
-        arr[i] = 2 * i + 2;*/
-    printf("%s%13s", "Element", "value\n");
-    for(size_t i = 0; i < SIZE; ++i)
-        printf("%5u%12d\n", i, arr[i]);
-}
-
-//static & nonStatic Arr
+/***/
 void staticArr(){
     static int arr[3];
     puts("\nAfter Entering Static Func: ");
@@ -126,7 +120,7 @@ __main(){
     staticArr();
     NonstaticArr();
 }
-
+/***/
 void print2Darray(){
     int row, col;
     scanf("%d%d", &row, &col);
