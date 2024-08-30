@@ -198,3 +198,17 @@ void SpiralMatrix(){
         }
     }
 }
+/***/
+void Jumparr(){
+    int arr[4] = {3, 2, 1};
+    int trv[4] = {10, 20, 30};
+    int jump = 100;
+    for(int i = 0; i < 3; i++){
+        jump = arr[i] * 2;
+        for(int j = 0; j < 3; j++){
+            trv[i] = arr[i] + trv[i];
+            jump = trv[i] / 2;
+            printf("i = %d A[%d] = %d B[%d] = %d jump = %d\n", i, i, arr[i], i, trv[i], jump);
+        }
+    }
+}
