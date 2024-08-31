@@ -409,9 +409,19 @@ void Bitwise(){
     printf("%d ^% d = %d\n", n, x, n ^ x);
 }
 /***/
-
 void OperationPointer(){
     int a, b; scanf("%d%d", &a, &b);
     int *ptr = &a, *trv = &b;
     printf("Sum of the pointer is: %d\nDiff of the pointer is: %d", (*ptr + *trv), abs(*ptr - *trv));
+}
+/***/
+void SumofDigits(){
+    int n; scanf("%d", &n);
+    int x, sum = 0;
+    while(n != 0){
+        x = n % 10;
+        n /= 10;
+        sum += x;
+    }
+    printf("%d", sum);
 }
