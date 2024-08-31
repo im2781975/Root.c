@@ -408,3 +408,10 @@ void Bitwise(){
     printf("%d &% d = %d\n", n, x, n & x);
     printf("%d ^% d = %d\n", n, x, n ^ x);
 }
+/***/
+
+void OperationPointer(){
+    int a, b; scanf("%d%d", &a, &b);
+    int *ptr = &a, *trv = &b;
+    printf("Sum of the pointer is: %d\nDiff of the pointer is: %d", (*ptr + *trv), abs(*ptr - *trv));
+}
