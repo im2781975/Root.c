@@ -72,3 +72,22 @@ void Rombo(){
         printf("\n");
     }
 }
+/***/
+void Pattern(){
+    int n; scanf("%d", &n);
+    for(int i = 1; i <= n; i++){
+        for(int j = 1; j <= n; j++){
+            if(j == 1)
+                printf("%d ", i);
+            else if(j == n)
+                printf("%d ", n - i);
+            else if(i == 1 || i == n)
+                printf("+");
+            else if(i == (n/2) + 1 && j == (n/2) + 1)
+                printf("*");
+            else
+                printf(" ");
+        }
+        printf("\n");
+    }
+}
