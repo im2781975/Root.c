@@ -212,3 +212,19 @@ void Jumparr(){
         }
     }
 }
+/***/
+void sortArr(){
+    int n, arr[100];
+    while(scanf("%d", &n) == 1){
+        if(n == 0)
+            break;
+        for(int i = 0; i < n; i++)
+            scanf("%d", &arr[i]);
+        for(int i = 0; i < 120; i++){
+            for(int j = 0; j < n; j++){
+                if(arr[j] == i)
+                    printf("%d ", i);
+            }
+        }
+    }
+}
