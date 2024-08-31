@@ -291,3 +291,24 @@ int main(){
         puts("Not Equivalent");
     puts("(!(i > 4) && !(j <= 6))")
 }
+/***/
+void CountBill(){
+    int n, x; scanf("%d", &n);
+    float sum;
+    if(n <= 50)
+        sum = n * (0.5);
+    else if(n > 50 && n <= 150){
+        x = n - 50;
+        sum += 50 * (0.5) + x * (0.75);
+    }
+    else if(n > 150 && n <= 250){
+        x = n - 150;
+        sum += 50 * (0.5) + 100 * (0.75) + x * (1.20);
+    }
+    else{
+        x = n - 250;
+        sum += 50 * (0.5) + 100 * (0.75) + 100 * (1.20) + x * (1.50);
+    }
+    sum += sum * (0.20);
+    printf("%0.2f", sum);
+}
