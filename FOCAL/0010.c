@@ -16,3 +16,21 @@ void Sequential(){
         printf("\n");
     }
 }
+void Sequential(){
+    int n; scanf("%d", &n);
+    for(int i = 1; i <= n; i++){
+        for(int j = n; j > 1; j--){
+            if(i >= j)
+                printf("%d", j);
+            else
+                printf("_");
+        }
+        for(int j = 1; j <= n; j++){
+            if(i >= j)
+                printf("%d", j);
+            else
+                printf(" ");
+        }
+        printf("\n");
+    }
+}
