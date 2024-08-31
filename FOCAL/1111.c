@@ -312,3 +312,22 @@ void CountBill(){
     sum += sum * (0.20);
     printf("%0.2f", sum);
 }
+/***/
+void DiagonalDiff(){
+    int n; scanf("%d", &n);
+    int arr[n][n];
+    for(int i = 0; i < n; i++){
+        for(int j = 0; j < n; j++)
+            scanf("%d", &arr[i][j]);
+    }
+    int left = 0, right = 0;
+    for(int i = 0; i < n; i++){
+        for(int j = 0; j < n; j++){
+            if(i == j)
+                left += arr[i][j];
+            if(j == n - i - 1)
+                right += arr[i][j];
+        }
+    }
+    printf("Diagonal of left is: %d\nDiagonal of right is: %d\nDiagonal Diffrence is: %d", left, right, abs(left - right));
+}
