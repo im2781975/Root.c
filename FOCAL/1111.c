@@ -331,3 +331,21 @@ void DiagonalDiff(){
     }
     printf("Diagonal of left is: %d\nDiagonal of right is: %d\nDiagonal Diffrence is: %d", left, right, abs(left - right));
 }
+/***/
+bool Divisor(int x){
+    for(int i = 2; i <= x; i++){
+        if(x % i == 0)
+            return false;
+    }
+    return true;
+}
+void TwinPrime(){
+    int n; scanf("%d", &n);
+    int x = n + 2, y = n - 2;
+    if(Divisor(x) == 1)
+        printf("%d", x);
+    else if(Divisor(y) == 1)
+        printf("%d", y);
+    else
+        puts("No");
+}
