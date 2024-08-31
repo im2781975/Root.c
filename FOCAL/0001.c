@@ -401,3 +401,10 @@ int main(){
         Global();
     }
 }
+/***/
+void Bitwise(){
+    int n, x; scanf("%d%d", &n, &x);
+    printf("%d |% d = %d\n", n, x, n | x);
+    printf("%d &% d = %d\n", n, x, n & x);
+    printf("%d ^% d = %d\n", n, x, n ^ x);
+}
