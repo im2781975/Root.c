@@ -1,3 +1,21 @@
+/***/
+int Divisor(int n){
+    int sum = 0;
+    while(n > 0){
+        int x = n % 10;
+        sum += x;
+        n /= 10;
+    }
+    return sum;
+}
+__main(){
+    int n, y = 0; scanf("%d", &n);
+    int m = Divisor(n);
+    if(m % 10 > 1)
+        y = Divisor(n);
+    printf("%d", y);
+}
+/***/
 void FloorCeil(){
     double val; scanf("%lf", &val);
     double floorVal = floor(val);
