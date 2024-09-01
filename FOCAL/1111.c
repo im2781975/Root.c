@@ -349,3 +349,16 @@ void TwinPrime(){
     else
         puts("No");
 }
+/***/
+void Coprime(){
+    int a, b;
+    cin >> a >> b;
+    int flag = 0;
+    for(int i = 2; i <= a; i++){
+        if(a % i == 0 && b % i == 0){
+            flag = 1;
+            break;
+        }
+    }
+    (flag == 1)?cout << "No":cout << "Yes";
+}
