@@ -361,3 +361,11 @@ void Coprime(){
     }
     (flag == 1)?puts("No"):puts("Yes");
 }
+void coprime(){
+    int a, b; scanf("%d%d", &a, &b);
+    int x = a, y = b;
+    while(y != 0){
+        int tmp = y; y = x % y; x = tmp;
+    }
+    (x == 1) ? printf("%d & %d are coprime", a, b): printf("%d & %d aren't coprime");
+}
