@@ -351,8 +351,7 @@ void TwinPrime(){
 }
 /***/
 void Coprime(){
-    int a, b;
-    cin >> a >> b;
+    int a, b; scanf("%d%d", &a, &b);
     int flag = 0;
     for(int i = 2; i <= a; i++){
         if(a % i == 0 && b % i == 0){
@@ -360,5 +359,5 @@ void Coprime(){
             break;
         }
     }
-    (flag == 1)?cout << "No":cout << "Yes";
+    (flag == 1)?puts("No"):puts("Yes");
 }
