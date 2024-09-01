@@ -40,7 +40,19 @@ __main(){
     
     printf("\nAfter Copy Str is: %s", arr);
 }
-
+/***/
+int length(char *arr){
+    int len = 0, i = 0;
+    while(arr[i]!= '\0'){
+        len++; i++;
+    }
+    printf("Length of the string is: %d", len);
+}
+__main(){
+    char arr[100]; scanf("%s", &arr);
+    length(arr);
+}
+/***/
 //print string
 #define SIZE 20
 __main(){
