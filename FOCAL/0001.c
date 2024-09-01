@@ -1,3 +1,12 @@
+
+/****
+void TwoBase(){
+    int x = 2, res = 1;
+    int n; scanf("%d", &n);
+    for(int i = 1; i <= n; i++)
+        res *= x;
+    printf("%d", res);
+}
 /***/
 int Divisor(int n){
     int sum = 0;
