@@ -1,3 +1,10 @@
+void FloorCeil(){
+    double val; scanf("%lf", &val);
+    double floorVal = floor(val);
+    double ceilVal = ceil(val);
+    printf("Floor value: %0.f\nCeil value: %0.f",floorVal, ceilVal);
+}
+/***/
 //Find cube of x using pointer
 void cubeByRef(int *ptr){
     *ptr = (*ptr) * (*ptr) * (*ptr);
