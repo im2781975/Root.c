@@ -1,4 +1,16 @@
 /***/
+void func(int num){
+    if(num > 0){
+        func(--num);
+        printf("%d ", num);
+        func(--num);
+    }
+}
+__main(){
+    int num; scanf("%d", &num);
+    func(num);
+}
+/***/
 int a, b, c = 5, d = 7;
 int func1(int a, int b){
     c = a + b;
