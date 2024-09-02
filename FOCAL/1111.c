@@ -369,3 +369,15 @@ void coprime(){
     }
     (x == 1) ? printf("%d & %d are coprime", a, b): printf("%d & %d aren't coprime");
 }
+/***/
+__main(){
+    int n; scanf("%d", &n);
+    int sum = 0;
+    for(int i = 1; i <= n; i++){
+        if(i % 2 == 0){
+            sum += i * (i + 1);
+            printf("i: %d\ti + 1: %d\tsum: %d\n", i, i + 1, sum);
+        }
+    }
+}
+/***/
