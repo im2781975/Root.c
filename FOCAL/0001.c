@@ -1,5 +1,29 @@
-
-/****
+/***/
+int a, b, c = 5, d = 7;
+int func1(int a, int b){
+    c = a + b;
+    return c * 2;
+}
+int func2(int p){
+    p += a;
+    a *= 2;
+    return p;
+}
+void func3(int d){
+    c = d + 10;
+    b = func2(c);
+}
+__main(){
+    a = 1; b = 3;
+    printf("a = %d b = %d c = %d d = %d\n", a, b, c, d);
+    a = func1(a, b);
+    printf("a = %d b = %d c = %d d = %d\n", a, b, c, d);
+    d = func2(c);
+    printf("a = %d b = %d c = %d d = %d\n", a, b, c, d);
+    func3(b);
+    printf("a = %d b = %d c = %d d = %d\n", a, b, c, d);
+}
+/***/
 void TwoBase(){
     int x = 2, res = 1;
     int n; scanf("%d", &n);
