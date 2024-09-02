@@ -53,6 +53,20 @@ __main(){
     length(arr);
 }
 /***/
+void strCpy(char *str, char *ing){
+    int i = 0, j = 0;
+    while(str[i] != '\0'){
+        ing[j] = str[i];
+        i++; j++;
+    }
+    printf("Copied string is: %s", ing);
+}
+__main(){
+    char str[32], ing[32];
+    scanf("%s", &str);
+    strCpy(str, ing);
+}
+/***/
 //print string
 #define SIZE 20
 __main(){
