@@ -53,3 +53,14 @@ __main(){
         printf("%s\n", str);
     }
 }
+/***/
+//shift char
+__main(){
+    char str[100];
+    fgets(str, sizeof(str), stdin);
+    for(int i = 0; str[i]!= '\0'; i++){
+        str[i] = str[i] + 2;
+    }
+    printf("%s", str);
+}
+/***/
