@@ -41,3 +41,15 @@ __main(){
     for(int i = 0; i < n; i++)
         printf("%s\n", arr[i]);
 }
+/***/
+__main(){
+    int n; scanf("%d", &n);
+    int i;
+    char str[100];
+    getchar();
+    for(int i = 0; i < n; i++){
+        printf("Enter line %d: ", i + 1);
+        fgets(str, sizeof(str), stdin);
+        printf("%s\n", str);
+    }
+}
