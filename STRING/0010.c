@@ -28,3 +28,16 @@ __main(){
     puts("\n");
 }
 /***/
+__main(){
+    int n; scanf("%d", &n);
+    int i;
+    char str[100];
+    getchar();
+    char arr[n][100];
+    for(int i = 0; i < n; i++){
+        printf("Enter line %d: ", i + 1);
+        fgets(arr[i], sizeof(arr[i]), stdin);
+    }
+    for(int i = 0; i < n; i++)
+        printf("%s\n", arr[i]);
+}
