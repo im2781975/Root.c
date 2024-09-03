@@ -97,3 +97,14 @@ __main(){
     func(str, 2); puts(str);
 }
 /***/
+__main(){
+    int n; scanf("%d", &n);
+    char str[100], buffer[1000] = " ";
+    getchar();
+    for(int i = 0; i < n; i++){
+        fgets(str, sizeof(str), stdin);
+        strcat(buffer, str);
+    }
+    printf("%s", buffer);
+}
+/***/
