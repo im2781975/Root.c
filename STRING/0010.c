@@ -64,3 +64,18 @@ __main(){
     printf("%s", str);
 }
 /***/
+__main(){
+    char str[50] = {'\0'}, arr[50] = "Best";
+    strcpy(str, "Hello");
+    int x = strlen(str) * (0.5);
+    for(int i = 0; str[i]!= '\0'; ++i)
+        str[x + i] = arr[i];
+    printf("arr = %s\tstr = %s\n", arr, str);
+    strncpy(str, arr, 4);
+    printf("str = %s\tarr = %s\n", str, arr);
+    strcat(str, arr);
+    printf("str = %s\tarr = %s\n", str, arr);
+    (strcmp(arr, str) > 0)?strcat(str, " Flash") : strcat(arr, "lash");
+    printf("str = %s\tarr = %s\n", str, arr);
+}
+/***/
