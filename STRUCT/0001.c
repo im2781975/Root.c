@@ -21,3 +21,34 @@ int main(){
     Acc.integer = 67;
     printf("Imaginary part: %0.3f\nReal part: %d\nInteger  part: %d", Acc.comp.img, Acc.comp.real, Acc.integer);
 }
+/***/
+struct Employe{
+    int id, scores[12];
+    char name[80];
+    float salary;
+};
+__main(){
+    printf("Enter Employes number: ");
+    int num; scanf("%d", &num);
+    struct Employe emp[num];
+    for(int i = 0; i < num; i++){
+        printf("Enter the Detail for %d Employe: ", i + 1);
+        printf("\nId: "); scanf("%d", &emp[i].id);
+        puts("Name: "); scanf("%s", &emp[i].name);
+        
+        puts("Salary: "); scanf("%f", &emp[i].salary);
+        puts("Enter Last 12 month: ");
+        for(int j = 0; j < 12; i++){
+            printf("Month %d: ", j + 1);
+            scanf("%d", &emp[i].scores[j]);
+        }
+    }
+    for(int i = 0; i < num; i++){
+        float avgScore = 0;
+        for(int j = 0; j < 12; j++)
+            avgScore += emp[i].scores[j];
+        avgScore /= 12;
+        (avgScore >= 80)?printf("Employe with id = %d is elegibile for Increament", emp[i].id):
+        printf("Employe with id = %d isn't elegibile for Increament", emp[i].id);
+    }
+}
