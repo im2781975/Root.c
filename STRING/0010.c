@@ -79,3 +79,21 @@ __main(){
     printf("str = %s\tarr = %s\n", str, arr);
 }
 /***/
+void func(char *str, int d){
+    for(int i = 0; i < strlen(str); ++i){
+        char ch = str[i];
+        if(ch >= 'a' && ch <= 'z')
+            str[i] = 'a' + (ch - 'a' + d) % 26;
+        else if(ch >= 'A' && ch <= 'Z')
+            str[i] = 'A' + (ch - 'A' + d) % 26;
+    }
+}
+__main(){
+    char str[50]; strcpy(str, "message");
+    puts(str);
+    strcat(str, " Send"); puts(str);
+    func(str, 2); puts(str);
+    strcpy(str, "# AhYaT"); puts(str);
+    func(str, 2); puts(str);
+}
+/***/
