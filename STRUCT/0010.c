@@ -68,3 +68,30 @@ int main(){
         scanf("%d", &ch);
     }while(ch == 1);
 }
+/***/
+struct student{
+    int id;
+    char name[50], achive[79], contact[20], status[20];
+};
+void Display(struct student s){
+    printf("Name: %s\nId: %d\n", s.name, s.id);
+    printf("Contact: %s\nStatus: %s\nAchive: %s\n", s.contact, s.status, s.achive);
+}
+int main(){
+    int n; scanf("%d", &n);
+    struct student s[n];
+    for(int i = 0; i < n; i++){
+        printf("Enter the name of %dth student: ", i + 1); scanf("%s", s[i].name);
+        printf("Enter the contact of %dth student: ", i + 1); scanf("%s", s[i].contact);
+        printf("Enter the status of %dth student: ", i + 1); scanf("%s", s[i].status);
+        printf("Enter the achive of %dth student: ", i + 1); scanf("%s", s[i].achive);
+        s[i].id = 10012 + i;
+    }
+    int id; scanf("%d", &id);
+    for(int i = 0; i < n; i++){
+        if(id == s[i].id){
+            Display(s[i]);
+            break;
+        }
+    }
+}
