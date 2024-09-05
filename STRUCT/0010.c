@@ -9,6 +9,7 @@ void Display(struct student s){
 int main(){
     int n, id, choice, flag = 0;
     char ch, username[30], password[50];
+    struct student s[100];
     do{
         printf("Enter choice: "); scanf("%d", &choice);
         printf("\nEnter Username: "); scanf("%s", username);
@@ -17,7 +18,6 @@ int main(){
             case 1:
                  if(strcmp(username, "Admin") == 0 && strcmp(password, "1234") == 0){
                      printf("Enter student number: "); scanf("%d", &n);
-                     struct student s[n];
                      for(int i = 0; i < n; i++){
                          printf("Enter the name of %dth student: ", i + 1); scanf("%s", s[i].name);
                          printf("Enter the contact of %dth student: ", i + 1); scanf("%s", s[i].contact);
@@ -25,42 +25,46 @@ int main(){
                         printf("Enter the achive of %dth student: ", i + 1); scanf("%s", s[i].achive);
                         s[i].id = 10012 + i;
                      }
-                    printf("Enter id: "); scanf("%d", &id);
+                    printf("Enter id for Display: "); scanf("%d", &id);
+                    flag = 0;
                     for(int i = 0; i < n; i++){
                         if(id == s[i].id){
                            Display(s[i]);
                               flag = 1;
                             break;
                         }
-                        else
-                            flag = 0;
                     }
+                    if(flag == 0)
+                        puts("No student found with that id");
                 }
                 else 
                     flag = 2;
                 break;
-            default:
-                if(strcmp(username, "Student") == 0 && strcmp(username, "2345") == 0){
-                    printf("Enter id: "); scanf("%d", &id);
-                    struct student s;
+            case 2:
+                if(strcmp(username, "Student") == 0 && strcmp(password, "2345") == 0){
+                    printf("Enter id for Display: "); scanf("%d", &id);
                     for(int i = 0; i < n; i++){
-                        if(id == s.id){
-                            Display(s);
+                        if(id == s[i].id){
+                            Display(s[i]);
                             flag = 1; break;
                         }
-                        else flag = 0;
-                        
                     }
+                        if(flag == 0)
+                            puts("No student found with that ID");
+                        
                 }
                 else
                     flag = 2;
                 break;
+            default:
+                puts("Invalid Choice");
+                break;
         }
-            if(flag == 0)
+        if(flag == 0)
                 puts("Sortage of Info");
-            else if(flag == 2)
-                puts("please Enter valid username & password");
-            printf("Enter 1 for continue: ");
-            scanf("%d", &ch);
+        else if(flag == 2)
+            puts("please Enter valid username & password");
+        printf("Enter 1 for continue: ");
+        scanf("%d", &ch);
     }while(ch == 1);
 }
