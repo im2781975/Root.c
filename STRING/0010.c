@@ -108,3 +108,15 @@ __main(){
     printf("%s", buffer);
 }
 /***/
+void stringLen(){
+    char str[100];
+    while(fgets(str, sizeof(str), stdin)){
+        int cnt = 0;
+        for(int i = 0; str[i] != '\0'; i++){
+            if(((str[i] >= 'a' && str[i] <= 'z') || (str[i] >= 'A' && str[i] <= 'Z')) && ((str[i + 1] >= 'A' && str[i + 1] <= 'Z') || (str[i + 1] >= 'a' && str[i + 1] <= 'z')))
+                cnt++;
+        }
+        printf("%d", cnt);
+    }
+}
+/***/
