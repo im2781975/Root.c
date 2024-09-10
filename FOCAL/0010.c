@@ -271,3 +271,10 @@ void func3(int c){
     printf("\nYou have entered %d\n", c);
 }
 /***/
+void limitExceed(){
+    int n = 2147483642, i = 1;
+    while(i <= 10){
+        printf("%d\n", n + i);
+        i++;
+    }
+}
