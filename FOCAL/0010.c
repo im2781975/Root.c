@@ -140,6 +140,13 @@ __main(){
     While(i);
 }
 /***/
+__main(){
+    unsigned int cnt = 1;
+    do{
+        printf("%u ", cnt);
+    }while(++cnt <= 10);
+}
+/***/
 int x = 12;
 void add(){
     x = 34;
