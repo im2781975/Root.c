@@ -241,3 +241,26 @@ void validTriangle(){
         puts("Invalid");
 }
 /***/
+void func1(int a);
+void func2(int b);
+void func3(int c);
+int main(){
+    void(*f[3])(int) = {func1, func2, func3};
+    puts("Enter Number between 0 and 2, 3 for end: ");
+    size_t choice; scanf("%u", &choice);
+    while(choice >= 0 && choice < 3){
+        (*f[choice])(choice);
+        puts("Enter Number between 0 and 2, 3 for end: ");
+        scanf("%u", &choice);
+    }
+}
+void func1(int a){
+    printf("\nYou have entered %d\n", a);
+}
+void func2(int b){
+    printf("\nYou have entered %d\n", b);
+}
+void func3(int c){
+    printf("\nYou have entered %d\n", c);
+}
+/***/
