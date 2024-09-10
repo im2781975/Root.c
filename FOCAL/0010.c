@@ -140,3 +140,23 @@ __main(){
     While(i);
 }
 /***/
+int x = 12;
+void add(){
+    x = 34;
+    puts("Enter Values: ");
+    int a, b; scanf("%d%d", &a, &b);
+    int sum = a + b; printf("sum is: %d\n", sum);
+    printf("Before Incr local val: %d\n", x);
+    x += 2;
+    printf("After Incr local val: %d\n", x);
+    {
+        extern int x;
+        printf("Global variable in local scope: %d", x);
+    }
+}
+__main(){
+    x = 5;
+    printf("Before Adding x is: %d\n", x);
+    add();
+    printf("\nAfter Adding x is: %d", x);
+}
