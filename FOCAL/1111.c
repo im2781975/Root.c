@@ -381,3 +381,37 @@ __main(){
     }
 }
 /***/
+#define SIZE 10
+void Bubble(int work[], size_t size, int(*compare)(int a, int b));
+int ascending(int a, int b);
+int descending(int a, int b);
+int main(){
+    int arr[SIZE] = {2, 6, 4, 8, 10, 12, 89, 68, 45, 37};
+    puts("Enter 1 For ascending 2 for descending: ");
+    int order; scanf("%d", &order);
+    if(order == 1)
+        Bubble(arr, SIZE, ascending);
+    else
+        Bubble(arr, SIZE, descending);
+    for(size_t i = 0; i < SIZE; i++)
+        printf("%d ", arr[i]);
+}
+void Bubble(int *work, size_t size, int(*compare)(int a, int b)){
+    void swap(int *x, int *y);
+    for(unsigned int i = 1; i < size; i++){
+        for(size_t j = 0; j < size - 1; j++){
+            if((*compare)(work[j], work[j + 1]))
+                swap(&work[j], &work[j + 1]);
+        }
+    }
+}
+void swap(int *x, int *y){
+    int hold = *x; *x = *y; *y = hold;
+}
+int ascending(int a, int b){
+    return (b < a);
+}
+int descending(int a, int b){
+    return (b > a);
+}
+/***/
