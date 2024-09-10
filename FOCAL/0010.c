@@ -178,3 +178,66 @@ __main(){
     printf("%d", y);
 }
 /***/
+void GradeAvg(){
+    int stud; scanf("%d", &stud);
+    float Attendence, Assingment, ClassTest, Mid, Final;
+    float MidConvMark, FinalConvMark, TotalMark;
+    for(int i = 0; i < stud; i++){
+        printf("\nAttendence: "); scanf("%f", &Attendence);
+        printf("\nAssingment: ");  scanf("%f", &Assingment);
+        printf("\nClassTest: "); scanf("%f", &ClassTest);
+        printf("\nMid(Out Of 50): "); scanf("%f", &Mid);
+        printf("\nFinal(Out Of 100): "); scanf("%f", &Final);
+        MidConvMark = (Mid * 30)/50;
+        FinalConvMark = (Final * 40)/100;
+        TotalMark = Attendence + Assingment + ClassTest + MidConvMark + FinalConvMark;
+        int count = i + 1;
+        if(TotalMark >= 90)
+            printf("Student %d: A", count);
+        else if(TotalMark >= 86 && TotalMark < 90)
+            printf("Student %d: A-", count);
+        else if(TotalMark >= 82 && TotalMark < 86)
+            printf("Student %d: B+", count);
+        else if(TotalMark >= 78 && TotalMark < 82)
+            printf("Student %d: B", count);
+        else if(TotalMark >= 74 && TotalMark < 78)
+            printf("Student %d: B-", count);
+        else if(TotalMark >= 70 && TotalMark < 74)
+            printf("Student %d: C+", count);
+        else if(TotalMark >= 66 && TotalMark < 70)
+            printf("Student %d: C", count);
+        else if(TotalMark >= 62 && TotalMark < 66)
+            printf("Student %d: C-", count);
+        else if(TotalMark >= 58 && TotalMark < 62)
+            printf("Student %d: D+", count);
+        else if(TotalMark >= 55 && TotalMark < 58)
+            printf("Student %d: D", count);
+        else
+            printf("Student %d: F", count);
+    }
+}
+/***/
+void validTriangle(){
+    float x1, x2, x3, y1, y2, y3;
+    printf("Enter values: "); scanf("%f%f%f%f%f%f", &x1, &y1, &x2, &y2, &x3, &y3);
+    float a = sqrt(pow((x2 - x1), 2) + pow((y2 - y1), 2));
+    float b = sqrt(pow((x2 - x3), 2) + pow((y2 - y3), 2));
+    float c = sqrt(pow((x3 - x1), 2) + pow((y3 - y1), 2));
+    if(a + b > c && b + c > a && c + a > b){
+        if(a == b == c)
+            printf("Equilateral");
+        else if((a == b) || (b == c) || (c == a))
+            printf("Isosceles");
+        else
+            printf("Scalen");
+        if(a * a + b * b == c * c || b * b + c * c == a * a || c * c + a * a == b * b)
+            printf("RightTriangle");
+        else if(a * a + b * b > c * c || b * b + c * c > a * a || c * c + a * a > b * b)
+            printf("Acute Triangle");
+        else
+            printf("Obtuse Triangle");
+    }
+    else
+        puts("Invalid");
+}
+/***/
