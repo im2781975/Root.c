@@ -278,3 +278,13 @@ void limitExceed(){
         i++;
     }
 }
+__main(){
+    //saldo Iniziale.
+    puts("Enter saldo Iniziale, Addebiti, Accrediti, limiti: ")
+    int saldo; scanf("%d", &saldo);
+    int spese; scanf("%d", &spese);
+    int accrediti; scanf("%d", &accrediti);
+    int limiti; scanf("%d", &limiti);
+    saldo += addebiti - accrediti;
+    (saldo > limiti)? puts("Limiti Superato") : puts("Limiti Non Superato");
+}
