@@ -115,3 +115,28 @@ void Pattern(){
         printf("\n");
     }
 }
+/***/
+int i = 0;
+int While(int i){
+    printf("\n");
+    while(i != 10){
+        printf("%d ", i); i++;
+    }
+}
+int Dowhile(int i){
+    printf("\n");
+    do{
+        printf("%d ", i); i++;
+    }while(i != 10);
+}
+int For(int i){
+    printf("\n");
+    for(;i < 10; i++)
+        printf("%d ", i);
+}
+__main(){
+    For(i);
+    Dowhile(i);
+    While(i);
+}
+/***/
