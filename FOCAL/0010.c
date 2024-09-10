@@ -160,3 +160,21 @@ __main(){
     add();
     printf("\nAfter Adding x is: %d", x);
 }
+/***/
+int Divisor(int n){
+    int sum = 0;
+    while(n != 0){
+        int x = n % 10;
+        sum += x;
+        n /= 10;
+    }
+    return sum;
+}
+__main(){
+    int n, y; scanf("%d", &n);
+    int m = Divisor(n);
+    if(m % 10 > 1)
+        y = Divisor(n);
+    printf("%d", y);
+}
+/***/
