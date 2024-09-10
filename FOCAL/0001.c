@@ -1,3 +1,9 @@
+#include<stdio.h>
+enum week{Mon, Tue, Wed};
+int main(){
+    enum week day; day = Wed;
+    printf("%d", Wed);
+}
 /***/
 void func(int num){
     if(num > 0){
