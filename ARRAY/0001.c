@@ -146,3 +146,23 @@ void Printarray(){
     printf("\nSum Of the First two elements are: %d", arr[0] + arr[1]);
     printf("\nFirst Element is: %d", arr[0]);
 }
+/***/
+__main(){
+    int arr[9] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+    
+    printf("%p\n%p\n%d\n", arr, (arr + 1), *(arr + 1));
+    printf("Address of elements: ");
+    for(int i = 0; i < 9; i++)
+        printf("%p\n", &arr[i]);
+    int b = 420;
+    int *p, *q;
+    p = &b;
+    printf("Pointer in hexDecimal: %p\nPointer in Decimal: %d\nvalue is: %d\n", p, p, *p);
+    *p = 421;
+    printf("value after change: %d\n", *p);
+    q = p; *q = 422;
+    printf("After Swap value is: %d\n", b);
+    int **r = &p; **r = 423;
+    printf("After Using double pointer value is: %d", **r);
+}
+/***/
