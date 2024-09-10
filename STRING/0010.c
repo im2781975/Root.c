@@ -120,3 +120,12 @@ void stringLen(){
     }
 }
 /***/
+#define SIZE 20
+__main(){
+    char str[SIZE], ing[SIZE] = "Lateral";
+    scanf("%19s", str);
+    printf("str is: %s\ning is: %s\n", str, ing);
+    for(size_t i = 0; i < SIZE && str[i] != '\0'; ++i)
+        printf("%c ", str[i]);
+}
+/***/
