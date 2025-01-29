@@ -501,3 +501,519 @@ void SumofDigits(){
     }
     printf("%d", sum);
 }
+// Sum even Divisible by 4
+int main(){
+    int arr[100], n;
+    scanf("%d", &n);
+    for(int i = 0; i < n; i++)
+        scanf("%d", &arr[i]);
+    int sum = 0;
+    for(int i = 0; i < n; i++){
+        if(arr[i] % 2 == 0 && arr[i] % 4 == 0)
+            sum += arr[i];
+    }
+    printf("%d", sum);
+}
+//rombos
+int main(){
+    int n; scanf("%d", &n);
+    for(int i = 1; i <= n; i++){
+        for(int j = n - i; j >= 1; j--)
+            printf(" ");
+        for(int j = 1; j <= n; j++)
+            printf("#");
+        printf("\n");
+    }
+}
+//print Integers
+int main(){
+    int n; scanf("%d", &n);
+    if(n < 0){
+        for(int i = n; i <= -n; i++)
+            printf("%d ", i);
+        printf("\n");
+    }
+    else if(n >= 0){
+        for(int i = n; i >= -n; i--)
+            printf("%d ", i);
+        printf("\n");
+    }
+}
+//Calculate CGPA
+int main(){
+    char name[100]; scanf("%s", name);
+    int arr[5], G[5];
+    float cgpa;
+    for(int i = 0; i < 5; i++)
+        scanf("%d", &arr[i]);
+    for(i = 0; i < 5; i++) {
+        if(arr[i] >= 80 && arr[i] <= 100)
+            G[i] = 4;
+        else if(arr[i] >= 70 && arr[i] <= 79)
+            G[i] = 3.5;
+        else if(arr[i] >= 60 && arr[i] <= 69)
+            G[i] = 3;
+        else if(arr[i] >= 50 && arr[i] <= 59)
+            G[i] = 2.5;
+        else if(arr[i] <= 49)
+            G[i] = 0;
+    }
+    cgpa = (((G[0] * 3) + (G[1] * 1.5) + (G[2] * 3) + (G[3] * 1.5) + (G[4] * 2)) / (3 + 1.5 + 3 + 1.5 + 2));
+    printf("CGPA of %s is: %0.2f\n", name, cgpa);
+    if (cgpa == 0)
+        puts("Letter Grade: F");
+    else if (cgpa <= 2.5)
+        puts("Letter Grade: D");
+    else if (cgpa <= 3)
+        puts("Letter Grade: C");
+    else if (cgpa <= 3.5)
+        puts("Letter Grade: B");
+    else if (cgpa <= 4)
+        puts("Letter Grade: A");
+}
+//determine whether the factorial of a given number n results in an overflow or underflow 
+int main(){
+    long long n;
+    while (scanf("%lld", &n) == 1){
+        if (n < 0 && n % 2 == 0) 
+            printf("Underflow!\n");
+        else if (n < 0 && n % 2 != 0) 
+            printf("Overflow!\n");
+        else if (n == 0 || n <= 7) 
+            printf("Underflow!\n");
+        else if (n == 8) 
+            printf("40320\n");
+        else if (n == 9) 
+            printf("362880\n");
+        else if (n == 10) 
+            printf("3628800\n");
+        else if (n == 11) 
+            printf("39916800\n");
+        else if (n == 12) 
+            printf("479001600\n");
+        else if (n == 13) 
+            printf("6227020800\n");
+        else if (n > 13) 
+            printf("Overflow!\n");
+    }
+}
+// calculate the total number of cigarettes a person can smoke given an initial number of cigarettes and 
+//an exchange rate for cigarette butts. The exchange rate specifies how many cigarette butts are needed to get one new cigarette.
+int main(){
+    int initialCigarettes, exchangeRate, totalSmoked, buttsLeft, totalBonus, remainingButts;
+    while (scanf("%d%d", &initialCigarettes, &exchangeRate) == 2){
+        totalSmoked = initialCigarettes;
+        totalBonus = 0;
+        while (totalSmoked >= exchangeRate) {
+            buttsLeft = totalSmoked / exchangeRate;
+            remainingButts = totalSmoked % exchangeRate;
+            totalSmoked = buttsLeft + remainingButts;
+            totalBonus = totalBonus + buttsLeft;
+        }
+        printf("%d\n", initialCigarettes + totalBonus);
+    }
+}
+int main(){
+    unsigned long int num1, num2, digit1, digit2;
+    int i, carryCount, tempCarry, totalCarry;
+    while (scanf("%lu%lu", &num1, &num2) == 2){
+        carryCount = 0;
+        tempCarry = 0;
+        if (num1 == 0 && num2 == 0) 
+            break;
+        for (i = 0; i < 9; i++){
+            digit1 = num1 % 10;
+            digit2 = num2 % 10;
+            if (digit1 + digit2 >= 10){
+                tempCarry = tempCarry + 1;
+                do{
+                    num1 /= 10;
+                    num2 /= 10;
+                    digit1 = num1 % 10;
+                    digit2 = num2 % 10;
+                    if (digit1 + digit2 == 9)
+                        carryCount = carryCount + 1;
+                    else if (digit1 + digit2 > 9)
+                        tempCarry = tempCarry + 1;
+                } while (digit1 + digit2 >= 9);
+            }
+            num1 /= 10;
+            num2 /= 10;
+            if (num1 == 0 && num2 == 0) 
+                break;
+        }
+        totalCarry = tempCarry + carryCount;
+        if (totalCarry == 0)
+            printf("No carry operation.\n");
+        else if (totalCarry == 1)
+            printf("%d carry operation.\n", totalCarry);
+        else
+            printf("%d carry operations.\n", totalCarry);
+    }
+}
+int main(){
+    long int init, trg, cur;
+    while(scanf("%ld%ld", &init, &trg) != EOF){
+        long int sum = 0;
+        cur = init;
+        while(sum < trg){
+            sum += cur;
+            cur++;
+        }
+        printf("%ld", cur - 1);
+    }
+}
+// calculate the radius of the largest circle that can fit inside a triangle
+void calculateRadius(){
+    double a, b, c;
+    while(scanf("%lf%lf%lf", &a, &b, &c) == 3){
+        if(a <= 0 || b <= 0 || c <= 0)
+            continue;
+        double s = (a + b + c) / 2;
+        double ans = sqrt(((s - a) * (s - b) * (s - c)) / s);
+        printf("The radius of the round table is: %.3lf\n", ans);
+    }
+}
+// calculate the missing corner of a rectangle when three of its corners are given. 
+void missingCorner() {
+    double a1, a2, b1, b2, c1, c2, d1, d2, e1, e2;
+    while (scanf("%lf %lf %lf %lf %lf %lf %lf %lf", &a1, &a2, &b1, &b2, &c1, &c2, &d1, &d2) == 8) {
+        if (a1 == b1 && a2 == b2) {
+            e1 = c1 + d1 - a1;
+            e2 = c2 + d2 - a2;
+        } else if (a1 == c1 && a2 == c2) {
+            e1 = b1 + d1 - a1;
+            e2 = b2 + d2 - a2;
+        } else if (a1 == d1 && a2 == d2) {
+            e1 = c1 + b1 - a1;
+            e2 = c2 + b2 - a2;
+        } else if (b1 == c1 && b2 == c2) {
+            e1 = a1 + d1 - b1;
+            e2 = a2 + d2 - b2;
+        } else if (b1 == d1 && b2 == d2) {
+            e1 = a1 + c1 - b1;
+            e2 = a2 + c2 - b2;
+        } else if (c1 == d1 && c2 == d2) {
+            e1 = b1 + a1 - c1;
+            e2 = b2 + a2 - c2;
+        }
+        printf("%.3lf %.3lf\n", e1, e2);
+    }
+}
+//calculate the minimum and maximum distances between a point and a circle
+int main(){
+    int n; scanf("%d", &n);
+    for(int i = 0; i < n; i++){
+        float x, y, z; scanf("%f%f%f", &x, &y, &z);
+        float maxDst, radius;
+        float dstOrg= sqrt(x * x + y * y);
+        if(dstOrg <= z)
+            maxDst = z - dstOrg;
+        else
+            maxDst = dstOrg;
+        radius = z + dstOrg;
+        printf("%.2f %.2f\n", maxDst, radius);
+    }
+}
+int main(){
+    char str[1000];
+    int b = 0, t = 0, a = 0, w = 0;
+    int n; scanf("%d", &n);
+    getchar();
+    for(int i = 0; i < n; i++)
+        scanf("%c", &str[i]);
+    for(int i = 0; i < n; i++){
+        if(str[i] == 'B') b++;
+        if(str[i] == 'W') w++;
+        if(str[i] == 'A') a++;
+        if(str[i] == 'T') t++;
+    }
+    if(b == 0 && w == 0 && a > 0 && t == 0)
+        printf("Case %d: ABANDONED\n", i);
+    else if(b == 0 && t == 0)
+        printf("Case %d: WHITEWASH\n", i);
+    else if(t == 0 && w == 0)
+        printf("Case %d: BANGLAWASH\n", i);
+    else if(b > w)
+        printf("Case %d: BANGLADESH %d - %d\n", i, b, w);
+    else if(w > b)
+        printf("Case %d: WWW %d - %d\n", i, w, b);
+    else if(b == w)
+        printf("Case %d: DRAW %d %d\n", i, b, t);
+}
+// buy two books such that the sum of their prices equals a given target price.
+int main(){
+    int num, trg, price[1000], minDiff;
+    int first, second;
+    while(scanf("%d", &num) == 1){
+        minDiff = INT_MAX;
+        for(int i = 1; i <= num; i++)
+            scanf("%d", &price[i]);
+        scanf("%d", &trg);
+        for (int i = 1; i <= num; i++){
+            for (int j = i + 1; j <= num; j++) { 
+                if ((price[i] + price[j]) == trg) {
+                    long priceDiff = price[j] > price[i] ? price[j] - price[i] : price[i] - price[j];
+                    if (priceDiff < minDiff) {
+                        first = price[i];
+                        second = price[j];
+                        minDiff = priceDiff;
+                    }
+                }
+            }
+        }
+        printf("Peter should buy books whose prices are %ld and %ld.\n\n", first, second);
+    }
+}
+int main(){
+    int a, b; scanf("%d%d", &a, &b);
+    print("%d", a * b - 1);
+    int s = a + b;
+    int ret = (s * (s + 1) / 2) + a + 1;
+    printf("%d", ret)
+}
+//calculate and determine the number of moves required to go from one point (x1, y1) to another point (x2, y2)
+void calculateMove(){
+    int x1, x2, y1, y2, dx, dy;
+    while(scanf("%d%d%d%d", &x1, &y1, &x2, &y2) == 4){
+        if(x1 == 0 && x2 == 0 && y1 == 0 && y2 == 0)
+            break;
+        dx = (x1 > x2) ? x1 - x2 : x2 - x1;
+        dy = (y1 > y2) ? y1 - y2 : y2 - y1;
+        if (dx == 0 && dy == 0)
+            printf("0\n"); 
+        else if (dx == dy || dx == 0 || dy == 0)
+            printf("1\n");
+        else
+            printf("2\n");  
+    }
+}
+int main(){
+    int t;
+    while(scanf("%d", &t) == 1){
+        for(int i = 1; i <= t; i++){
+            int n; scanf("%d", &n);
+            int original = n;
+            int rev = 0, cnt = 0;
+            while(1){
+                sum = 0;
+                while(n != 0) {
+                    sum = sum * 10 + n % 10;
+                    n /= 10;
+                }
+                if(sum == original)
+                    break;
+                else{
+                    n = sum + original;
+                    original = n; 
+                    cnt++;
+                }
+            }
+            printf("%d %d\n", cnt, original);
+        }
+    }
+}
+int main() {
+    unsigned long int dnum;
+    int rem, parity, l, i, num, t;
+    int s[1000];
+    while(scanf("%lu", &dnum) == 1) {
+        num = dnum;
+        parity = 0;
+        l = 0; 
+        while(dnum > 0) {
+            rem = dnum % 2;
+            l = l + 1; 
+            if(rem == 1)
+                parity = parity + 1; 
+            dnum = dnum / 2;
+        }
+        for(i = 0; i < l; i++) {
+            rem = num % 2;
+            s[i] = rem; 
+            num = num / 2; 
+        }
+        printf("The parity of ");
+        for(i = l - 1; i >= 0; i--)
+            printf("%d", s[i]); 
+        printf(" is %d (mod 2).\n", parity);
+    }
+    return 0;
+}
+int main(){
+    int x, y; scanf("%d%d", &x, &y);
+    puts("Divisible are: ");
+    for(int i = 1; i <= y; i++){
+        if(i % x == 0)
+            printf("%d ", i);
+    }
+    puts("\nOdds are: ");
+    for(int i = 1; i <= x; i++){
+        if(i % 2 != 0)
+            printf("%d ", i);
+    }
+    puts("\nEvens are: ");
+    for(int i = 2; i <= x; i++){
+        if(i % 2 == 0)
+            printf("%d ", i);
+    }
+    puts("\nPrimes are: ");
+    for(i = 2; i <= x; i++){
+        if(i % 2 != 0 && i % 3 != 0 && i % 5 != 0 && i % 7 != 0)
+            puts("prime")
+        else
+            puts("composite")
+    }
+}
+// There has N floors 1-st floor to N-th floor. Each floor has K rooms,  1-st to K-th room.
+//both N and K are one-digit integers, and the j-th room on the i-th floor has the room number i0j. sum of the room numbers of all rooms 
+int main(){
+    int n, k; scanf("%d%d", &n, &k);
+    int nxtRoom = 101, nxtFloor = 2, res = 0;
+    for(int i = 1; i <= n * k; i++){
+        res += nxtRoom;
+        nxtRoom += 1;
+        if(i % k == 0){
+            nxtRoom = (100 * nxtFloor) + 1;
+            nxtFloor += 1;
+        }
+        printf("%d", res);
+    }
+}
+int main(){
+    int t; scanf("%d", &t);
+    int arr[233], IsIncr, IsDecr;
+    while(t--){
+        for(int i = 0; i < 10; i++)
+            scanf("%d", &arr[i]);
+        IsIncr = 1; IsDecr = 1;
+        for(int i = 0; i < 9; i++){
+            if(arr[i] < arr[i + 1])
+                IsDecr = 0;
+            if(arr[i] > arr[i + 1])
+                IsIncr = 0;
+        }
+        if(IsIncr || IsDecr)
+            puts("Ordered");
+        else
+            puts("Unordered");
+    }
+}
+int main(){
+    int n; scanf("%d", &n);
+    if(n >= 1){
+        for(int i = 1; i <= n; i++)
+            printf("%d ", i);
+    }
+    else{
+        for(int i = 1; i >= n; i--)
+            printf("%d ", i);
+    }
+    printf("\n");
+}
+int main(){
+    int n, m; scanf("%d%d", &n, &m);
+    if(n > m)
+        m += 24;
+    for(int i = n; i <= m; i++)
+        printf("%d ", i % 24);
+    printf("\n");
+}
+int main(){
+    char str[10], ch = 'a';
+    for(int i = 0; i < 8; i++)
+        str[i] = ch + 8 - i;
+    str[i] = '\0';
+    for(int i = 0; i < 8; i++)
+        printf("%c ", str[i]);
+}
+int main(){
+    int n, cnt = 0;
+    while(scanf("%d", &n) == 1){
+        if(n == 0)
+            break;
+        cnt = 0;
+        while(n >= 3){
+            n -= 3;
+            cnt++;
+            n += 1;
+        }
+        if(n == 2)
+            printf("%d", cnt + 1);
+        else
+            printf("%d", cnt);
+    }
+}
+int main() {
+    int term1, term2, finalExam, attendance, classTest1, classTest2, classTest3;
+    int classTestAverage, totalMarks, numCases, caseNumber;
+    while (scanf("%d", &numCases) == 1) {
+        for (caseNumber = 1; caseNumber <= numCases; caseNumber++) {
+            scanf("%d %d %d %d %d %d %d", &term1, &term2, &finalExam, &attendance, &classTest1, &classTest2, &classTest3);
+            if (classTest1 <= classTest2 && classTest1 <= classTest3)
+                classTestAverage = (classTest2 + classTest3) / 2;
+            else if (classTest2 <= classTest1 && classTest2 <= classTest3)
+                classTestAverage = (classTest1 + classTest3) / 2;
+            else
+                classTestAverage = (classTest1 + classTest2) / 2;
+            totalMarks = term1 + term2 + finalExam + attendance + classTestAverage;
+            if (totalMarks >= 90)
+                printf("Case %d: A\n", caseNumber);
+            else if (totalMarks >= 80)
+                printf("Case %d: B\n", caseNumber);
+            else if (totalMarks >= 70)
+                printf("Case %d: C\n", caseNumber);
+            else if (totalMarks >= 60)
+                printf("Case %d: D\n", caseNumber);
+            else
+                printf("Case %d: F\n", caseNumber);
+        }
+    }
+    return 0;
+}
+#include<stdio.h>
+//take three integers & print bigger oner.if same print equal
+validTriangle(int a, int b, int c){
+    if(a == b || b == c || c == a)
+        puts("Yes");
+    if(a > b && a > c){
+        (b + c > a) ? puts("Yes") : puts("No");
+    }
+    else if(b > a && b > c){
+        (a + c > b) ? puts("Yes") : puts("No");
+    }
+    else if(c > a && c > b){
+        (a + b > c) ? puts("Yes") : puts("No");
+    }
+}
+int Bigger(int a, int b, int c)
+{
+    if(a > b && a > c)
+        puts("A is Bigger");
+    else if(a > b && a == c)
+        puts("A & C both are bigger");
+    else if(a > c && a == b)
+        puts("A & B both are bigger");
+    else if(b > a && b > c)
+        puts("B is Bigger");
+    else if(b > a && b == c)
+        puts("B & C both are Bigger");
+    else if(b > c && b == a)
+        puts("A & B both are Bigger");
+    else if(a == b && b == c && c == a)
+        puts("They are equal");
+    else if(c > a && c > b)
+        puts("C is Bigger");
+    else if(c == a && c > b)
+        puts("A & C both are Bigger");
+    else if(c > a && b == c){
+        puts("B & C both are Bigger");
+    }
+}
+int main()
+{
+    int a, b, c; scanf("%d%d%d", &a, &b, &c);
+    Bigger(a, b, c);
+    validTriangle(a, b, c);
+    return 0;
+}
