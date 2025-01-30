@@ -129,3 +129,27 @@ __main(){
         printf("%c ", str[i]);
 }
 /***/
+/***/
+void printStr(){
+    char country[] = {'A', 'R', 'A', 'B'};
+    int len = 4;
+    printf("%s\n", country);
+    for(int i = 0; i < len; i++){
+        if(country[i] >= 65 && country[i] <= 90)
+            country[i] = 'a' + (country[i] - 'A');
+    }
+    printf("%s", country);
+}
+/***/
+void UnmatchedCnt(){
+    char str[21];
+    while(scanf("%s", &str) != EOF){
+        int l = 0, r = strlen(str) - 1, cnt = 0;
+        while(l < r){
+            if(str[l] != str[r])
+                cnt++;
+            l++; r--;
+        }
+        printf("%d", cnt);
+    }
+}
