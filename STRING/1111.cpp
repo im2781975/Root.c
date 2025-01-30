@@ -26,3 +26,20 @@ int main(){
     else
         puts("2");
 }
+#include<stdio.h>
+int main(){
+    char str[100]; gets(str);
+    int cnt = 0;
+    int len = strlen(str);
+    for(int i = 0; i < len; i++){
+        if((str[i] == 'a') || (str[i] == 'd') || (str[i] == 'g') || (str[i] == 'j') || (str[i] == 'm') || (str[i] == 'p') || (str[i] == 't') || (str[i] == 'w') || (str[i] == ' '))
+            cnt += 1;
+        else if((str[i] == 'b') || (str[i] == 'e') || (str[i] == 'h') || (str[i] == 'k') || (str[i] == 'n') || (str[i] == 'q') || (str[i] == 'u') || (str[i] == 'x'))
+            cnt += 2;
+        else if((str[i] == 'c') || (str[i] == 'f') || (str[i] == 'i') || (str[i] == 'l') || (str[i] == 'o') || (str[i] == 'r') || (str[i] == 'v') || (str[i] == 'y'))
+            cnt += 3;
+        else if((str[i] == 's') || (str[i] == 'z'))
+            cnt += 4;
+    }
+    printf("%d", cnt);
+}
