@@ -382,3 +382,33 @@ int main(){
     total = firstmarks / 4.0 + secmarks/4.0 + finalmarks / 2.0;
     printf("%f\n", total);
 }
+int get_press_count(char ch) {
+    if (ch == '.' || ch == 'a' || ch == 'd' || ch == 'g' || ch == 'j' ||
+        ch == 'm' || ch == 'p' || ch == 't' || ch == 'w' || ch == ' ')
+        return 1;
+    else if (ch == ',' || ch == 'b' || ch == 'e' || ch == 'h' || ch == 'k' ||
+             ch == 'n' || ch == 'q' || ch == 'u' || ch == 'x')
+        return 2;
+    else if (ch == '*' || ch == 'c' || ch == 'f' || ch == 'i' || ch == 'l' ||
+             ch == 'o' || ch == 'r' || ch == 'v' || ch == 'y')
+        return 3;
+    else if (ch == 's' || ch == 'z')
+        return 4;
+    else
+        return 0;  
+}
+int main() {
+    char str[107];
+    int t; scanf("%d", &t);
+    getchar(); 
+    // Consume the newline character left by scanf
+    for (int i = 1; i <= t; i++){
+        fgets(str, sizeof(str), stdin);
+        str[strcspn(str, "\n")] = '\0';
+        sum = 0;
+        // Calculate the total key presses
+        for (int j = 0; j < strlen(str); j++)
+            sum += get_press_count(a[j]);
+        printf("%d\n", sum);
+    }
+}
