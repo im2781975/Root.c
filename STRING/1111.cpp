@@ -480,3 +480,20 @@ int main (){
     if(ch >='A' && ch <='Z')
         printf("%c is upper case\n",ch);
 }
+int main() {
+    int x = 'A';
+    while (x <= 'Z'){
+        printf("%c = %d\n", x, x);
+        x++;
+    }
+}
+int main() {
+    int t; scanf("%d", &t);
+    char str[100];
+    getchar();  
+    while (t--) {
+        fgets(str, sizeof(str), stdin); 
+        str[strcspn(str, "\n")] = '\0';
+        printf("%s\n", str);
+    }
+}
