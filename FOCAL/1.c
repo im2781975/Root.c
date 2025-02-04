@@ -302,3 +302,83 @@ int main() {
         printf("%d ", arr[i]);
     printf("\n");
 }
+int main(){
+    int number[3], quantity[3], i;
+    float price[3], value;
+    char item[3][20]; 
+    printf("Item  Name   Number    Price    Quantity\n");
+    for (i = 0; i < 3; i++)
+        scanf("%s %d %f %d", item[i], &number[i], &price[i], &quantity[i]);
+    printf("\nItem Name    Number    Price    Quantity    Value\n");
+    for (i = 0; i < 3; i++){
+        value = price[i] * quantity[i];
+        printf("%-10s %7d %8.2f %9d %10.2f\n", item[i], number[i], price[i], quantity[i], value);
+    }
+}
+int main() {
+    int arr[100], pos = -1;
+    int n; scanf("%d", &n);
+    for (int i = 0; i < n; i++)
+        scanf("%d", &arr[i]);
+    int data; scanf("%d", &data);
+    for (int i = 0; i < n; i++) {
+        if (arr[i] == data) {
+            pos = i;  
+            break;      
+        }
+    }
+    if (pos != -1)
+        printf("The data is found at position: %d\n", pos + 1); 
+    else 
+        puts("The data is not found");
+}
+int main() {
+    float a, b, c; scanf("%f %f %f", &a, &b, &c);
+    if (a == 0) {
+        printf("This is not a quadratic equation (a cannot be zero).\n");
+        return 0;
+    }
+    float D, r1, r2, real, img;
+    D = (b * b - 4 * a * c);
+    if (D > 0) {
+        printf("The roots are real and distinct.\n");
+        r1 = (-b + sqrt(D)) / (2 * a);  
+        r2 = (-b - sqrt(D)) / (2 * a);
+        printf("The roots are: %.3f and %.3f\n", r1, r2);
+    } 
+    else if (D == 0) {
+        printf("The roots are real and equal.\n");
+        r1 = -b / (2 * a);
+        printf("The root is: %.3f\n", r1);
+    } 
+    else{
+        printf("The roots are imaginary (complex).\n");
+        real = -b / (2 * a);
+        img = sqrt(-D) / (2 * a);
+        printf("The roots are: %.3f + %.3fi and %.3f - %.3fi\n", 
+               real, img, real, img);
+    }
+}
+int main(){
+    int rem, result = 0;
+    int num; scanf("%d", &num);
+    int original= num;
+    while (original != 0){
+        rem = original % 10;
+        result += rem * rem * rem;
+        original /= 10;
+    }
+    if(result == num)
+        printf("%d is an Armstrong number.",num);
+    else
+        printf("%d is not an Armstrong number.",num);
+}
+int main(){
+    int firstmarks, secmarks, finalmarks;
+    float total;
+    firstmarks = 80;
+    secmarks = 74;
+    finalmarks = 97;
+    total = firstmarks / 4.0 + secmarks/4.0 + finalmarks / 2.0;
+    printf("%f\n", total);
+}
