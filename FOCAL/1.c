@@ -248,3 +248,57 @@ int main() {
     }
     return 0;
 }
+//swap
+int main(){
+    int x, y; scanf("%d%d", &x, &y);
+    x += y;
+    y = x - y;
+    x -= y;
+    printf("After swapping,the numbers are %d %d\n", x, y);
+}
+int main(){
+    int n; scanf("%d", &n);
+    printf("%d", (sqrt(1 + 8 * n) - 1) / 2);
+    printf("%d", ceil(sqrt(1 + 8 * n) - 1) / 2)
+    }
+}
+//seperate even or odd
+int main() {
+    int n; scanf("%d", &n);
+    int arr[100], even[100], odd[100];
+    for(i = 0; i < n; i++) 
+        scanf("%d", &arr[i]);
+
+    int evenCount = 0, oddCount = 0;
+    for(int i = 0; i < n; i++) {
+        if(arr[i] % 2 == 0)
+            even[evenCount++] = arr[i];
+        else
+            odd[oddCount++] = arr[i];
+    }
+    for(int i = 0; i < oddCount; i++)
+        printf("%d ", odd[i]);
+    printf("\n");
+    for(int i = 0; i < evenCount; i++)
+        printf("%d ", even[i]);
+    printf("\n");
+}
+//Sort
+int main() {
+    int num, j, arr[100], key, i;
+    scanf("%d", &num);
+    for(i = 0; i < num; i++)
+        scanf("%d", &arr[i]);
+    for(j = 1; j < num; j++) {
+        key = arr[j];
+        i = j - 1;
+        while(i >= 0 && arr[i] > key) {
+            arr[i + 1] = arr[i];
+            i = i - 1;
+        }
+        arr[i + 1] = key;
+    }
+    for(i = 0; i < num; i++) 
+        printf("%d ", arr[i]);
+    printf("\n");
+}
