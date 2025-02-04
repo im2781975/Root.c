@@ -412,3 +412,21 @@ int main() {
         printf("%d\n", sum);
     }
 }
+int main() {
+    char ch[1000]; 
+    while (scanf("%s", ch) != EOF) {
+        int len = strlen(n);
+        double sum = 0;
+        // Convert the string to an integer
+        int number = atoi(ch);  
+        // Calculate the sum of each digit raised to the power of 'length'
+        for (int i = 0; i < len; i++) {
+            int digit = ch[i] - '0';
+            sum += pow(digit, len);
+        }
+        if ((int)sum == number)
+            printf("%d is an Armstrong number\n", number);
+        else
+            printf("%d is NOT an Armstrong number\n", number);
+    }
+}
