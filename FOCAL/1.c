@@ -144,3 +144,107 @@ int main(){
     float deviation = sqrt(reg)
     printf("%0.2f", deviation)
 }
+#include <stdio.h>
+int main(){
+    int count, price; scanf("%d%d", &count, &price);
+        if (count == 1)
+            printf("%d\n", price);
+        else if (count > 1)
+            printf("%d\n", (count * price) - (count - 1) * 2); 
+}
+int main() {
+    char text[100];
+    int vowel = 0, consonant = 0;
+    fgets(text, sizeof(text), stdin);
+    int len = strlen(text);
+    for(int i = 0; i < len; i++) {
+        char ch = text[i];
+        if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u' ||
+            ch == 'A' || ch == 'E' || ch == 'I' || ch == 'O' || ch == 'U')
+            vowel++;
+        else if ((ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z')) 
+            consonant++;
+    }
+    printf("vowels: %d\nconsonant: %d", vowel, consonant);
+    printf("Total number of consonants = %d\n", consonant);
+}
+int main(){
+    char number[1000];
+    int i, rem, len, sum;
+    while (fgets(number, sizeof(number), stdin)) {
+        // Remove trailing newline character if present
+        number[strcspn(number, "\n")] = '\0';
+        int len = strlen(number);
+        if (len == 1 && number[0] == '0')
+            break;
+        rem = 0;
+        for (int i = 0; i < len; i++) {
+            sum = rem * 10 + (number[i] - '0');
+            rem = sum % 11;
+        }
+        (rem == 0)? puts("Yes") : puts("No");
+    }
+}
+int main(){
+    int n, x, k; scanf("%d %d %d", &n, &x, &k);
+    int total = n * (n + 1) / 2;
+    int rem = (x * (2 * k + (x - 1) * 1)) / 2;
+    printf("%d", total - rem);
+}
+int main() {
+    int arr[1000], j;
+    int n; scanf("%d", &n);
+    for (int i = 0; i < n; i++)
+        scanf("%d", &arr[i]);
+    for (int i = 1; i < n; i++){
+        int temp = arr[i];    
+        j = i - 1;
+        while (j >= 0 && arr[j] > temp){
+            arr[j + 1] = arr[j];
+            j--;
+        }
+        arr[j + 1] = temp; 
+    }
+    for (int i = 0; i < n; i++)
+        printf("%d\n", arr[i]);
+    return 0;
+}
+int main() {
+    int t, n;
+    while (scanf("%d %d", &t, &n) != EOF){
+        if (n == 0) {
+            printf("Error: Division by zero is not allowed.\n");
+            continue;
+        }
+        int div = t / n;
+        int mod = t % n;
+        printf("div = %d, mod = %d\n", div, mod);
+    }
+}
+int main() {
+    int n;
+    while(scanf("%d", &n) != EOF) {
+        int row = ceil((sqrt(1 + 8 * n) - 1) / 2);
+        int last = (row * (row - 1)) / 2;
+        int x, y;
+        if(row % 2 == 0){
+            x = 0;
+            y = row + 1;
+        }else{
+            x = row + 1;
+            y = 0;
+        }
+        for(int i = last + 1;; i++) {
+            if(row % 2 == 0) {
+                x++; y--;
+            }else{
+                x--; y++;
+            }
+            if(i == n) {
+                printf("TERM %d IS %d/%d\n", n, x, y);
+                break;
+            }
+        }
+    }
+    return 0;
+}
