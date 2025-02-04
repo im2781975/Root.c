@@ -210,3 +210,60 @@ int main(){
         printf("\n");
     }
 }
+#include<stdio.h>
+//Factorial
+int main(){
+    int num; scanf("%d", &num);
+    int res = 1;
+    for(int i = 1; i <= num; i++)
+        res *= i;
+    printf("%d", res);
+}
+//Fib series
+int main() {
+    int first = 0, second = 1, next;
+    int n; scanf("%d", &n);
+    for (int i = 0; i < n; i++) {
+        if (i <= 1)
+            next = i;
+        else{
+            next = first + second;
+            first = second;
+            second = next;
+        }
+        printf("%d\n", next);
+    }
+}
+//Odd Even
+int main() {
+    int arr[1000];
+    int n; scanf("%d", &n);
+    for (int i = 1; i <= n; i++)
+        scanf("%d", &arr[i]);
+    for (int i = 1; i <= n; i++) {
+        if (arr[i] % 2 != 0)
+            printf("%d ", arr[i]);
+    }
+    printf("\n");
+    for (int i = 1; i <= n; i++) {
+        if (arr[i] % 2 == 0)
+            printf("%d ", arr[i]);
+    }
+}
+int main() {
+    int  arr[100];
+    int n; scanf("%d", &n);
+    for (int i = 0; i < size; i++)
+        scanf("%d", &arr[i]);
+    int trg; scanf("%d", &trg);
+    int flag = 0;
+    for (for i = 0; i < n; i++) {
+        if (arr[i] == trg)
+            flag = i + 1;  
+            // Storing the (1-based) position
+    }
+    if (flag > 0)
+        printf("Number is found at %d", flag);
+    else
+        printf("Number not found");
+}
