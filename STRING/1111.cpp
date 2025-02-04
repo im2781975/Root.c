@@ -515,3 +515,19 @@ int main() {
         printf("%d\n", res);
     }
 }
+int main(){
+    // char country[] = {'B', 'a', 'n', 'g', 'l', 'a', 'd', 'e', 's', 'h'};
+    char country[] = "Bangladesh";
+    int length = strlen(country);
+    for(int i = 0; i < length; i++) {
+        if(country[i] >= 'a' && country[i] <= 'z') {
+            country[i] = 'A' + (country[i] - 'a');
+        }
+    }
+    printf("Modified string: %s\n", country);
+}
+int main() {
+    char line[80];
+    scanf("%79[^\n]", line);
+    printf("%s\n", line);
+}
