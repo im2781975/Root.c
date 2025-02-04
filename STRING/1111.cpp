@@ -468,3 +468,15 @@ int main(){
     }
     printf("\n");
 }
+int main(){
+    char ch; ch = getchar();
+    printf("%c", ch)
+}
+//check upper or lower
+int main (){
+    char ch ='W';
+    if (ch >= 'a' && ch <= 'z') 
+        printf("%c is lower case\n", ch);
+    if(ch >='A' && ch <='Z')
+        printf("%c is upper case\n",ch);
+}
