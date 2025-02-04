@@ -497,3 +497,21 @@ int main() {
         printf("%s\n", str);
     }
 }
+int main() {
+    char ing[1000];
+    while (scanf("%s", ing) != EOF) {
+        int sum = 0, res = 0;     
+        int len = strlen(ing);
+        for (int i = 0; i < len; i++) {
+            int ch = ing[i];
+            if (ch >= 'a' && ch <= 'z')
+                sum += ch - 'a' + 1;     
+            else if (ch >= 'A' && ch <= 'Z')
+                sum += ch - 'A' + 27;
+            else if (ch >= '0' && ch <= '9')
+                sum += ch - '0';         
+            res = (res * 10 + (ch - '0')) % 5;
+        }
+        printf("%d\n", res);
+    }
+}
