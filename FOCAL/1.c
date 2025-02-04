@@ -130,3 +130,17 @@ int main() {
     else
         printf("Number not found");
 }
+int main(){
+    float arr[100], sum = 0, add = 0;
+    int n; scanf("%d", &n);
+    for(int i = 0; i < n; i++)
+        scanf("%f", &arr[i]);
+    for(int i = 0; i < n; i++)
+        sum += arr[i];
+    float avg = sum / n;
+    for(int i = 0; i < n; i++)
+        add += pow(arr[i] - avg, 2);
+    float reg = add / n;
+    float deviation = sqrt(reg)
+    printf("%0.2f", deviation)
+}
