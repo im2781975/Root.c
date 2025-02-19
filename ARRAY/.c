@@ -29,3 +29,12 @@ int main(){
     for(size_t i = 0; i < n; i++)
         printf("(ptr + %u) = %d\t", (ptr + i), ptr[i]);
 }
+#include<stdio.h>
+//Access Values
+#define SZ 5
+int main(){
+    int arr[SZ] = {2, 3, 1, 5, 4};
+    printf("%s%13s", "Element", "value\n");
+    for(size_t i = 0; i < SZ; ++i)
+        printf("%4u%13d\n", i, arr[i]);
+}
