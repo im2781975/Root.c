@@ -75,3 +75,29 @@ int main(){
     for(size_t i = 0; i < n; i++)
         printf("%d ", arr[i]);
 }
+#include<stdio.h>
+// print 2D array
+void print(int arr[2][3]){
+    for(int i = 0; i < 2; i++){
+        for(int j = 0; j < 3; j++)
+            printf("%d ", arr[i][j]);
+        printf("\n");
+    }
+}
+int main(){
+    int arr[2][3] = {{1, 2, 3}, {4, 5, 6}};
+    int seq[2][3] = {1, 2, 3, 4, 5};
+    int mat[2][3] = {{1, 2}, {4}};
+    print(arr); print(seq); print(mat);
+    
+    int row, col; scanf("%d%d", &row, &col);
+    for(int i = 0; i < row; i++){
+        for(int j = 0; j < col; j++)
+            scanf("%d", &arr[i][j]);
+    }
+    for(int i = 0; i < row; i++){
+        for(int j = 0; j < col; j++)
+            printf("%d ", arr[i][j]);
+        printf("\n");
+    }
+}
