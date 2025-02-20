@@ -101,3 +101,27 @@ int main(){
         printf("\n");
     }
 }
+#include<stdio.h>
+//static & non static
+void statik(){
+    static int arr[3];
+    for(size_t i = 0; i < 3; i++)
+        printf("arr[%u] = %u\t", i, arr[i]);
+    puts("");
+    for(size_t i = 0; i < 3; i++)
+        printf("arr[%u] = %u\t", i, arr[i] += 5);
+    puts("");
+}
+void staticNo(){
+    int arr[3] = {0, 0, 0};
+    for(size_t i = 0; i < 3; i++)
+        printf("arr[%u] = %u\t", i, arr[i]);
+    puts("");
+    for(size_t i = 0; i < 3; i++)
+        printf("arr[%u] = %u\t", i, arr[i] += 5);
+    puts("");
+}
+int main(){
+    statik(); statik();
+    staticNo(); staticNo();
+}
