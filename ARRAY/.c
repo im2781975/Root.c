@@ -175,3 +175,35 @@ int main(){
     if(n % 2 != 0) n += 1;
     (x >= n / 2) ? puts("Beautiful") : puts("Ugly");
 }
+#include<stdio.h>
+// Provide the user with a list of conflict-free, valid marked positions.
+int main(){
+    int row = 8, col = 8;
+    int chess[row][col];
+    for(int i = 0; i < row; i++){
+        for(int j = 0; j < col; j++)
+            chess[i][j] = 0;
+    }
+    int n; scanf("%d", &n);
+    while(n--){
+        int r, c; scanf("%d%d", &r, &c);
+        chess[r][c] = 1;
+    }
+    for(int i = 0; i < row; i++){
+        int cnt = 0;
+        for(int j = 0; j < col; j++){
+            if(chess[i][j] == 1)
+                cnt++;
+        }
+        if(cnt > 1){
+            for(int j = 0; j < col; j++)
+                chess[i][j] = 0;
+        }
+    }
+    for(int i = 0; i < row; i++){
+        for(int j = 0; j < col; j++){
+            if(chess[i][j] != 0)
+                printf("%d %d", i, j);
+        }
+    }
+}
