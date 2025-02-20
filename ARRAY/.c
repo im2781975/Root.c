@@ -151,3 +151,27 @@ int main(){
     int **r = &p; **r = 423;
     printf("After Using double pointer value is: %d", **r);
 }
+#include<stdio.h>
+// given array will be beautiful if half or more of the numbers in the array have 7 digits.
+int IsBeauti(int *arr, int n){
+    int cnt = 0;
+    for(int i = 0; i < n; i++){
+        while(arr[i] != 0){
+            if(arr[i] % 10 == 7){
+                cnt++;
+                break;
+            }
+            arr[i] /= 10;
+        }
+    }
+    return cnt;
+}
+int main(){
+    int n; scanf("%d", &n);
+    int arr[n];
+    for(int i = 0; i < n; i++)
+        scanf("%d", &n);
+    int x = IsBeauti(arr, n);
+    if(n % 2 != 0) n += 1;
+    (x >= n / 2) ? puts("Beautiful") : puts("Ugly");
+}
