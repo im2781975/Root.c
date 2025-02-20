@@ -125,3 +125,12 @@ int main(){
     statik(); statik();
     staticNo(); staticNo();
 }
+#include<stdio.h>
+// sum of first two elements
+int main(){
+    int n; scanf("%d", &n);
+    int arr[n];
+    for(int i = 0; i < n; i++)
+        scanf("%d", &arr[i]);
+    printf("%d", arr[0] + arr[1]);
+}
