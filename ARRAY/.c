@@ -134,3 +134,20 @@ int main(){
         scanf("%d", &arr[i]);
     printf("%d", arr[0] + arr[1]);
 }
+#include<stdio.h>
+// Address of value
+int main(){
+    int arr[9] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+    printf("%p\t%p\t%d\n", arr, (arr + 1), *(arr + 1));
+    for(int i = 0; i < 9; i++)
+        printf("%p\t", &arr[i]);
+    int *p, *q, b = 420;
+    p = &b;
+    printf("Pointer in hexDecimal: %p\nPointer in Decimal: %d\nvalue is: %d\n", p, p, *p);
+    *p = 421;
+    printf("value after change: %d\n", *p);
+    q = p; *q = 422;
+    printf("After Swap value is: %d\n", b);
+    int **r = &p; **r = 423;
+    printf("After Using double pointer value is: %d", **r);
+}
