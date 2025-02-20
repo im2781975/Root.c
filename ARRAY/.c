@@ -38,3 +38,23 @@ int main(){
     for(size_t i = 0; i < SZ; ++i)
         printf("%4u%13d\n", i, arr[i]);
 }
+#include<stdio.h>
+//Bubble sort
+void swap(int *a, int *b){
+    int tmp = *a; *a = *b; *b = tmp;
+}
+int bubbleSort(int *arr, size_t n){
+    for(size_t pass = 0; pass < n - 1; pass++){
+        for(size_t j = 0; j < n - 1; j++){
+            if(arr[j] > arr[j + 1])
+                swap(&arr[j], &arr[j + 1]);
+        }
+    }
+}
+int main(){
+    int arr[] = {2, 6, 4, 8, 10, 12, 89, 68, 45, 37};
+    int n = sizeof(arr) / sizeof(arr[0]);
+    bubbleSort(arr, n);
+    for(size_t i = 0; i < n; i++)
+        printf("%d ", arr[i]);
+}
