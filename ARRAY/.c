@@ -58,3 +58,20 @@ int main(){
     for(size_t i = 0; i < n; i++)
         printf("%d ", arr[i]);
 }
+#include<stdio.h>
+// sort elements
+int main(){
+    int arr[] = {2, 6, 4, 8, 10, 12, 89, 68, 45, 37};
+    int n = sizeof(arr) / sizeof(arr[0]);
+    for(size_t i = 1; i < n; i++){
+        for(size_t j = 0; j < n - 1; j++){
+            if(arr[j] > arr[j + 1]){
+                int tmp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = tmp;
+            }
+        }
+    }
+    for(size_t i = 0; i < n; i++)
+        printf("%d ", arr[i]);
+}
