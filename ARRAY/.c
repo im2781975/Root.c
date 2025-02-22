@@ -325,3 +325,50 @@ int main(){
     }
     printf("%d", sum);
 }
+#include<stdio.h>
+float avgEven(int *arr, int n){
+    int sum = 0, cnt = 0;
+    for(int i = 0; i < n; i++){
+        if(arr[i] % 2 == 0){
+            sum += arr[i];
+            cnt++;
+        }
+    }
+    return (cnt == 0) ? 0.0 : float(sum) / cnt;
+}
+int prime(int *arr, int n){
+    int cnt = 0;
+    for(int i = 0; i < n; i++){
+        if(arr[i] < 2)
+            continue;
+        int flag = 1;
+        for(int j = 2; j * j <= arr[i]; j++){
+            if(arr[i] % j == 0){
+                flag = 0; break;
+            }
+        }
+        if(flag) cnt++;
+    }
+    return cnt;
+}
+void swapp(int *arr, int n){
+    int q; scanf("%d", &q);
+    for(int i = 0; i < q; i++){
+        int x, y; scanf("%d%d", &x, &y);
+        if(x >= 0 && x < n && y >= 0; y < n){
+            int tmp = arr[x]; 
+            arr[x] = arr[y]; arr[y] = tmp;
+        }
+    }
+}
+int main(){
+    int n; scanf("%d", &n);
+    int arr[n];
+    for(int i = 0; i < n; i++)
+        scanf("%d", &arr[i]);
+    printf("Prime numbers: %d\n", prime(arr, n));
+    printf("Average of All Even positive integers: %0.2f\n", avgEven(arr, n));
+    swapp(arr, n);
+    for(int i = 0; i < n; i++)
+        printf("%d ", arr[i]);
+}
