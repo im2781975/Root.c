@@ -289,3 +289,22 @@ int main(){
         printf("%.3f\n", median);
     }
 }
+#include<stdio.h>
+// Firstly print all the even numbers from 1 to n and followed by those even print all the odd numbers
+//in the same range. Finally, find the k-th number in the sequence that you just printed.
+int main(){
+    int n, k; scanf("%d%d", &n, &k);
+    int arr[n], idx = 0;
+    for(int i = 1; i <= n; i++){
+        if(i % 2 == 0)
+            arr[idx++] = i;
+    }
+    for(int i = 1; i <= n; i++){
+        if(i % 2 != 0)
+            arr[idx++] = i;
+    }
+    for(int i = 0; i < n; i++)
+        printf("%d ", arr[i]);
+    printf("\n");
+    printf("%dth element in this sequence is %d", k, arr[k - 1]);
+}
