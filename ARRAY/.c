@@ -308,3 +308,20 @@ int main(){
     printf("\n");
     printf("%dth element in this sequence is %d", k, arr[k - 1]);
 }
+#include<stdio.h>
+//If the index & the value is odd or even at the same time then 
+//sum the index and value.Return the total sum from the function.
+int main(){
+    int n; scanf("%d", &n);
+    int arr[n];
+    for(int i = 1; i <= n; i++)
+        scanf("%d", &arr[i]);
+    int sum = 0;
+    for(int i = 1; i <= n; i++){
+        if(i % 2 == 0 && arr[i] % 2 == 0)
+            sum += i + arr[i];
+        else if(i % 2 != 0 && arr[i] % 2 != 0)
+            sum += i + arr[i];
+    }
+    printf("%d", sum);
+}
