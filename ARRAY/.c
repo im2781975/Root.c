@@ -237,3 +237,28 @@ int main(){
     }
     safeRock(n, arr, ray);
 }
+#include<stdio.h>
+int main(){
+    int row, col; scanf("%d%d", &row, &col);
+    int mat[row][col], rix[row][col], res[row][col];
+    for(int i = 0; i < row; i++){
+        for(int j = 0; j < col; j++)
+            scanf("%d", &mat[i][j]);
+    }
+    for(int i = 0; i < row; i++){
+        for(int j = 0; j < col; j++)
+            scanf("%d", &rix[i][j]);
+    }
+    for(int i = 0; i < row; i++){
+        for(int j = 0; j < row; j++){
+            for(int k = 0; k < col; k++){
+                res[i][j] += mat[i][k] * rix[k][j];
+            }
+        }
+    }
+    for(int i = 0; i < row; i++){
+        for(int j = 0; j < col; j++)
+            printf("%d ", res[i][j]);
+        puts("");
+    }
+}
