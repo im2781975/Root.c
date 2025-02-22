@@ -401,4 +401,73 @@ int main(){
     else if (y == -1) printf("Total count = %d\n", x);
     else printf("Total count = %d\n", x + y);
 }
-
+//check Diagonal
+int main(){
+    int row, col; scanf("%d%d", &row, &col)
+    int arr[row][col], flag = 1;
+    for(int i = 0; i < row; i++){
+        for(int j = 0; j < col; j++)
+            scanf("%d", &arr[i][j]);
+            
+    }/*
+    if(row == col){
+        int res = 1;
+        for(int i = 0; i < row; i++){
+            for(int j = 0; j < col; j++){
+                if(i == j)
+                    continue;
+                if(arr[i][j] != 0)
+                    flag = 0;
+            }
+        }
+        (flag == 0) ? puts("Not Diagonal"): puts("Diagonal");
+    }*/
+    if(row == col){
+        for(int i = 0; i < row; i++){
+            for(int j = 0; j < col; j++){
+                if(i + j == 2)
+                    continue;
+                if(arr[i][j] != 0)
+                    flag = 0;
+            }
+        }
+        (flag == 0) ? puts("Not Diagonal"): puts("Diagonal");
+    }
+    else
+        puts("Not Diagonal");
+}
+//Identity matrix
+int main(){
+    int row, col; scanf("%d%d", &row, &col);
+    int arr[row][col], flag = 1;
+    for(int i = 0; i < row; i++){
+        for(int j = 0; j < col; j++)
+            scanf("%d", &arr[i][j]);
+    }
+    if(row == col){
+        int res = 1;
+        for(int i = 0; i < row; i++){
+            for(int j = 0; j < col; j++){
+                if(i == j)
+                    continue;
+                if(arr[i][j] == 0)
+                    flag = 0;
+            }
+        }
+        (flag == 1)? puts("identity") : puts("Not identity");
+    }/*
+    if(row == col){
+        int res = 1;
+        for(int i = 0; i < row; i++){
+            for(int j = 0; j < col; j++){
+                if(i + j == 2)
+                    continue;
+                if(arr[i][j] != 0)
+                    flag = 0;
+            }
+        }
+        (flag == 1)? puts("identity") : puts("Not identity");
+    }*/
+    else
+        puts("Not identity");
+}
