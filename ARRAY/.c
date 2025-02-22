@@ -372,3 +372,33 @@ int main(){
     for(int i = 0; i < n; i++)
         printf("%d ", arr[i]);
 }
+#include<stdio.h>
+// how many numbers are divisible by 3 and by 5. if there are no such numbers then return -1
+int div3(int *arr, int n){
+    int cnt3 = 0;
+    for(int i = 0; i < n; i++){
+        if(arr[i] % 3 == 0 && arr[i] > 0)
+            cnt3++;
+    }
+    return (cnt3 == 0) ? -1 : cnt3;
+}
+int div5(int *arr, int n){
+    int cnt5 = 0;
+    for(int i = 0; i < n; i++){
+        if(arr[i] % 5 == 0 && arr[i] > 0)
+            cnt5++;
+    }
+    return (cnt5 == 0) ? -1 : cnt5;
+}
+int main(){
+    int n; scanf("%d", &n);
+    int arr[n];
+    for(int i = 0; i < n; i++)
+        scanf("%d", &arr[i]);
+    int x = div3(arr, n), y = div5(arr, n);
+    if (x == -1 && y == -1) puts("-1")
+    else if (x == -1) printf("Total count = %d\n", y);
+    else if (y == -1) printf("Total count = %d\n", x);
+    else printf("Total count = %d\n", x + y);
+}
+
