@@ -207,3 +207,33 @@ int main(){
         }
     }
 }
+#include<stdio.h>
+//calculates the number & positions of "safe rooks" on a chessboard 
+//A rook is considered "safe" if no other rook shares the same row or column with it.
+int safeRock(int n, int *arr, int *ray){
+    int flag = 0, mark[1000];
+    for(int i = 1; i <= n; i++){
+        for(int j = i + 1; j <= n; j++){
+            if(arr[i] == arr[j] || ray[i] == ray[j]){
+                mark[i] = 1;
+                mark[j] = 1;
+            }
+        }
+        if(mark[i] == 0) flag++;
+    }
+    printf("Safe rooks = %d\n", flag);
+    for(int i = 1; i <= n; i++){
+        if(mark[i] == 0)
+            printf("%d %d\n", arr[i], ray[i]);
+    }
+    puts("");
+}
+int main(){
+    int n; scanf("%d", &n);
+    int arr[1000], ray[1000];
+    for(int i = 1; i <= n; i++){
+        int x, y; scanf("%d%d", &x, &y);
+        arr[i] = x; ray[i] = y;
+    }
+    safeRock(n, arr, ray);
+}
