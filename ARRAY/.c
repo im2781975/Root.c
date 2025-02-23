@@ -557,3 +557,41 @@ int main(){
     else
         puts("____");
 }
+#include<stdio.h>
+int main(){
+    int row, col; scanf("%d%d", &row, &col);
+    int mat[row][col];
+    for(int i = 0; i < row; i++){
+        for(int j = 0; j < col; j++)
+            scanf("%d", &mat[i][j]);
+    }
+    //swap column
+    for(int i = 0; i < row; i++){
+        for(int j = col - 1; j >= 0; j--)
+            printf("%d ", mat[i][j]);
+        puts("");
+    }
+    //swap row
+    for(int i = row - 1; i >= 0; i--){
+        for(int j = 0; j < col; j++)
+            printf("%d ", mat[i][j]);
+        puts("");
+    }
+    // swap first & last row
+    for(int j = 0; j < col; j++){
+        int tmp = mat[0][j];
+        mat[0][j] = mat[row - 1][j];
+        mat[row - 1][j] = tmp;
+    }
+    //swap first & last column
+    for(int i = 0; i < row; i++){
+        int tmp = mat[i][0];
+        mat[i][0] = mat[i][col - 1];
+        mat[i][col - 1] = tmp;
+    }
+    for(int i = 0; i < row; i++){
+        for(int j = 0; j < col; j++)
+            printf("%d ", mat[i][j]);
+        puts("");
+    }
+}
