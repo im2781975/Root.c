@@ -682,7 +682,8 @@ int main(){
     }
 }
 #include<stdio.h>
-//print values
+//prints the middle element of the array 
+//a number of times equal to the size of the array
 int main(){
     int t, arr[20];
     while(scanf("%d", &t) == 1){
