@@ -637,3 +637,17 @@ int main(){
         }
     }
 }
+#include<stdio.h>
+// Linear Search
+int main(){
+    int n; scanf("%d", &n);
+    int arr[n];
+    for(int i = 0; i < n; i++)
+        scanf("%d", &arr[i]);
+    int data, flag = 0; scanf("%d", &data);
+    for(int i = 0; i < n; i++){
+        if(arr[i] == data)
+            flag = 1;
+    }
+    (flag) ? puts("Found") : puts("Not Found");
+}
