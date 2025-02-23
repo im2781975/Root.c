@@ -822,6 +822,7 @@ int main(){
         }
         arr[j + 1] = key;
     }
+    // sort(arr, arr + n);
     for(int i = 0; i < n; i++)
         printf("%d ", arr[i]);
 }
