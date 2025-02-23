@@ -881,3 +881,19 @@ int main(){
     for(int i = 0; i < n; i++)
         printf("%d ", arr[i] - tmp[i]);
 }
+#include<stdio.h>
+#include<stdbool.h>
+int main(){
+    int arr[5] = {1, 2, 3, 4, 5};
+    int i = 5;
+    while(i >= 1){
+        arr[i - 1] -= 1;
+        while(true){
+            arr[i - 1] += i;
+            break;
+        }
+        i--;
+    }
+    for(int i = 0; i < 5; i++)
+        printf("%d ", arr[i]);
+}
