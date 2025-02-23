@@ -774,3 +774,42 @@ int main(){
     }
     printf("\nDuplicate: %d\nUnique: %d", dup, unique);
 }
+#include<stdio.h>
+#include<limits.h>
+// Bubble & selection sort
+int main(){
+    int n; scanf("%d", &n);
+    int arr[n];
+    for(int i = 0; i < n; i++)
+        scanf("%d", &arr[i]);
+    //Bubble sort
+    for(int i = 0; i < n / 2; i++){
+        for(int j = 0; j < n - 1; j++){
+            if(arr[j] > arr[j + 1]){
+                int tmp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = tmp;
+            }
+        }
+    }
+    for(int i = 0; i < n; i++)
+        printf("%d ", arr[i]);
+    puts("");
+    //selection sort
+    int sorted[n];
+    for(int i = 0; i < n; i++){
+        int min = INT_MAX, idx = -1;
+        for(int j = 0; j < n; j++){
+            if(arr[j] != INT_MAX && arr[j] < min){
+                min = arr[j]; idx = j;
+            }
+        }
+        sorted[i] = min;
+        arr[idx] = 999;
+        for(int k = 0; k < n; k++)
+            printf("%d ", arr[k]);
+        puts("");
+    }
+    for(int i = 0; i < n; i++)
+        printf("%d ", sorted[i]);
+}
