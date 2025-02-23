@@ -826,3 +826,27 @@ int main(){
     for(int i = 0; i < n; i++)
         printf("%d ", arr[i]);
 }
+#include<stdio.h>
+int reverse(int num){
+    int rev = 0;
+    while(num != 0){
+        rev = rev * 10 + num % 10;
+        num /= 10;
+    }
+    return rev;
+}
+int main(){
+    int t; scanf("%d", &t);
+    while(t--){
+        int num; scanf("%d", &num);
+        int step = 0;
+        while(true){
+            int rev = reverse(num);
+            if(rev == num) 
+                break;
+            num += rev;
+            step++;
+        }
+        printf("%d %d", num, step);
+    }
+}
