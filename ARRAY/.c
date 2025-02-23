@@ -471,3 +471,60 @@ int main(){
     else
         puts("Not identity");
 }
+#include<stdio.h>
+int Leader(int *arr, int n){
+    for(int i = 0; i < n; i++){
+        for(int j = i + 1; j < n; j++){
+            if(arr[i] <= arr[j])
+                break;
+        }
+        if(j == n)
+            printf("%d ", arr[i]);
+    }
+}
+int main(){
+    int n; scanf("%d", &n);
+    int arr[n];
+    for(int i = 0; i < n; i++)
+        scanf("%d", &arr[i]);
+    // Leader(arr, n);
+    for(int i = 0; i < n; i++){
+        int flag = 1;
+        for(int j = i + 1; j < n; j++){
+            if(arr[i] <= arr[j]){
+                flag = 0; break;
+            }
+        }
+        if(flag)
+            printf("%d ", arr[i]);
+    }
+}
+#include<stdio.h>
+//sum of the matrixes & sum of the elements of a matrix
+int main(){
+    int row, col; scanf("%d%d", &row, &col);
+    int mat[row][col], rix[row][col]; 
+    int res[row][col], sum = 0;
+    for(int i = 0; i < row; i++){
+        for(int j = 0; j < col; j++)
+            scanf("%d", &mat[i][j]);
+    }
+    for(int i = 0; i < row; i++){
+        for(int j = 0; j < col; j++)
+            scanf("%d", &rix[i][j]);
+    }
+    for(int i = 0; i < row; i++){
+        for(int j = 0; j < col; j++)
+            res[i][j] = mat[i][j] + rix[i][j];
+    }
+    for(int i = 0; i < row; i++){
+        for(int j = 0; j < col; j++)
+            printf("%d ", res[i][j]);
+        puts("");
+    }
+    for(int i = 0; i < row; i++){
+        for(int j = 0; j < col; j++)
+            sum += mat[i][j];
+    }
+    printf("%d", sum);
+}
