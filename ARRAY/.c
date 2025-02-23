@@ -696,3 +696,36 @@ int main(){
         }
     }
 }
+#include<stdio.h>
+//compute the number of ways to choose 2 items out of x items. 
+// since ans = x * (x - 1) corresponds to the combinatorial x * (x−1)
+//often divided by 2 to avoid counting permutations of the same pair. 
+int main(){
+    int n; scanf("%d", &n);
+    for(int i = 0; i < n; i++){
+        int x; scanf("%d", &x);
+        long long int res = x * (x - 1);
+        printf("Case %d: ", i + 1);
+        (res % 4 == 0) ? printf("%lld", res / 4) : printf("%lld / 2", res / 2);
+    }
+}
+//counting the number of swaps required to sort an array
+#include<stdio.h>
+int main(){
+    int n, arr[100];
+    while(scanf("%d", &n) == 1){
+        for(int i = 0; i < n; i++){
+            int x; scanf("%d", &x);
+            arr[x] = i;
+        }
+        int swap = 0, pos = -1;
+        for(int i = 0; i < n; i++){
+            if(arr[i] < pos){
+                pos = n + 1;
+                swap++;
+            }
+            else pos = arr[i];
+        }
+        printf("case %d = %d\n", ++cnt, swap);
+    }
+}
