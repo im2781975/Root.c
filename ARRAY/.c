@@ -812,9 +812,8 @@ int main(){
     }
     for(int i = 0; i < n; i++)
         printf("%d ", sorted[i]);
-    //selection sort
-}
-for(int i = 1; i < n; i++){
+    // selection sort
+    for(int i = 1; i < n; i++){
         int key = arr[i];
         int j = i - 1;
         while(j >= 0 && key < arr[j]){
@@ -825,3 +824,4 @@ for(int i = 1; i < n; i++){
     }
     for(int i = 0; i < n; i++)
         printf("%d ", arr[i]);
+}
