@@ -850,3 +850,34 @@ int main(){
         printf("%d %d", num, step);
     }
 }
+#include<stdio.h>
+//sort the arrays in ascending & discending order and print difference
+int main(){
+    int n; scanf("%d", &n);
+    int arr[n], tmp[n];
+    for(int i = 0; i < n; i++)
+        scanf("%d", &arr[i]);
+    for(int i = 0; i < n; i++)
+        scanf("%d", &tmp[i]);
+    int min, max;
+    for(int i = 0; i < n; i++){
+        for(int j = i + 1; j < n; j++){
+            if(arr[j] < arr[i]){
+                min = arr[i]; 
+                arr[i] = arr[j]; 
+                arr[j] = min;
+            }
+        }
+    }
+    for(int i = 0; i < n; i++){
+        for(int j = i + 1; j < n; j++){
+            if(tmp[j] > tmp[i]){
+                max = tmp[i]; 
+                tmp[i] = tmp[j];
+                tmp[j] = max;
+            }
+        }
+    }
+    for(int i = 0; i < n; i++)
+        printf("%d ", arr[i] - tmp[i]);
+}
