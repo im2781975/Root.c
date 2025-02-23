@@ -897,3 +897,45 @@ int main(){
     for(int i = 0; i < 5; i++)
         printf("%d ", arr[i]);
 }
+#include<stdio.h>
+int main(){
+    int n; scanf("%d", &n);
+    int sum = 0;
+    for(int i = 1; i <= n / 2; i++){
+        if(n % i == 0)
+            sum += i;
+    }
+    if(sum == n) puts("Perfect");
+    else if(sum < n) puts("Deficient");
+    else puts("Abundent");
+}
+#include<stdio.h>
+int main(){
+    int n; scanf("%d", &n);
+    int arr[n], swapp = 0;
+    for(int i = 0; i < n; i++)
+        scanf("%d", &arr[i]);
+    for(int i = 0; i < n; i++){
+        for(int j = i + 1; j < n; j++){
+            if(arr[i] > arr[j]){
+                int tmp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = tmp;
+                swapp++;
+            }
+        }
+    }
+    printf("Total Swap takes: %d", swapp);
+}
+#include<stdio.h>
+int main(){
+    int n; scanf("%d", &n);
+    int head = 0, tail = 0;
+    for(int i = 0; i < n; i++){
+        char ch; scanf(" %c", ch);
+        if(ch == 'H') head++;
+        else if(ch == 'T') tail++;
+    }
+    if(head > tail) puts("Eng");
+    else puts("Pak");
+}
