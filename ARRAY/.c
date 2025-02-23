@@ -729,3 +729,48 @@ int main(){
         printf("case %d = %d\n", ++cnt, swap);
     }
 }
+#include<stdio.h>
+//Fib series
+int main(){
+    int n, arr[60];
+    while(scanf("%d", &n) == 1){
+        arr[0] = 1; arr[1] = 1;
+        for(int i = 2; i <= n + 1; i++)
+            arr[i] = arr[i - 1] + arr[i - 2];
+        printf("%d", arr[n + 1]);
+    }
+}
+#include<stdio.h>
+//nth largest
+int main(){
+    int n; scanf("%d", &n);
+    int arr[n];
+    for(int i = 0; i < n; i++)
+        scanf("%d", &arr[i]);
+    int maxi = arr[0];
+    for(int i = 1; i < n; i++){
+        if(arr[i] > maxi) maxi = arr[i];
+    }
+    int sorted[maxi + 1], uniqueDup[maxi + 1];
+    for(int i = 0; i < maxi; i++){
+        sorted[i] = 0;
+        uniqueDup[i] = 0;
+    }
+    for(int i = 0; i < n; i++){
+        sorted[arr[i]] += 1;
+        uniqueDup[arr[i]] += 1;
+    }
+    int cnt = 0, unique = 0, dup = 0;
+    for(int i = maxi; i >= 0; i--){
+        if(sorted[i] > 0) cnt++;
+        if(cnt == 3){
+            printf("3rd Largest Element is: %d", i);
+            break;
+        }
+    }
+    for(int i = 0; i <= maxi; i++){
+        if(uniqueDup[i] == 1) unique++;
+        else if(uniqueDup[i] > 1) dup++;
+    }
+    printf("\nDuplicate: %d\nUnique: %d", dup, unique);
+}
