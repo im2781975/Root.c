@@ -666,3 +666,32 @@ int main(){
         }
     }
 }
+#include<stdio.h>
+//sort array
+int main(){
+    int n, arr[100];
+    while(scanf("%d", &n) == 1){
+        for(int i = 0; i < n; i++)
+            scanf("%d", &arr[i]);
+        for(int i = 0; i < 120; i++){
+            for(int j = 0; j < n; j++){
+                if(arr[j] == i)
+                    printf("%d ", i);
+            }
+        }
+    }
+}
+#include<stdio.h>
+//print values
+int main(){
+    int t, arr[20];
+    while(scanf("%d", &t) == 1){
+        while(t--){
+            int n; scanf("%d", &n);
+            for(int i = 0; i < n; i++){
+                scanf("%d", &arr[i]);
+                printf("case %d = %d\n", i, arr[i / 2]);
+            }
+        }
+    }
+}
