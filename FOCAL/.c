@@ -164,3 +164,18 @@ int main(){
     if(x >= y)
         printf("%d >= %d, %d", x, y, x >= y);
 }
+#include<stdio.h>
+int fib(int num){
+    if(num == 0 || num == 1) return num;
+    else return fib(num - 1) + fib(num - 2);
+}
+unsigned long long int fact(int n){
+    if(n <= 1) return 1;
+    else return (n * fact(n - 1));
+}
+int main(){
+    int num; scanf("%d", &num);
+    printf("Fib[%d] = %d\n", num, fib(num));
+    for(int i = 1; i <= num; i++)
+        printf("%d! = %llu\n", i, fact(i));
+}
