@@ -786,6 +786,25 @@ int main(){
     printf("\nDuplicate: %d\nUnique: %d", dup, unique);
 }
 #include<stdio.h>
+int main(){
+    int n; scanf("%d", &n);
+    int arr[n];
+    for(int i = 0; i < n; i++)
+        scanf("%d", &arr[i]);
+    int unique[n], idx = 0;
+    for(int i = 0; i < n; i++){
+        int select = arr[i], found = 0;
+        for(int j = 0; j < n; j++){
+            if(unique[j] == select)
+                found = 1;
+        }
+        if(found == 0)
+            unique[idx++] = arr[i];
+    }
+    for(int i = 0; i < idx; i++)
+        printf("%d ", unique[i]);
+}
+#include<stdio.h>
 //nth smallest
 int main(){
     int n; scanf("%d", &n);
