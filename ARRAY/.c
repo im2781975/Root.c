@@ -1081,3 +1081,40 @@ int main(){
     }
     free(ptr);
 }
+#include<stdio.h>
+int main(){
+    int t; scanf("%d", &t);
+    while(t--){
+        int n; scanf("%d", &n);
+        int arr[n], l = 0, r = 0, ind = 0;
+        for(int i = 0; i < n; i++)
+            scanf("%d", &arr[i]);
+        for(int i = 0; i < n - 1; i++)
+            (arr[i] < arr[i + 1]) ? l++ : r++;
+        printf("case %d : %d %d\n", ++ind, l, r);
+    }
+}
+#include<stdio.h>
+//Reverse
+int main(){
+    int n; scanf("%d", &n);
+    int arr[n];
+    for(int i = 0; i < n; i++)
+        scanf("%d", &arr[i]);
+    for(int i = 0, j = n - 1; i < n / 2; i++, j--){
+        int tmp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = tmp;
+    }
+    for(int i = 0; i < n; i++)
+        printf("%d ", arr[i]);
+    //Reverse
+    int rev[n + 1];
+    for(int i = n - 1, j = 0; i >= 0; i--, j++)
+        rev[j] = arr[i];
+    for(int i = 0; i < n; i++)
+        printf("%d ", rev[i]);
+    //Reverse
+    for(int i = n - 1; i >= 0; i--)
+        printf("%d ", arr[i]);
+}
