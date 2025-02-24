@@ -309,28 +309,6 @@ int main(){
     printf("%dth element in this sequence is %d", k, arr[k - 1]);
 }
 #include<stdio.h>
-//nth smallest
-int main(){
-    int n; scanf("%d", &n);
-    int arr[n];
-    for(int i = 0; i < n; i++)
-        scanf("%d", &arr[i]);
-    int x; scanf("%d", &x);
-    for(int i = 0; i < n; i++){
-        for(int j = i + 1; j < n; j++){
-            if(arr[i] > arr[j]){
-                int tmp = arr[i];
-                arr[i] = arr[j];
-                arr[j] = tmp;
-            }
-        }
-    }
-    for(int i = 0; i < n; i++){
-        if(i == x)
-            printf("%d", arr[x - 1]);
-    }
-}
-#include<stdio.h>
 //If the index & the value is odd or even at the same time then 
 //sum the index and value.Return the total sum from the function.
 int main(){
@@ -807,6 +785,50 @@ int main(){
     }
     printf("\nDuplicate: %d\nUnique: %d", dup, unique);
 }
+#include<stdio.h>
+//nth smallest
+int main(){
+    int n; scanf("%d", &n);
+    int arr[n];
+    for(int i = 0; i < n; i++)
+        scanf("%d", &arr[i]);
+    int x; scanf("%d", &x);
+    for(int i = 0; i < n; i++){
+        for(int j = i + 1; j < n; j++){
+            if(arr[i] > arr[j]){
+                int tmp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = tmp;
+            }
+        }
+    }
+    for(int i = 0; i < n; i++){
+        if(i == x)
+            printf("%d", arr[x - 1]);
+    }
+}
+#include<stdio.h>
+//Freq arr
+int main(){
+    int arr[8] = {7, 8, 6, 3, 9, 5, 3, 1};
+    int max = INT_MIN;
+    for(int i = 0; i < 8; i++){
+        if(arr[i] > max)
+            max = arr[i];
+    }
+    int freq[max + 1];
+    for(int i = 0; i <= max; i++)
+        freq[i] = 0;
+    for(int i = 0; i < 8; i++)
+        freq[arr[i]]++;
+    for(int i = 0; i <= max; i++){
+        /*if(freq[i] != 0)
+            printf("freq[%d] = %d\n", i, freq[i]);*/
+        for(int j = 1; j <= freq[i]; j++)
+            printf("%d ", i);
+    }
+}
+
 #include<stdio.h>
 #include<limits.h>
 // Bubble & selection sort
