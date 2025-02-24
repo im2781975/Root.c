@@ -309,6 +309,28 @@ int main(){
     printf("%dth element in this sequence is %d", k, arr[k - 1]);
 }
 #include<stdio.h>
+//nth smallest
+int main(){
+    int n; scanf("%d", &n);
+    int arr[n];
+    for(int i = 0; i < n; i++)
+        scanf("%d", &arr[i]);
+    int x; scanf("%d", &x);
+    for(int i = 0; i < n; i++){
+        for(int j = i + 1; j < n; j++){
+            if(arr[i] > arr[j]){
+                int tmp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = tmp;
+            }
+        }
+    }
+    for(int i = 0; i < n; i++){
+        if(i == x)
+            printf("%d", arr[x - 1]);
+    }
+}
+#include<stdio.h>
 //If the index & the value is odd or even at the same time then 
 //sum the index and value.Return the total sum from the function.
 int main(){
