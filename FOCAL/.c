@@ -190,3 +190,40 @@ int main(){
     for(int i = 1; i <= num; i++)
         printf("%d! = %llu\n", i, fact(i));
 }
+#include<stdio.h>
+#include<stdlib.h>
+#include<time.h>
+#define SZ 7
+#define Lancia 6e7
+//probability of DICE
+int main(){
+    int freq[SZ] = {0};
+    srand(time(NULL));
+    for(size_t i = 1; i <= Lancia; i++){
+        size_t face = 1 + rand() % 6;
+        ++freq[face];
+    }
+    printf("%s%13s\n", "Face", "Freq");
+    for(size_t face = 1; face < SZ; ++face)
+        printf("%2d%16d\n", face, freq[face]);
+    //freq dice
+    int freq1 = 0, freq2 = 0, freq3 = 0, freq4 = 0, freq5 = 0, freq6 = 0;
+    for(size_t i = 1; i <= Lancia; i++){
+        size_t face = 1 + rand() % 6;
+        switch(face){
+            case 1: ++freq1; break;
+            case 2: ++freq2; break;
+            case 3: ++freq3; break;
+            case 4: ++freq4; break;
+            case 5: ++freq5; break;
+            case 6: ++freq6; break;
+        }
+    }
+    printf("%s%8s\n", "Face", "Freq");
+    printf(" 1%13u\n", freq1);
+    printf(" 2%13u\n", freq2);
+    printf(" 3%13u\n", freq3);
+    printf(" 4%13u\n", freq4);
+    printf(" 5%13u\n", freq5);
+    printf(" 6%13u\n", freq6);
+}
