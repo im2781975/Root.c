@@ -1041,3 +1041,43 @@ int main(){
         sum += arr[i - 1];
     printf("%d\n", sum);
 }
+#include<stdio.h>
+// Is it possible to make target by adding any two different values from a array.
+int main(){
+    int n; scanf("%d", &n);
+    int arr[n];
+    for(int i = 0; i < n; i++)
+        scanf("%d", &arr[i]);
+    int trg, cnt = 0; scanf("%d", &trg);
+    for(int i = 0; i < n - 1; i++){
+        if(arr[i] + arr[i + 1] == trg)
+            cnt++;
+    }
+    (cnt > 0) ? puts("Yes") : puts("No");
+}
+#include<stdio.h>
+int main(){
+    int n; scanf("%d", &n);
+    int *ptr = (int*)malloc(n * sizeof(int));
+   //int *ptr = (int*)calloc(n, sizeof(int));
+    printf("Memory Address is: %p\n", ptr);
+    if(ptr == NULL)
+        puts("Allocation Failed");
+    else {
+        for(int i = 0; i < n; i++)
+            scanf("%d", (ptr + i));
+        for(int i = 0; i < n; i++)
+            printf("%d - %d\n", i, *(ptr + i));
+    }
+    ptr = (int*)realloc(ptr, (n + 5) * sizeof(int));
+    printf("Memory Address is: %p\n", ptr);
+    if(ptr == NULL)
+        puts("Allocation Failed");
+    else {
+        for(int i = n; i < n + 5; i++)
+            scanf("%d", (ptr + i));
+        for(int i = n; i < n + 5; i++)
+            printf("%d - %d\n", i, *(ptr + i));
+    }
+    free(ptr);
+}
