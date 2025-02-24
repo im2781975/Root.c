@@ -1169,3 +1169,27 @@ int main(){
         }
     }
 }
+#include<stdio.h>
+int main(){
+    int n; scanf("%d", &n);
+    int arr[n];
+    for(int i = 0; i < n; i++)
+        scanf("%d", &arr[i]);
+    // Add value to index
+    int Q; scanf("%d", &Q);
+    while(Q--){
+        int idx, val; scanf("%d%d", &idx, &val);
+        arr[idx] += val;
+    }
+    for(int i = 0; i < n; i++)
+        printf("%d ", arr[i]);
+    //print "Yes" or "No",if the array contain all Duplicate value or not
+    int val = arr[0], cnt = 1;
+    for(int i = 1; i < n; i++){
+        if(val != arr[i]){
+            cnt = 0;
+            break;
+        }
+    }
+    (cnt == 1) ? puts("Yes") : puts("No");
+}
