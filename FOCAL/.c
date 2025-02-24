@@ -85,3 +85,28 @@ int main(){
     printf("Cube of(ByRef): %d is %d ", x, num);
     printf("\nCube of(Byval): %d is %d", num, byVal(num));
 }
+#include<stdio.h>
+//Access address
+int main(){
+    int arr[5] = {10, 20, 30, 40, 50};
+    int *ptr = arr;
+    printf("%d\t%p\n", ptr, (void*)ptr);
+    ptr += 4;
+    printf("%d\t%p\n", (void*)ptr, ptr);
+    ptr -= 4;
+    printf("%d\t%p\n", ptr, (void*)ptr);
+    printf("%d", sizeof(arr));
+}
+#include<stdio.h>
+int main(){
+    // float sum
+    float x, y; scanf("%f%f", &x, &y);
+    printf("%0.2f + %0.2f = %0.2f\n", x, y, x + y);
+    //count digits
+    int n = 1;
+    while(n <= 100){
+        n *= 3;
+        printf("%d ", n);
+        //printf("%d ", n++);
+    }
+}
