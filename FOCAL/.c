@@ -40,3 +40,48 @@ int main(){
     func3(b);
     printf("%d %d %d %d\n", a, b, c, d);
 }
+#include<stdio.h>
+//Two Base
+int main(){
+    int res = 1, x = 2;
+    int n; scanf("%d", &n);
+    for(int i = 1; i <= n; i++)
+        res *= x;
+    printf("%d", res);
+}
+#include<stdio.h>
+int divisor(int n){
+    int sum = 0;
+    while(n > 0){
+        sum += n % 10; n /= 10;
+    }
+    return sum;
+}
+int main(){
+    int res, n; scanf("%d", &n);
+    int m = divisor(n);
+    if(m % 10 > 1)
+        res = m;
+    printf("%d", res);
+}
+#include<stdio.h>
+int main(){
+    double val; scanf("%lf", &val);
+    double floorVal = floor(val);
+    double ceilVal = ceil(val);
+    printf("Floor value: %0.f\tCeil value: %0.f\n",floorVal, ceilVal);
+}
+#include<stdio.h>
+int byRef(int *ptr){
+    *ptr = (*ptr) * (*ptr) * (*ptr);
+}
+int byVal(int num){
+    return num * num * num;
+}
+int main(){
+    int n; scanf("%d", &n);
+    int x = n;
+    byRef(&n);
+    printf("Cube of(ByRef): %d is %d ", x, num);
+    printf("\nCube of(Byval): %d is %d", num, byVal(num));
+}
