@@ -1,8 +1,19 @@
 #include<stdio.h>
 enum week{sat, sun, mon, tue, wed, thu, fri};
 int main(){
-    enum week day; day = tue;
-    printf("%d", day);
+    enum week day; day = tue; printf("%d\n", day);
+    for(int i = sat; i <= fri; i++){
+        printf("Enum value %d->", i);
+        switch(i){
+            case sat:printf("Saturday\n"); break;
+            case sun:printf("Sunday\n"); break;
+            case mon:printf("Monday\n"); break;
+            case tue:printf("Tuesday\n"); break;
+            case wed:printf("Wednesday\n"); break;
+            case thu:printf("Thursday\n"); break;
+            case fri:printf("Friday\n"); break;
+        }
+    }
 }
 #include<stdio.h>
 int func(int num){
