@@ -1118,3 +1118,43 @@ int main(){
     for(int i = n - 1; i >= 0; i--)
         printf("%d ", arr[i]);
 }
+#include<stdio.h>
+int main(){
+    int n; scanf("%d", &n);
+    for(int i = 1; i <= n; i++)
+        printf("%d", i);
+    puts("");
+    for(int i = 2; i <= n - 1; i++){
+        printf("%d", i);
+        for(int j = 1; j <= n - 2; j++)
+            printf(" ");
+        printf("%d\n", n - i + 1);
+    }
+    for(int i = n; i >= 1; i--)
+        printf("%d", i);
+}
+#include<stdio.h>
+int main(){
+    int a, b; scanf("%d%d", &a, &b);
+    if(a > b) puts("Arg");
+    else if(b > a) puts("Brasil");
+    else {
+        char x[6], y[6];
+        int ans = 0, res = 0;
+        while(true){
+            scanf("%s%s", x, y);
+            for(int i = 0; i < 5; i++){
+                if(x[i] == '1') ans++;
+                else if(y[i] == '1') res++;
+            }
+            if(ans > res){
+                printf("Arg");
+                break;
+            }
+            else if(ans < res){
+                printf("Brasil");
+                break;
+            }
+        }
+    }
+}
