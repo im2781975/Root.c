@@ -1006,3 +1006,38 @@ int main(){
         (sum > x) ? puts("No") : puts("Yes");
     }
 }
+#include<stdio.h>
+int main(){
+    int i = 1, j = 0;
+    int arr[2][3] = {
+        {10, 20, 30}, {40, 50, 60} };
+    arr[j][i] = arr[i][j];
+    printf("arr[%d][%d] = %d\narr[%d + 1][%d + 1] = %d", i, j, arr[i][j], j, i, arr[j + 1][i + 1]);
+}
+#include<stdio.h>
+int main(){
+    int n; scanf("%d", &n);
+    int arr[n];
+    for(int i = 0; i < n; i++)
+        scanf("%d", &arr[i]);
+    for(int i = 0; i < n; i++){
+        printf("%d - ", arr[i]);
+        for(int j = 0; j < n; j++){
+            if(i != j)
+                printf("%d ", arr[j]);
+        }
+        puts("");
+    }
+    /**/
+    for(int i = 1; i <= n; i++)
+        arr[i - 1] = i - 1;
+    for(int i = 0; i < n; i++)
+        printf("%d ", arr[i]);
+    /**/
+    int sum = 0;
+    for(int i = 1; i <= n; i++)
+        arr[i - 1] = i;
+    for(int i = 1; i <= n; i++)
+        sum += arr[i - 1];
+    printf("%d\n", sum);
+}
