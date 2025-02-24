@@ -928,6 +928,7 @@ int main(){
     printf("Total Swap takes: %d", swapp);
 }
 #include<stdio.h>
+//TOSS
 int main(){
     int n; scanf("%d", &n);
     int head = 0, tail = 0;
@@ -938,4 +939,70 @@ int main(){
     }
     if(head > tail) puts("Eng");
     else puts("Pak");
+}
+#include<stdio.h>
+//Closest to Century
+int main(){
+    int t; scanf("%d", &t);
+    while(t--){
+        int n, min; scanf("%d", &n);
+        int left[100], right[100];
+        while(n--){
+            scanf("%d", &left[i]);
+            right[i] = abs(left[i] - 100);
+        }
+        min = right[0];
+        for(int i = 0; i < n; i++){
+            if(min > right[i])
+                min = right[i];
+        }
+        printf("%d", abs(min - 100));
+    }
+}
+#include<stdio.h>
+// Help ICC
+int main(){
+    int t; scanf("%d", &t);
+    while(t--){
+        int arr[6], cnt = 0;
+        for(int i = 0; i < 6; i++)
+            scanf("%d", &arr[i]);
+        for(int i = 0; i < 6; i++){
+            if(arr[i] > 0)
+                cnt++;
+        }
+        (cnt > 0) ? puts("No") : puts("Yes");
+    }
+}
+#include<stdio.h>
+#include<math.h>
+// Perfect Square
+int main(){
+    int t; scanf("%d", &t);
+    while(t--){
+        int n; scanf("%d", &n);
+        int arr[n], cnt = 0
+        for(int i = 0; i < n; i++)
+            scanf("%d", &arr[i]);
+        for(int i = 0; i < n; i++){
+            int r = sqrt(arr[i]);
+            if(arr[i] == r * r)
+                cnt++;
+        }
+        if(cnt != 0) ? printf("%d", cnt) : printf("-1");
+    }
+}
+#include<stdio.h>
+// WhiteWalkerAndCandies
+int main(){
+    int t; scanf("%d", &t);
+    while(t--){
+        int n, x; scanf("%d%d", &n, &x);
+        int arr[n];
+        for(int i = 0; i < n; i++)
+            scanf("%d", &arr[i]);
+        for(int i = 0; i < n; i++)
+            sum += arr[i] * 2;
+        (sum > x) ? puts("No") : puts("Yes");
+    }
 }
