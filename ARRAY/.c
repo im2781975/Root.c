@@ -1193,3 +1193,56 @@ int main(){
     }
     (cnt == 1) ? puts("Yes") : puts("No");
 }
+#include<stdio.h>
+//a chessboard of size 3×3 have placed R rooks.others cells are empty. tell the total empty cells and their position
+int main(){
+    int n; scanf("%d", &n);
+    int arr[4][4];
+    for(int i = 0; i < n; i++){
+        for(int j = 0; j < n; j++)
+            arr[i][j] = 0;
+    }
+    for(int i = 0; i < n; i++){
+        scanf("%d%d", &x, &y);
+        arr[x][y] = 1;
+    }
+    printf("Total empty cell - %d", 9 - n);
+    for(int i = 0; i < 3; i++){
+        for(int j = 0; j < 3; j++){
+            if(arr[i][j] == 0)
+                printf("%d%d\n", i, j);
+        }
+    }
+}
+#include<stdio.h>
+//count the prime number from the array & print them
+int main(){
+    int n; scanf("%d", n);
+    int arr[n], res[n];
+    for(int i = 0; i < n; i++)
+        scanf("%d", &arr[i]);
+    for(int i = 0; i < n; i++){
+        int sum = 0, k = 0;
+        for(int j = 2; j <= arr[i] / 2; j++){
+            if(arr[i] % j == 0) sum++;
+        }
+        if(sum == 0) res[k++] = arr[i];
+    }
+    printf("%d\n", k);
+    for(int i = 0; i < k; i++)
+        printf("%d ", res[i]);
+}
+#include<stdio.h>
+int main(){
+    int n; scanf("%d", &n);
+    int fib = 0, first = 0, sec = 1;
+    for(int i = 0; i < n; i++){
+        if(i <= 1) fib = i;
+        else{
+            fib = first + sec;
+            first = sec;
+            sec = fib;
+        }
+        printf("fib[%d] = %d\n", i, fib);
+    }
+}
