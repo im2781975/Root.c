@@ -98,6 +98,15 @@ int main(){
     printf("%d", sizeof(arr));
 }
 #include<stdio.h>
+//Access value
+int main(){
+    int x = 7;
+    int *ptr = &x;
+    printf("Address of x: %p, ptr: %p", &x, ptr);
+    printf("\nvalue of x: %d, ptr: %d", x, *ptr);
+    printf("\n&*ptr: %p, *&ptr: %p", &*ptr, *&ptr);
+}
+#include<stdio.h>
 int main(){
     // float sum
     float x, y; scanf("%f%f", &x, &y);
