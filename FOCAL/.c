@@ -227,3 +227,33 @@ int main(){
     printf(" 5%13u\n", freq5);
     printf(" 6%13u\n", freq6);
 }
+#include<stdio.h>
+void validTriangle(int a, int b, int c){
+    if(a == b || b == c || c == a) puts("Yes");
+    if(a > b && a > c){
+        (b + c > a) ? puts("Yes") : puts("No");
+    }
+    else if(b > a && b > c){
+        (a + c > b) ? puts("Yes") : puts("No");
+    }
+    else if(c > a && c > b){
+        (a + b > c) ? puts("Yes") : puts("No");
+    }
+}
+int Bigger(int a, int b, int c){
+    if(a > b && a > c) puts("A is Bigger");
+    else if(a > b && a == c) puts("A & C both are bigger");
+    else if(a > c && a == b) puts("A & B both are bigger");
+    else if(b > a && b > c) puts("B is Bigger");
+    else if(b > a && b == c) puts("B & C both are Bigger");
+    else if(b > c && b == a) puts("A & B both are Bigger");
+    else if(a == b && b == c && c == a) puts("They are equal");
+    else if(c > a && c > b) puts("C is Bigger");
+    else if(c == a && c > b) puts("A & C both are Bigger");
+    else if(c > a && b == c) puts("B & C both are Bigger");
+}
+int main(){
+    int a, b, c; scanf("%d%d%d", &a, &b, &c);
+    Bigger(a, b, c);
+    validTriangle(a, b, c);
+}
