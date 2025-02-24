@@ -110,3 +110,48 @@ int main(){
         //printf("%d ", n++);
     }
 }
+#include<stdio.h>
+int main(){
+    for(int i = 1; i <= 3; ++i){
+        for(int j = 1; j <= 3; ++j){
+            for(int k = 1; k <= 3; k++)
+                printf("*");
+            puts(" ");
+        }
+        puts(" ");
+    }
+}
+#include<stdio.h>
+int main(){
+    int x = 1;
+    while(x <= 10){
+        int y = 1;
+        while(y <= 10){
+            printf("%d\t", x * y);
+            y++;
+        }
+        puts(""); x++;
+    }
+}
+#include<stdio.h>
+//Operations
+int main(){
+    int x, y; scanf("%d%d", &x, &y);
+    printf("Sum of %d & %d is: %d", x, y, x + y);
+    printf("\nSub of %d & %d is: %d", x, y, x - y);
+    printf("\nMult of %d & %d is: %d", x, y, x * y);
+    printf("\nDiv of %d & %d is: %d", x, y, x / y);
+    printf("\nRemainder of %d & %d is: %d", x, y, x % y);
+    if(x == y)
+        printf("\n%d == %d,%d", x, y, x == y);
+    if(x != y)
+        printf("\n%d != %d, %d", x, y, x != y);
+    if(x < y)
+        printf("\n%d < %d, %d", x, y, x < y);
+    if(x <= y)
+        printf("\n%d <= %d, %d", x, y, x <= y);
+    if(x > y)
+        printf("%d > %d, %d", x, y, x > y);
+    if(x >= y)
+        printf("%d >= %d, %d", x, y, x >= y);
+}
