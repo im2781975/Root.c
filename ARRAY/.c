@@ -594,6 +594,17 @@ int main(){
             printf("%d ", mat[i][j]);
         puts("");
     }
+    //transpose 
+    int res[row][col];
+    for(int i = 0; i < row; i++){
+        for(int j = 0; j < col; j++)
+            res[j][i] = mat[i][j];
+    }
+    for(int i = 0; i < col; i++){
+        for(int j = 0; j < row; j++)
+            printf("%d ", res[i][j]);
+        puts("");
+    }
 }
 #include<stdio.h>
 //OddSum
