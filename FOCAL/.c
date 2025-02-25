@@ -257,3 +257,18 @@ int main(){
     Bigger(a, b, c);
     validTriangle(a, b, c);
 }
+#include<stdio.h>
+//Tower Of Hanoi
+void Tower(int n, int start, int end, int tmp){
+    if(n == 1){
+        printf("%d -> %d\n", start, end);
+        return;
+    }
+    Tower(n - 1, start, tmp, end);
+    printf("%d -> %d\n", start, end);
+    Tower(n - 1, tmp, end, start);
+}
+int main(){
+    int n; scanf("%d", &n);
+    Tower(n, 1, 3, 2);
+}
