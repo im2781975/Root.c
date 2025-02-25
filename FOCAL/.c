@@ -300,3 +300,20 @@ int main(){
     }
     printf("%d!\t = %u\n", n, fact);
 }
+#include <stdio.h>
+#include <math.h>
+int square(int x){
+    return x * x;
+}
+int main(void) {
+    printf("%s\t%5s\t%5s\t%5s\t%5s\t%5s\t%5s\t%5s\t%5s\t%5s\t%5s\t%5s\n", 
+           "num", "log", "log10", "fabs", "ceil", "floor", "pow(2)", "fmod(2)", "sin", "cos", "tan");
+    for (int i = 1; i <= 10; i++) {
+        printf("%2d\t%5.2f\t%5.2f\t%5.2f\t%5.2f\t%5.2f\t%5.2f\t%5.2f\t%5.2f\t%5.2f\t%5.2f\n", 
+               i, log(i), log10(i), fabs(i), ceil(i), floor(i), pow(i, 2), fmod(i, 2), sin(i), cos(i), tan(i));
+    }
+    printf("%s\t%5s\t%5s\t%4s\n", "num", "sqrt", "cbrt", "exp");
+    for (int i = 1; i <= 10; i++) {
+        printf("%d\t %5.2f\t %5.2f\t %5.2f\n", i, sqrt(i), cbrt(i), exp(i));
+    }
+}
