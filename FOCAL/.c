@@ -317,3 +317,16 @@ int main(void) {
         printf("%d\t %5.2f\t %5.2f\t %5.2f\n", i, sqrt(i), cbrt(i), exp(i));
     }
 }
+#include<stdio.h>
+// calculate avarage
+int main(){
+    int val; scanf("%d", &val);
+    int cnt = 0, total = 0;
+    while(n != 9999){
+        total += val;
+        cnt++;
+        scanf("%d", &val);
+    }
+    if(cnt != 0) printf("%0.2f", (double)total / sum);
+    else puts("No value entered");
+}
