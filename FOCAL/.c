@@ -81,6 +81,8 @@ int main(){
     double floorVal = floor(val);
     double ceilVal = ceil(val);
     printf("Floor value: %0.f\tCeil value: %0.f\n",floorVal, ceilVal);
+    float num = 19.987654321;
+    printf("%f\t%0.2f\n%4.3f\t%e\t%lf\n", num, num, num, num, num);
 }
 #include<stdio.h>
 int byRef(int *ptr){
