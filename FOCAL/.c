@@ -499,3 +499,46 @@ int main(){
     }
     printf("%d", sum);
 }
+//print Integers
+#include<stdio.h>
+int main(){
+    int n; scanf("%d", &n);
+    if(n < 0){
+        for(int i = n; i <= -n; i++)
+            printf("%d ", i);
+        puts("");
+    }
+    else if(n >= 0){
+        for(int i = n; i >= -n; i--)
+            printf("%d ", i);
+        puts("");
+    }
+}
+//Calculate CGPA
+#include<stdio.h>
+int main(){
+    char name[100]; scanf("%s", name);
+    int arr[5], G[5];
+    float cgpa;
+    for(int i = 0; i < 5; i++)
+        scanf("%d", &arr[i]);
+    for(i = 0; i < 5; i++) {
+        if(arr[i] >= 80 && arr[i] <= 100)
+            G[i] = 4;
+        else if(arr[i] >= 70 && arr[i] <= 79)
+            G[i] = 3.5;
+        else if(arr[i] >= 60 && arr[i] <= 69)
+            G[i] = 3;
+        else if(arr[i] >= 50 && arr[i] <= 59)
+            G[i] = 2.5;
+        else if(arr[i] <= 49)
+            G[i] = 0;
+    }
+    cgpa = (((G[0] * 3) + (G[1] * 1.5) + (G[2] * 3) + (G[3] * 1.5) + (G[4] * 2)) / (3 + 1.5 + 3 + 1.5 + 2));
+    printf("CGPA of %s is: %0.2f\n", name, cgpa);
+    if (cgpa == 0) puts("Letter Grade: F");
+    else if (cgpa <= 2.5) puts("Letter Grade: D");
+    else if (cgpa <= 3) puts("Letter Grade: C");
+    else if (cgpa <= 3.5) puts("Letter Grade: B");
+    else if (cgpa <= 4) puts("Letter Grade: A");
+}
