@@ -542,3 +542,20 @@ int main(){
     else if (cgpa <= 3.5) puts("Letter Grade: B");
     else if (cgpa <= 4) puts("Letter Grade: A");
 }
+//determine whether the factorial of a given number n results in an overflow or underflow 
+#include<stdio.h>
+int main(){
+    long long n;
+    while (scanf("%lld", &n) == 1){
+        if (n < 0 && n % 2 == 0) puts("Underflow!");
+        else if (n < 0 && n % 2 != 0) puts("Overflow!");
+        else if (n == 0 || n <= 7) puts("Underflow!");
+        else if (n == 8) puts("40320");
+        else if (n == 9) puts("362880");
+        else if (n == 10) puts("3628800");
+        else if (n == 11) puts("39916800");
+        else if (n == 12) puts("479001600");
+        else if (n == 13) puts("6227020800");
+        else if (n > 13) puts("Overflow!");
+    }
+}
