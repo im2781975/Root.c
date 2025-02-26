@@ -446,3 +446,31 @@ int main(){
     p = &x;
     q = (double *)q; printf("\n%p\t%p", p, q);
 }
+#include<stdio.h>
+int x = 1;
+void Local(){
+    x = 25;
+    printf("\nAfter Enter local: %d", x++);
+    printf("\nBefore Exit local: %d", x);
+}
+void staticLocal(){
+    static int x = 30;
+    printf("\nAfter Enter staticLocal: %d", x++);
+    printf("\nBefore Exit staticLocal: %d", x);
+}
+void Global(){
+    printf("\nAfter Enter Global: %d", x);
+    x *= 10;
+    printf("\nBefore Exit Global: %d", x);
+}
+int main(){
+    x = 5; printf("Outer Scoper: %d", x);
+    x = 7; printf("\nInner Scope: %d", x);
+    printf("\nOuter Scope: %d", x);
+    for(int i = 0; i < 3; i++){
+        puts("");
+        Local();
+        staticLocal();
+        Global();
+    }
+}
