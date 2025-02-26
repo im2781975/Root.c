@@ -559,3 +559,72 @@ int main(){
         else if (n > 13) puts("Overflow!");
     }
 }
+#include<stdio.h>
+// calculate the total number of cigarettes a person can smoke given
+//an initial number of cigar and an exchange rate for cigar butts.
+// The exchange rate specifies how many cigar butts are needed to get one new cigar.
+int main(){
+    int initCigar, exchangeVal, totalSmoke, buttLeft, totalBonus, remainButt;
+    while(scanf("%d%d", &initCigar, &exchangeVal) == 2){
+        totalSmoke = initCigar;
+        totalBonus = 0;
+        while(totalSmoke >= exchangeVal){
+            buttLeft = totalSmoke / exchangeVal;
+            remainButt = totalSmoke % exchangeVal;
+            totalSmoke = buttLeft + remainButt;
+            totalBonus += buttLeft;
+        }
+        printf("%d", initCigar + totalBonus);
+    }
+}
+#include<stdio.h>
+int main(){
+    int init, trg;
+    while(scanf("%d%d", &init, &trg) == 2){
+        int sum = 0;
+        int cur = init;
+        while(sum < trg){
+            sum += cur;
+            if(sum >= trg) break;
+            cur++;
+        }
+        printf("%d", cur);
+    }
+}
+#include<stdio.h>
+int main(){
+    int num1, num2;
+    while(scanf("%d%d", &num1, &num2) == 2){
+        if(num1 == 0 && num2 == 0) break;
+        int carrycnt = 0, carry = 0;
+        while(num1 > 0 || num2 > 0){
+            int dig1 = num1 % 10;
+            int dig2 = num2 % 10;
+            if(dig1 + dig2 + carry >= 10){
+                carry = 1;
+                carrycnt++;
+            }
+            else
+                carry = 0;
+            num1 /= 10; num2 /= 10;
+        }
+        if (carrycnt == 0)
+            puts("No carry operation");
+        else if (carrycnt == 1)
+            puts("1 carry operation.");
+        else
+            printf("%d carry operations.\n", carrycnt);
+    }
+}
+#include<stdio.h>
+// calculate the radius of the largest circle that can fit inside a triangle
+int main(){
+    double a, b, c;
+    while(scanf("%lf%lf%lf", &a, &b, &c) == 3){
+        if(a <= 0 || b <= 0 || c <= 0)
+            continue;
+        double s = (a + b + c) / 2;
+        double res = sqrt(((s - a) * (s - b) * (s - c)) / s);
+        printf("The radius of the round table is: %.3lf\n", res);
+    }
+}
