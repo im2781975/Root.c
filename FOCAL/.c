@@ -330,3 +330,48 @@ int main(){
     if(cnt != 0) printf("%0.2f", (double)total / sum);
     else puts("No value entered");
 }
+#include<stdio.h>
+int main(){
+    int x = 1;
+    while(x <= 20){
+        printf("%d ", x);
+        if(x % 5 == 0) puts("");
+        else printf("\t");
+    }
+    int sum = 0; x = 1;
+    do{
+        sum += x;
+        x += 2;
+    }while(x <= 99);
+    printf("\n%d ", sum);
+}
+#include<stdio.h>
+int main(){
+    int cnt = 0, sum = 0;
+    while(cnt < 5){
+        cnt++;
+        int n; scanf("%d", &n);
+        sum += n;
+    }
+    printf("%d", sum);
+}
+#include<stdio.h>
+int main(){
+    int x = 1;
+    while(x <= 10){
+       // puts(x % 2 ? "*" : "+");
+        puts(x % 2 + 1 ? "*" : "+");
+        x++;
+    }
+}
+#include<stdio.h>
+//Base Power
+int main(){
+    int x, y; scanf("%d%d", &x, &y);
+    int i = 1, power = 1;
+    while(i <= y){
+        power *= x;
+        i++;
+    }
+    printf("%d", power);
+}
