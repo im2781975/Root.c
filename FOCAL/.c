@@ -421,18 +421,28 @@ int main(){
 int main(){
     int x = 4, y = 5;
     if(++x >= 5){
-        if(y-- >= 5)
-            puts("*");
+        if(y-- >= 5) puts("*");
         else{
             puts("+");
             puts("#");
         }
     }
     if(++x >= 5){
-        if(y-- >= 5)
-            puts("*");
-        else
-            puts("+");
+        if(y-- >= 5) puts("*");
+        else puts("+");
         puts("#");
     }
+}
+#include<stdio.h>
+#include<stdlib.h>
+int main(){
+    int a, b; scanf("%d%d", &a, &b);
+    int *ptr = &a, *trv = &b;
+    printf("Sum of the pointer is: %d\nDiff of the pointer is: %d", (*ptr + *trv), abs(*ptr - *trv));
+    //Typecast
+    int x, *p;
+    double y, *q;
+    y = (double)25 / 4; printf("\n%lf", y);
+    p = &x;
+    q = (double *)q; printf("\n%p\t%p", p, q);
 }
