@@ -474,3 +474,16 @@ int main(){
         Global();
     }
 }
+#include<stdio.h>
+// Sum even Divisible by 4
+int main(){
+    int n; scanf("%d", &n);
+    int arr[100];
+    for(int i = 0; i < n; i++)
+        scanf("%d", &arr[i]);
+    for(int i = 0; i < n; i++){
+        if(arr[i] % 2 == 0 && arr[i] % 4 == 0)
+            sum += arr[i];
+    }
+    printf("%d", sum);
+}
