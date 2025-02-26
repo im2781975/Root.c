@@ -628,3 +628,83 @@ int main(){
         printf("The radius of the round table is: %.3lf\n", res);
     }
 }
+#include<stdio.h>
+int main(){
+    int n;
+    while(scanf("%d", &n) == 1){
+        if(n == 0) break;
+        int cnt = 0;
+        while(n >= 3){
+            n -= 3;
+            cnt++; n += 1;
+        }
+        (n == 2) ? printf("%d", cnt + 1) : printf("%d", cnt);
+    }
+}
+#include<stdio.h>
+int main(){
+    char str[10], ch = 'a';
+    for(int i = 0; i < 8; i++)
+        str[i] = ch + 8 - i;
+    str[i] = '\0';
+    for(int i = 0; i < 8; i++)
+        printf("%c ", str[i]);
+}
+#include<stdio.h>
+int main(){
+    int n, m; scanf("%d%d", &n, &m);
+    if(n > m)
+        m += 24;
+    for(int i = n; i <= m; i++)
+        printf("%d ", i % 24);
+    puts("");
+}
+#include<stdio.h>
+int main(){
+    int n; scanf("%d", &n);
+    if(n >= 1){
+        for(int i = 1; i <= n; i++)
+            printf("%d ", i);
+    }
+    else{
+        for(int i = 1; i >= n; i--)
+            printf("%d ", i);
+    }
+    puts("");
+}
+#include<stdio.h>
+int main(){
+    int t; scanf("%d", &t);
+    int arr[233], IsIncr, IsDecr;
+    while(t--){
+        for(int i = 0; i < 10; i++)
+            scanf("%d", &arr[i]);
+        IsIncr = 1; IsDecr = 1;
+        for(int i = 0; i < 9; i++){
+            if(arr[i] < arr[i + 1])
+                IsDecr = 0;
+            if(arr[i] > arr[i + 1])
+                IsIncr = 0;
+        }
+        if(IsIncr || IsDecr)
+            puts("Ordered");
+        else
+            puts("Unordered");
+    }
+}
+#include<stdio.h>
+// There has N floors 1-st to N-th. Each floor has K rooms,1-st to K-th. both N and K are one-digit integers, and 
+// the j-th room on the i-th floor has the room number i0j. sum of the room numbers of all rooms 
+int main(){
+    int n, k; scanf("%d%d", &n, &k);
+    int nxtRoom = 101, nxtFloor = 2, res = 0;
+    for(int i = 1; i <= n * k; i++){
+        res += nxtRoom;
+        nxtRoom += 1;
+        if(i % k == 0){
+            nxtRoom = (100 * nxtFloor) + 1;
+            nxtFloor += 1;
+        }
+        printf("%d", res);
+    }
+}
