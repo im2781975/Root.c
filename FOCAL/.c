@@ -771,3 +771,125 @@ int main(){
     else
         printf("DRAW %d %d\n", b, t);
 }
+#include <stdio.h>
+int main() {
+    int dnum;
+    while (scanf("%d", &dnum) == 1) {
+        int arr[64], l = 0, parity = 0;
+        int num = dnum;
+        // Convert to binary and calculate parity
+        while (num > 0) {
+            arr[l] = num % 2;
+            if (arr[l] == 1)
+                parity++;
+            num /= 2;
+            l++;
+        }
+        printf("The parity of ");
+        if (l == 0)
+            printf("0");
+        else {
+            for (int i = l - 1; i >= 0; i--) 
+                printf("%d", arr[i]);
+        }
+        printf(" is %d (mod 2).\n", parity);
+    }
+}
+#include<stdio.h>
+int main(){
+    int x, y; scanf("%d%d", &x, &y);
+    for(int i = 1; i <= y; i++){
+        if(i % x == 0)
+            printf("%d ", i);
+    }
+    puts("");
+    for(int i = 1; i <= x; i++){
+        if(i % 2 != 0)
+            printf("%d ", i);
+    }
+    puts("");
+    for(int i = 2; i <= x; i++){
+        if(i % 2 == 0)
+            printf("%d ", i);
+    }
+    puts("");
+    for(i = 2; i <= x; i++){
+        if(i % 2 != 0 && i % 3 != 0 && i % 5 != 0 && i % 7 != 0)
+            puts("prime")
+        else
+            puts("composite")
+    }
+}
+#include <stdio.h>
+int reverseNumber(int num){
+    int rev = 0;
+    while (num != 0){
+        rev = rev * 10 + num % 10;
+        num /= 10;
+    }
+    return rev;
+}
+int main() {
+    int t; scanf("%d", &t); 
+    while(t--){
+        int n; scanf("%d", &n);
+        int cnt = 0;
+        while (1) {
+            int rev = reverseNumber(n);
+            if (rev == n) break;
+            n = n + rev; 
+            cnt++;
+        }
+        printf("%d %d\n", cnt, n);
+    }
+}
+#include<stdio.h>
+//calculate and determine the number of moves required to go from one point (x1, y1) to another point (x2, y2)
+int main(){
+    int x1, x2, y1, y2, dx, dy;
+    while(scanf("%d%d%d%d", &x1, &y1, &x2, &y2) == 4){
+        if(x1 == 0 && x2 == 0 && y1 == 0 && y2 == 0)
+            break;
+        dx = (x1 > x2) ? x1 - x2 : x2 - x1;
+        dy = (y1 > y2) ? y1 - y2 : y2 - y1;
+        if (dx == 0 && dy == 0)
+            puts("0");
+        else if (dx == dy || dx == 0 || dy == 0)
+            puts("1");
+        else
+            puts("2");
+    }
+}
+#include<stdio.h>
+int main(){
+    int a, b; scanf("%d%d", &a, &b);
+    print("%d", a * b - 1);
+    int s = a + b;
+    int ret = (s * (s + 1) / 2) + a + 1;
+    printf("%d", ret)
+}
+#include<stdio.h>
+// buy two books such that the sum of their prices equals a given target price.
+int main(){
+    int num, trg, price[1000], minDiff;
+    int first, second;
+    while(scanf("%d", &num) == 1){
+        minDiff = INT_MAX;
+        for(int i = 1; i <= num; i++)
+            scanf("%d", &price[i]);
+        scanf("%d", &trg);
+        for (int i = 1; i <= num; i++){
+            for (int j = i + 1; j <= num; j++) { 
+                if ((price[i] + price[j]) == trg) {
+                    long priceDiff = price[j] > price[i] ? price[j] - price[i] : price[i] - price[j];
+                    if (priceDiff < minDiff) {
+                        first = price[i];
+                        second = price[j];
+                        minDiff = priceDiff;
+                    }
+                }
+            }
+        }
+        printf("Peter should buy books whose prices are %ld and %ld.\n\n", first, second);
+    }
+}
