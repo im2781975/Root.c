@@ -396,3 +396,22 @@ int main(){
         }
     }
 }
+#include<stdio.h>
+int main(){
+    int x = 5;
+    printf("x++: %d", x++);
+    printf("\nx--: %d", x--);
+    printf("\n++x: %d", ++x);
+    printf("\n--x: %d", --x);
+    //relational
+    int y = 4;
+    printf("\nx == y: %d", x == y);
+    printf("\nx != y: %d", x != y);
+    x++;
+    printf("\nx == y: %d", x == y);
+    printf("\nx != y: %d", x != y);
+    //Bitwise
+    printf("\n%d |% d = %d", y, x, y | x);
+    printf("\n%d &% d = %d", y, x, y & x);
+    printf("\n%d ^% d = %d", y, x, y ^ x);
+}
