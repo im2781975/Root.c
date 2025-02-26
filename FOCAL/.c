@@ -375,3 +375,24 @@ int main(){
     }
     printf("%d", power);
 }
+#include<stdio.h>
+//Calculate Grade
+int main(){
+    int term1, term2, final, attendance;
+    int CT1, CT2, CT3, CTavg, t, total;
+    while(scanf("%d", &t) == 1){
+        while(t--){
+            scanf("%d%d%d%d%d%d%d", &term1, &term2, &final, &attendance, &CT1, &CT2, CT3);
+            int lowest = min(CT1, CT2, CT3);
+            CTavg = (CT1 + CT2 + CT3 - lowest) / 2;
+            total += term1 + term2 + final + attendance + CTavg;
+            char grade;
+            if (total >= 90)  grade = 'A';
+            else if (total >= 80) grade = 'B';
+            else if (total >= 70) grade = 'C';
+            else if (total >= 60) grade = 'D';
+            else grade = 'F';
+            printf("Case %d: %c\n", t, grade);
+        }
+    }
+}
