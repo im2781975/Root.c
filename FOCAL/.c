@@ -415,3 +415,22 @@ int main(){
     printf("\n%d &% d = %d", y, x, y & x);
     printf("\n%d ^% d = %d", y, x, y ^ x);
 }
+#include<stdio.h>
+int main(){
+    int x = 4, y = 5;
+    if(++x >= 5){
+        if(y-- >= 5)
+            puts("*");
+        else{
+            puts("+");
+            puts("#");
+        }
+    }
+    if(++x >= 5){
+        if(y-- >= 5)
+            puts("*");
+        else
+            puts("+");
+        puts("#");
+    }
+}
