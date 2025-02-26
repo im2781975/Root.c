@@ -708,3 +708,66 @@ int main(){
         printf("%d", res);
     }
 }
+#include <stdio.h>
+// calculate the missing corner of a rectangle when three of its corners are given. 
+int main(){
+    double x1, y1, x2, y2, x3, y3, x4, y4, missingX, missingY;
+    while(scanf("%lf %lf %lf %lf %lf %lf %lf %lf", &x1, &y1, &x2, &y2, &x3, &y3, &x4, &y4) == 8){
+        if (x1 == x2 && y1 == y2){
+            missingX = x3 + x4 - x1;
+            missingY = y3 + y4 - y1;
+        }else if (x1 == x3 && y1 == y3){
+            missingX = x2 + x4 - x1;
+            missingY = y2 + y4 - y1;
+        } else if (x1 == x4 && y1 == y4) {
+            missingX = x2 + x3 - x1;
+            missingY = y2 + y3 - y1;
+        } else {
+            missingX = x1 + x2 - x3;
+            missingY = y1 + y2 - y3;
+        }
+        printf("%.3lf %.3lf\n", missingX, missingY);
+    }
+}
+#include<stdio.h>
+//calculate the minimum and maximum distances between a point and a circle
+int main(){
+    int n; scanf("%d", &n);
+    for(int i = 0; i < n; i++){
+        float x, y, z; scanf("%f%f%f", &x, &y, &z);
+        float maxDst, radius;
+        float dstOrg= sqrt(x * x + y * y);
+        if(dstOrg <= z)
+            maxDst = z - dstOrg;
+        else
+            maxDst = dstOrg;
+        radius = z + dstOrg;
+        printf("%.2f %.2f\n", maxDst, radius);
+    }
+}
+#include<stdio.h>
+int main(){
+    int n; scanf("%d", &n);
+    char str[n];
+    int b = 0, t = 0, a = 0, w = 0;
+    for(int i = 0; i < n; i++)
+        scanf("% c", &str[i]);
+    for (int i = 0; i < n; i++){
+        if (str[i] == 'B') b++;
+        if (str[i] == 'W') w++;
+        if (str[i] == 'A') a++;
+        if (str[i] == 'T') t++;
+    }
+    if (b == 0 && w == 0 && a > 0 && t == 0)
+        puts("ABANDONED");
+    else if (b == 0 && t == 0)
+        puts("WHITEWASH");
+    else if (t == 0 && w == 0)
+        puts("BANGLAWASH");
+    else if (b > w)
+        printf("BANGLADESH %d - %d\n", b, w);
+    else if (w > b)
+        printf("WWW %d - %d\n", w, b);
+    else
+        printf("DRAW %d %d\n", b, t);
+}
