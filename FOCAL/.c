@@ -1322,3 +1322,62 @@ int main(){
         }
     }
 }
+#include<stdio.h>
+int main(){
+    int t; cin >> t;
+    while(t--){
+        int a, b, c; scanf("%d%d%d", &a, &b, &c);
+        if(a == 0 && b == 0 && c == 0) break;
+        else if(a * a == b * b + c * c || b * b == a * a + c * c || c * c = a * a + b * b) puts("right");
+        else puts("wrong");
+    }
+}
+#include<stdio.h>
+int main(){
+    float u, v, s, t, a;
+    int n;
+    while(scanf("%d", &n) == 1 && n != 0){
+        u = v = s = t = a = 0;
+        if(n == 1){
+            scanf("%f%f%f", &u, &v, &t);
+            s = ((u + v) *t)/2;
+            a = (v - u)/t;
+            printf("u: %f\ta: %f\n", s, a);
+        }
+        else if(n == 2){
+            scanf("I%f%f%f", &u, &v, &a);
+            t = (v - u)/a;
+            s = ((u + v) *t)/2;
+            printf("s: %f\tt: %f\n", s, a);
+        }
+        else if(n == 3){
+            scanf("%f%f%f", &u, &a, &s);
+            v = sqrt(u * u + 2 * a * s);
+            t = (v - u)/a;
+            printf("v: %f\tt: %f", v, t);
+        }
+        else if(n == 4){
+            scanf("%f%f%f", &v, &a, &s);
+            u = (v * v - 2 * a * s);
+            t = (u - v)/a;
+            printf("u: %f\tt: %f", u, t);
+        }
+    }
+}
+#include<stdio.h>
+int main(){
+    int n;
+    while(scanf("%d", &n) == 1){
+        for(int i = 0; i < n; i++){
+            int e, f, c; scanf("%d%d%d", &e, &f, &c);
+            int totalBottle = e + f;
+            int newDrink = 0;
+            while(totalBottle >= c){
+                int exchanged = totalBottle / c; 
+                newDrink += exchanged;
+                totalBottle = exchanged + (totalBottle % c);   
+            }
+            printf("%d", newDrink);
+        }
+    }
+}
