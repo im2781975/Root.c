@@ -203,6 +203,9 @@ int main(){
     printf("Floor value: %0.f\tCeil value: %0.f\n",floorVal, ceilVal);
     float num = 19.987654321;
     printf("%f\t%0.2f\n%4.3f\t%e\t%lf\n", num, num, num, num, num);
+    double r, v; scanf("%lf%lf", &r, &v);
+    double ans = (3.1416 / 2 * r/ v);
+    printf("%lf", ans);
 }
 #include<stdio.h>
 int byRef(int *ptr){
