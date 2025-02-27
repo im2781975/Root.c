@@ -949,3 +949,21 @@ int main(){
     else
         printf("No Average found");
 }
+#include<stdio.h>
+#include<math.h>
+//Deposite
+int main(){
+    double amount, capital = 1000.0, rate = 0.05;
+    printf("%4s%21s\n", "Year", "Deposite");
+    for(int i = 1; i <= 10; i++){
+        amount = capital * pow(1.0 + rate,  i);
+        printf("%4u%21.2f\n", i, amount);
+    }
+    //Deposite
+    double principle = 1000.0; rate = 0.05;
+    puts(" Year\t\tamount");
+    for(unsigned int year = 1; year <= 10; ++year){
+        double amount = principle * pow(1.0 + rate, year);
+        printf("%4u%15.2f\n", year, amount);
+    }
+}
