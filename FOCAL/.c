@@ -1383,6 +1383,27 @@ int main(){
 }
 #include <stdio.h>
 int main() {
+    int n;
+    while (scanf("%d", &n) == 1) {
+        if (n == 0) { 
+            printf("0 Parity is 0\n");
+            continue;
+        }
+        int arr[32], index = 0, parity = 0, num = n;
+        while (num > 0) {
+            arr[index] = num % 2;  
+            if (arr[index] == 1)
+                parity++;  
+            num /= 2;
+            index++;
+        }
+        for (int i = index - 1; i >= 0; i--)
+            printf("%d", arr[i]);
+        printf(" Parity is %d\n", parity);
+    }
+}
+#include <stdio.h>
+int main() {
     int n, i, arr[100];
     while (scanf("%d", &n) == 1) {
         if (n == 0)
