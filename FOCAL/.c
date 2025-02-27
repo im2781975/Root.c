@@ -54,6 +54,88 @@ int main(){
     (game == Won) ? puts("Player won!") : puts("Player lost.\n");
 }
 #include<stdio.h>
+#include<stdlib.h>
+#include<time.h>
+//Dice Game
+enum status {Continue, Won, Lost};
+int rollDice(void){
+    int die1 = 1 + (rand() % 6);
+    int die2 = 1 + (rand() % 6);
+    printf("%d + %d = %d\n", die1,  die2, die1 + die2);
+    return die1 + die2;
+}
+void chatter(void){
+    int select = 1 + rand() % 6;
+    switch(select){
+        case 1: puts("Going for broke!"); break;
+        case 2: puts("Take a chance!"); break;
+        case 3: puts("Break the bank!"); break;
+        case 4: puts("You're up big. Time to cash in!"); break;
+        case 5: puts("Way to be lucky! The dice must be loaded!"); break;
+        case 6: puts("Bet it all!"); break;
+        default : break;
+    }
+}
+enum status craps(void){
+    int point;
+    enum status game;
+    int sum = rollDice();
+    switch (sum){
+        case 7:
+        case 11:
+            game = Won;
+            chatter();
+            return Won;
+        case 2:
+        case 3:
+        case 12:
+            game = Lost;
+            chatter();
+            return Lost;
+        default:
+            game = Continue;
+            point = sum;
+            printf("Point is: %d\n", point);
+            break;
+    }
+    while (game == Continue){
+        chatter();
+        sum = rollDice();
+        if (sum == point) game = Won;
+        else if (sum == 7) game = Lost;
+    }
+    if (game == Won){
+        puts("Player won!");
+        return Won;
+    }else{
+        puts("Player lost.");
+        return Lost;
+    }
+}
+int main(void){
+    srand(time(NULL));
+    int BankBalance = 1000;
+    printf("Your balance is: %d\n", BankBalance);
+    int wager;
+    do{
+        printf("Enter wager: ");
+        scanf("%d", &wager);
+        if (wager <= 0 || wager > BankBalance) {
+            puts("Please enter a valid amount within your balance.");
+        }
+    } while (wager <= 0 || wager > BankBalance);
+    enum status res = craps();
+    if (res == Lost) {
+        BankBalance -= wager;
+        printf("Your new balance is: %d\n", BankBalance);
+        if (BankBalance == 0)
+            printf("You are busted. Thanks for playing!\n");
+    }else {
+        BankBalance += wager;
+        printf("Your new balance is: %d\n", BankBalance);
+    }
+}
+#include<stdio.h>
 int func(int num){
     if(num > 0){
         func(--num);
