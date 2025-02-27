@@ -25,3 +25,19 @@ int main(){
         puts("");
     }
 }
+#include<stdio.h>
+//print M
+int main(){
+    int n; scanf("%d", &n);
+    for(int i = 0; i < n; i++){
+        for(int j = 0; j < n; j++){
+            // if(j <= i || j >= n - 1 - i) printf("*");
+            // else printf(" ");
+            //if((j == 0 || j == n - 1) || (i % 2 != 0 && j % 2 != 0 && i <= n/2) || (i % 2 == 0 && j % 2 == 0 && i <= n/2 && i != 0)) printf("*");
+            //else printf(" ");
+            if((j == 0 || j == n - 1) || (i == j || j == n - 1 - i) && i < n/2 ) printf("*");
+            else printf(" ");
+        }
+        puts("");
+    }
+}
