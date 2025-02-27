@@ -921,6 +921,28 @@ int main(){
         printf("%d ", arr[i]);
 }
 #include<stdio.h>
+int compare(const void *a, const void *b) {
+    return (*(int *)a - *(int *)b);
+}
+int main(){
+    int n, arr[100], tmp[100], i;
+    while(scanf("%d", &n) == 1){
+        int flag = 0;
+        for(i = 0; i < n; i++)
+            scanf("%d", &arr[i]);
+        for(i = 0; i < n - 1; i++)
+            tmp[i] = abs(arr[i + 1] - arr[i]);
+        qsort(tmp, n - 1, sizeof(int), compare);
+        for(i = 1; i < n; i++){
+            if(tmp[i] != tmp[i - 1]){
+                flag = 1;
+                break;
+            }
+        }
+        (flag == 1) ? puts("Not jolly") : puts("Jolly");
+    }
+}
+#include<stdio.h>
 int reverse(int num){
     int rev = 0;
     while(num != 0){
