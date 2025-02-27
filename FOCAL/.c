@@ -1430,3 +1430,45 @@ int main(){
         printf("%d", ans);
     }
 }
+#include <stdio.h>
+int main() {
+    int n, k = 1;
+    while (scanf("%d", &n) == 1 && n >= 0) {
+        for (int i = 0; i < 14; i++) {
+            if (n <= (1 << i)){
+                printf("Case %d: %d\n", k, i);
+                break;
+            }
+        }
+        k++;
+    }
+    double a; scanf("%lf", &a);
+    double b = (- 1 + sqrt(1 + (8 * a)))/2;
+    long long int n = (long long)(b);
+    printf("%lld", n);
+}
+#include<stdio.h>
+int main(){
+    int n;
+    while(scanf("%d", &n) == 1){
+        if(n == 0)
+            break;
+        int a, b; scanf("%d%d", &a, &b);
+        for(int i = 0; i < n; i++){
+            int x, y; scanf("%d%d", &x, &y);
+            if(x == a && y == b)
+                puts("Divisa");
+            else if(x > a && y > b)
+                puts("Ne");
+            else if(x < a && y > b)
+                puts("No");
+            else if(x > a && y < b)
+                puts("SE");
+            else if(x < a && y < b)
+                puts("So");
+        }
+        /**/
+        int odd = n * (n + 1)/2;
+        printf("%d", (3 * odd) - 6);
+    }
+}
