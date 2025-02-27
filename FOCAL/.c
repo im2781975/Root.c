@@ -1247,3 +1247,76 @@ int main(){
     for(size_t i = 0; i < SIZE; i++)
         printf("%d ", arr[i]);
 }
+#include<stdio.h>
+int main(){
+    int n, arr[200];
+    while(scanf("%d", &n) == 1 && n != 0){
+        int sum = 0, ans = 0;
+        for(int i = 0; i < n; i++)
+            scanf("%d", &arr[i]);
+        for(int i = 0; i < n; i++)
+            sum += arr[i];
+        int avg = sum / n;
+        for(int i = 0; i < n; i++){
+            if(arr[i] > avg)
+                ans += arr[i] - avg;
+        }
+        printf("Minimum num of Moves are: %d", ans);
+    }
+}
+#include<stdio.h>
+int main(){
+    int n;
+    while(scanf("%d", &n) != EOF){
+        int cnt = 0;
+        for(int i = 0; i < 5; i++){
+            int x; scanf("%d", &x);
+            if(x == n)
+                cnt++;
+        }
+        printf("%d", cnt);
+    }
+}
+#include<stdio.h>
+int main(){
+    int x, y;
+    while(scanf("%d%d", &x, &y) == 2){
+        int sum = 0;
+        if(x > y){
+            int tmp = x; x = y; y = tmp;
+        }
+        for(int i = x; i <= y; i++){
+            int res = 1;
+            while(j != 1){
+                if(j % 2 == 0) j /= 2;
+                else j = 3 * j + 1;
+                res++;
+            }
+            if(res > sum) sum = res;
+        }
+    }
+    printf("%d", sum);
+}
+#include<stdio.h>
+int main(){
+    int year;
+    while(scanf("%d", &year) == 1){
+        if(year >= 2000){
+            int cnt = 0;
+            if((year % 4 == 0 && year % 4 != 0) || year % 400 == 0){
+                puts("Leap Year");
+                cnt++;
+            }
+            if(year % 15 == 0){
+                puts("Huluculu year");
+                cnt++;
+            }
+            if(year % 55 == 0){
+                puts("Buluculu year");
+                cnt++;
+            }
+            if(cnt == 0)
+                puts("Ordinary year");
+        }
+    }
+}
