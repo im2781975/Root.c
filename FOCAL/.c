@@ -1215,6 +1215,8 @@ int main(){
             printf("i: %d\ti + 1: %d\tsum: %d\n", i, i + 1, sum);
         }
     }
+    int a = sqrt(n), b = a * a;
+    (b == n) ? puts("Yes") : puts("No");
 }
 #include<stdio.h>
 #define SIZE 10
