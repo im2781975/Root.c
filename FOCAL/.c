@@ -219,6 +219,65 @@ int main(){
     printf("\nCube of(Byval): %d is %d", num, byVal(num));
 }
 #include<stdio.h>
+int main(){
+    puts("Enter 1 for circle: ");
+    puts("Enter 2 for square: ");
+    puts("Enter 3 for sfear: ");
+    puts("Please Insert option: ");
+    unsigned int i; scanf("%u", &i);
+    float x, y;
+    switch(i):{
+        case 1:{
+            puts("Enter radius: ");
+            scanf("%f", &x);
+            printf("Area of circle is: ", 3.1416 * x * x);
+            break;
+        }
+        case 2:{
+            puts("Enter sides: ");
+            scanf("%f", &x);
+            printf("Area of square is: ", x  * x );
+            break;
+        }
+        case 3:{
+            puts("Enter radius: ");
+            scanf("%f", &x);
+            printf("Area of sfear is: ", 4 * 3.1416 * x * x);
+            break;
+        }
+        default:
+            puts("Option not valid");
+    }
+}
+#include<stdio.h>
+int main(){
+    int x = 10, y = 1, a = 3, b = 3, g = 5, y = 1, i = 2, j = 9;
+    puts("!(x < 5) && !(y >= 7)");
+    if((!(x < 5) && !(y >= 7)) == (!((x < 5) || (y >= 7))))
+        puts("Equivalent");
+    else
+        puts("Not Equivalent");
+    puts("!((x < 5) || (y >= 7))");
+    puts("!(a == b) || !(g != 5)");
+    if((!(a == b) || !(g != 5)) == (!((a == b) && (g != 5))))
+        puts("Equivalent");
+    else
+        puts("Not Equivalent");
+    puts("!((a == b) && (g != 5))");
+    puts("!((x <= 8) && (h > 4))");
+    if(!((x <= 8) && (h > 4)) == (!(x <= 8) || !(h > 4)))
+        puts("Equivalent");
+    else
+        puts("Not Equivalent");
+    puts("(!(x <= 8) || (h > 4))");
+    puts("!((i > 4) || (j <= 6))");
+    if(!((i > 4) || (j <= 6)) == (! (i > 4) && !(j <= 6))
+        puts("Equivalent");
+    else
+        puts("Not Equivalent");
+    puts("(!(i > 4) && !(j <= 6))");
+}
+#include<stdio.h>
 //Access address
 int main(){
     int arr[5] = {10, 20, 30, 40, 50};
