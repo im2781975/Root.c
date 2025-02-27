@@ -16,6 +16,44 @@ int main(){
     }
 }
 #include<stdio.h>
+#include<stdlib.h>
+#include<time.h>
+//Dice Game
+enum status {Continue, Won, Lost};
+int rollDice(void){
+    int die1 = 1 + (rand() % 6);
+    int die2 = 1 + (rand() % 6);
+    printf("%d + %d = %d\n", die1,  die2, die1 + die2);
+    return die1 + die2;
+}
+int main(){
+    srand(time(NULL));
+    int point; enum status game;
+    int sum = rollDice();
+    switch(sum){
+        case 7:
+        case 11:
+            game = Won;
+            break;
+        case 2:
+        case 3:
+        case 12:
+            game = Lost;
+            break;
+        default:
+            game = Continue;
+            point = sum;
+            printf("Point is: %d\n", point);
+            break;
+    }
+    while(game == Continue){
+        sum == rollDice();
+        if(sum == point) game = Won;
+        else if(sum == 7) game = Lost;
+    }
+    (game == Won) ? puts("Player won!") : puts("Player lost.\n");
+}
+#include<stdio.h>
 int func(int num){
     if(num > 0){
         func(--num);
