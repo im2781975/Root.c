@@ -472,6 +472,26 @@ int main(){
         puts("Not identity");
 }
 #include<stdio.h>
+//calculate diagonal difference
+int main(){
+    int n; scanf("%d", &n);
+    int arr[n][n];
+    for(int i = 0; i < n; i++){
+        for(int j = 0; j < n; j++)
+            scanf("%d", &arr[i][j]);
+    }
+    int left = 0, right = 0;
+    for(int i = 0; i < n; i++){
+        for(int j = 0; j < n; j++){
+            if(i == j)
+                left += arr[i][j];
+            if(j == n - i - 1)
+                right += arr[i][j];
+        }
+    }
+    printf("Diagonal of left is: %d\nDiagonal of right is: %d\nDiagonal Diffrence is: %d", left, right, abs(left - right));
+}
+#include<stdio.h>
 int Leader(int *arr, int n){
     for(int i = 0; i < n; i++){
         for(int j = i + 1; j < n; j++){
