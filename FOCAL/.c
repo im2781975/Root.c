@@ -1146,3 +1146,41 @@ int main(){
         printf("%4u%15.2f\n", year, amount);
     }
 }
+#include<stdio.h>
+//calculate current bill
+int main(){
+    int n, x; scanf("%d", &n);
+    float sum;
+    if(n <= 50)
+        sum = n * (0.5);
+    else if(n > 50 && n <= 150){
+        x = n - 50;
+        sum += 50 * (0.5) + x * (0.75);
+    }
+    else if(n > 150 && n <= 250){
+        x = n - 150;
+        sum += 50 * (0.5) + 100 * (0.75) + x * (1.20);
+    }
+    else{
+        x = n - 250;
+        sum += 50 * (0.5) + 100 * (0.75) + 100 * (1.20) + x * (1.50);
+    }
+    sum += sum * (0.20);
+    printf("%0.2f", sum);
+}
+#include<stdio.h>
+//Twin Prime
+bool Divisor(int x){
+    for(int i = 2; i <= x; i++){
+        if(x % i == 0)
+            return false;
+    }
+    return true;
+}
+int main(){
+    int n; scanf("%d", &n);
+    int x = n + 2, y = n - 2;
+    if(Divisor(x) == 1) printf("%d", x);
+    else if(Divisor(y) == 1) printf("%d", y);
+    else puts("No");
+}
