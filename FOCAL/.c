@@ -1493,3 +1493,262 @@ int main(){
         printf("%d", (3 * odd) - 6);
     }
 }
+#include<stdio.h>
+// standard Deviation
+int main(){
+    int n; scanf("%d", &n);
+    float arr[n], sum = 0, sum1 = 0;
+    for(int i = 0; i < n; i++)
+        scanf("%f", &arr[i]);
+    for(int i = 0; i < n; i++)
+        sum += arr[i];
+    float avg = sum / n;
+    for(int i = 0; i < n; i++)
+        sum1 += pow(arr[i] - avg, 2);
+    float var = sum1 / n;
+    printf("Standard deviation : %f", sqrt(var));
+}
+#include<stdio.h>
+//swap
+int main(){
+    int x, y; scanf("%d%d", &x, &y);
+    x = x + y;
+    y = x - y;
+    x = x - y;
+    printf("%d %d", x, y);
+}
+#include<stdio.h>
+int main(){
+    int x = 'A';
+    start:
+        printf("%c = %d\n", x, x);
+        x++;
+        goto start;
+}
+#include<stdio.h>
+//prime
+int main(){
+    int n, i; scanf("%d", &n);
+    for(i = 2; i < n; i++){
+        if(n % i == 0){
+            printf("%d isn't prime", n);
+            break;
+        }
+    }
+    if(i == n)
+        printf("%d is prime", n);
+    /**/
+    int n, cnt; scanf("%d", &n);
+    for(int i = 1; i <= n; i++){
+        cnt = 0;
+        for(int j = 2; j <= i / 2; j++){
+            if(i % j == 0){
+                cnt++; break;
+            }
+        }
+        if(cnt == 0 && i != 1)
+            printf("%d ", i);
+    }
+    // prime word
+    int i = 2;
+    while(i <= 100){
+        int flag  = 0;
+        for(int j = 2; j < i; j++){
+            if(i % j == 0)
+                flag = 1;
+        }
+        if(flag)
+            printf("%d ", i);
+        i++;
+    }
+}
+#include<stdio.h>
+//Quadric equation
+int main(){
+    float a, b, c; scanf("%f%f%f", &a, &b, &c);
+    float D = b * b - 4 * a * c;
+    if(D > 0){
+        float x = (-b + sqrt(D) / (2 * a));
+        float y = (-b - sqrt(D)/ (2 * a));
+        printf("Roots are %0.3f %0.3f", x, y);
+    }
+    else if(D == 0)
+        printf("\nRoots are %f", -b/(2 * a));
+    else
+        puts("Roots are immaginary");
+}
+#include<stdio.h>
+//Armstrong number
+int main(){
+    int num; scanf("%d", &num);
+    int original = num;
+    int res = 0;
+    while(original != 0){
+        int rem = original % 10;
+        res += rem * rem * rem;
+        original /= 10;
+    }
+    (res == num) ? puts("%d is Armstrong number") : puts("%d isn't Armstrong number");
+}
+#include<stdio.h>
+int main(){
+    char str[100];
+    while(gets(str)){
+        int r = 0, l = strlen(str);
+        if(l == 1 && str[0] == '0')
+            break;
+        for(int i = 0; i < l; i++){
+            int sum = r * 10 + (s[i] - '0');
+            r = sum % 11;
+        }
+        (r == 0) ? puts("Yes"): puts("No");
+    }
+}
+#include<stdio.h>
+int main(){
+    int t; scanf("%d", &t);
+    while(t--){
+        int c, p; scanf("%d%d", &c, &p);
+        if(c == 1) printf("%d", p);
+        else if(c > 1) printf("%d\n", (c * p) - (c - 1) * 2);
+    }
+}
+#include<stdio.h>
+int main(){
+    float fahrenheit, celcius;
+    int extra = 0111; char ch = '.';
+    scanf("%f", &fahrenheit);
+    celcius = ((fahrenheit -32)*5)/9;
+    printf("Temparature in celcius is: %f%c%d", celcius, ch, extra);
+}
+#include<stdio.h>
+int main(){
+    int mark; scanf("%d", &mark);
+    char grade[20];
+    int idx = mark / 10;
+    switch(idx){
+        case 10:
+        case 9:
+        case 8: strcpy(grade, "Honours"); break;
+        case 7:
+        case 6: strcpy(grade, "First Div"); break;
+        case 5: strcpy(grade, "Second Div"); break;
+        case 4: strcpy(grade, "Third Div"); break;
+        default: strcpy(grade, "Fail"); break;
+    }
+    printf("%s", grade);
+}
+#include<stdio.h>
+int main(){
+    int n; 
+    while(scanf("%d", &n) == 1){
+        int arr[n], cnt = 0;
+        if(n == 0) break;
+        for(int i = 0; i < n; i++)
+            scanf("%d", &arr[i]);
+        for(int i = 0; i < 120; i++){
+            for(int j = 0; j < n; j++){
+                if(arr[j] == i && cnt <= n - 1){
+                    printf("%d ", i);
+                    cnt++;
+                }
+            }
+        }
+    }
+}
+#include<stdio.h>
+int main(){
+    int n; scanf("%d", &n);
+    int maxi = 0, mini = 100;
+    while(n--){
+        int val; scanf("%d", &val);
+        (val > maxi) ? maxi == val : mini == val;
+    }
+    printf("%d", 2 * (maxi - mini));
+}
+#include<stdio.h>
+int main(){
+    int n; 
+    while(scanf("%d", &n) == 1){
+        int arr[n];
+        for(int i = 0; i < n; i++)
+            scanf("%d", &arr[i]);
+        int max = 1;
+        for(int i = 0; i < n; i++){
+            if(arr[i] > 0)
+                max *= arr[i];
+        }
+        (maxi > 0)? printf("Maximum Product is: %d", maxi): puts("Maximum Product is 0");
+    }
+}
+#include<stdio.h>
+int main(){
+    int a, b;
+    while(scanf("%d%d", &a, &b) == 2){
+        if(a == 0 && b == 0)
+            break;
+        int cnt = 0;
+        for(int i = a; i <= b; i++){
+            int c = sqrt(i);
+            if(c * c == i)
+                cnt++;
+        }
+        printf("%d", cnt);
+    }
+}
+#include<stdio.h>
+int main(){
+    int t;
+    while(scanf("%d", &t) == 1){
+        for(int i = 1; i <= t; i++){
+            int n; scanf("%d", &n);
+            int arr[n];
+            for(int j = 0; j < n; j++)
+                scanf("%d", &arr[j]);
+            for(int j = 0; j < n; j++)
+                printf("Case %d: %d\n", i, arr[j/2]);
+            
+        }
+    }
+}
+#include<stdio.h>
+int main(){
+    int n; scanf("%d", &n);
+    long long ans = (long long)n * (n - 1);
+    if(ans % 4 == 0)
+        printf("%lld", ans / 4);
+    else
+        printf("%lld", ans / 2);
+}
+#include<stdio.h>
+int main(){
+    int n; scanf("%d", &n);
+    int arr[n];
+    for(int i = 0; i < n; i++){
+        int x; scanf("%d", &x);
+        arr[x] = i;
+    }
+    int swap = 0, pos = - 1;
+    for(int i = 0; i < n; i++){
+        if(arr[i] < pos){
+            swap++;
+            pos = n + 1;
+        }
+        else
+            pos = arr[i];
+    }
+    printf("%d", swap);
+}
+#include<stdio.h>
+int main(){
+    int n; 
+    while(scanf("%d", &n) == 1){
+        int arr[n];
+        if(n == 0)
+            break;
+        arr[0] = 0; arr[1] = 1;
+        for(int i = 2; i <= n + 1; i++)
+            arr[i] = arr[i - 1] + arr[i - 2];
+        printf("%d", arr[n + 1]);
+    }
+}
