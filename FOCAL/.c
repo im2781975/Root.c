@@ -1381,3 +1381,52 @@ int main(){
         }
     }
 }
+#include <stdio.h>
+int main() {
+    int n, i, arr[100];
+    while (scanf("%d", &n) == 1) {
+        if (n == 0)
+            break;
+        int cnt = 0, index = 0;
+        int temp = n;
+        while (temp > 0) {
+            int mod = temp % 2;
+            if (mod == 1)
+                cnt++;  
+            arr[index++] = mod;  
+            temp /= 2;
+        }
+        printf("Parity of ");
+        for (int j = index - 1; j >= 0; j--) 
+            printf("%d", arr[j]);
+        printf(" is %d (mod 2).\n", cnt);
+        printf("%d\n", (3 + sqrt(9 + 8 * n))/2);
+        int x = (n * 10) / 9;
+        if(n % 9 == 0) printf("%d %d", x - 1, x);
+        else printf("%d", x);
+    }
+}
+#include<stdio.h>
+int main(){
+    int a, b; scanf("%d%d", &a, &b);
+    int sum = 0;
+    for(int i = a; i <= b; i++){
+        if(i % 2 != 0) sum += i;
+        printf("%d", sum);
+    }
+}
+#include<stdio.h>
+int main(){
+    int a, b, c, d;
+    while(cin >> a >> b >> c >> d){
+        if(!a && !b && !c && !d) break;
+        int ans = 1080;
+        if(a < b) ans += (40 + a - b) * 9;
+        else ans += (a - b) * 9;
+        if(b > c) ans += (40 + c - b) * 9;
+        else ans += (c - b) * 9;
+        if(c < d) ans += (40 + c - d) * 9;
+        else ans += (c - d) * 9;
+        printf("%d", ans);
+    }
+}
