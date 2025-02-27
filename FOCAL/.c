@@ -1184,3 +1184,32 @@ int main(){
     else if(Divisor(y) == 1) printf("%d", y);
     else puts("No");
 }
+#include<stdio.h>
+int main(){
+    int a, b; scanf("%d%d", &a, &b);
+    int flag = 0;
+    for(int i = 2; i <= a; i++){
+        if(a % i == 0 && b % i == 0){
+            flag = 1;
+            break;
+        }
+    }
+    (flag == 1) ? puts("No") : puts("Yes");
+    /**/
+    int x = a, y = b;
+    while(y != 0){
+        int tmp = y; y = x % y; x = tmp;
+    }
+    (x == 1) ? printf("%d & %d are coprime", a, b): printf("%d & %d aren't coprime");
+}
+#include<stdio.h>
+int main(){
+    int n; scanf("%d", &n);
+    int sum = 0;
+    for(int i = 1; i <= n; i++){
+        if(i % 2 == 0){
+            sum += i * (i + 1);
+            printf("i: %d\ti + 1: %d\tsum: %d\n", i, i + 1, sum);
+        }
+    }
+}
