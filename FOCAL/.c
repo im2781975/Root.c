@@ -893,3 +893,59 @@ int main(){
         printf("Peter should buy books whose prices are %ld and %ld.\n\n", first, second);
     }
 }
+#include<stdio.h>
+int main(){
+    int pass = 0, fail = 0, std = 1, res;
+    while(std <= 10){
+        puts("Enter result(1 == pass || 2 == fail) ");
+        scanf("%d", &res);
+        if(res == 1) pass++;
+        else if(res == 2) fail++;
+        std++;
+    }
+    printf("passed student are: %d\nFailed student are: %d", pass, fail);
+    if(pass > 8) puts("Bonus To Instruct");
+}
+#include<stdio.h>
+int main(){
+    int grade; puts("Enter Grade: ");
+    scanf("%d", &grade);
+    (grade >= 18)?puts("pass"):puts("fail");
+    if(grade >= 27) puts("A");
+    else if(grade >= 24) puts("B");
+    else if(grade >= 21) puts("C");
+    else if(grade >= 18) puts("D");
+    else
+        puts("Fail\nMust Take course again");
+}
+#include<stdio.h>
+int main(){
+    int grade, total = 0, avg, cnt = 1;
+    while(cnt <= 10){
+        printf("Enter Grade: ");
+        scanf("%d", &grade);
+        total += grade; cnt++;
+    }
+    avg = total / 10;
+    printf("Average is: %d", avg);
+}
+#include<stdio.h>
+int main(){
+    int cnt = 0, grade, total = 0, avg;
+    // float avg;
+    puts("Enter grade(-1 for exit): ");
+    scanf("%d", &grade);
+    while(grade != -1){
+        total += grade;
+        cnt++;
+        puts("Enter Grade(-1 for exit): ");
+        scanf("%d", &grade);
+    }
+    if(cnt != 0){
+        // avg = (float)total/ cnt;
+        avg = total / cnt;
+        printf("Average is: %f", avg);
+    }
+    else
+        printf("No Average found");
+}
