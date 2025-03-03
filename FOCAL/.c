@@ -2285,3 +2285,22 @@ int main(){
         puts("");
     }
 }
+#include<stdio.h>
+//Is Triangle is valid
+int main(){
+    float x1, x2, x3, y1, y2, y3;
+    puts("Enter values: "); 
+    scanf("%f%f%f%f%f%f", &x1, &y1, &x2, &y2, &x3, &y3);
+    float a = sqrt(pow((x2 - x1), 2) + pow((y2 - y1), 2));
+    float b = sqrt(pow((x2 - x3), 2) + pow((y2 - y3), 2));
+    float c = sqrt(pow((x3 - x1), 2) + pow((y3 - y1), 2));
+    if(a + b > c && b + c > a && c + a > b){
+        if(a == b == c) puts("Equilateral");
+        else if((a == b) || (b == c) || (c == a)) puts("Isosceles");
+        else puts("Scalen");
+        if(a * a + b * b == c * c || b * b + c * c == a * a || c * c + a * a == b * b) puts("RightTriangle");
+        else if(a * a + b * b > c * c || b * b + c * c > a * a || c * c + a * a > b * b) puts("Acute Triangle");
+        else puts("Obtuse Triangle");
+    }
+    else puts("Invalid");
+}
