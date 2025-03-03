@@ -1928,3 +1928,360 @@ int main(){
             printf("Student %d: F", count);
     }
 }
+#include<stdio.h>
+int main(){
+    //Diamond
+    int n; scanf("%d", &n);
+    for(int i = 1; i <= n; i++){
+        for(int j = 1; j <= n - i; j++)
+            printf(" ");
+        for(int j = 1; j <= 2 * i - 1; j++)
+            printf("*");
+        puts('');
+    }
+    for(int i = n; i >= 1; i--){
+        for(int j = 1; j <= n - i; j++)
+            printf(" ");
+        for(int j = 1; j <= 2 * i - 1; j++)
+            printf("*");
+        puts('');
+    }
+}
+int main(){
+    int n; scanf("%d", &n);
+    //FloyadsTriangle
+    int cnt = 0;
+    for(int i = 1; i <= n; i++){
+        for(int j = 1; j <= i; j++)
+            printf("%d ", ++cnt);
+        puts("");
+    }
+    //pyramid
+    for(int i = 1; i <= n; i++){
+        for(int j = 1; j <= n - i; j++)
+            printf(" ");
+        for(int j = 1; j <= 2 * i - 1; j++){
+            (i % 2 == 0)? printf("*") : printf("-");
+        }
+        puts("");
+    }
+}
+int main(){
+    int n; scanf("%d", &n);
+    //Triangle
+    for(int i = 1; i <= n; i++){
+        for(int j = i; j <= n; j++)
+            printf("*");
+        puts("");
+    }
+    /**/
+    for(int i = n; i >= 1; i--){
+        for(int j = 1; j <= n - i; j++)
+            printf(" ");
+        for(int j = 1; j <= i; j++)
+            printf("%d ", j);
+        puts("");
+    }
+    /**/
+    for(int i = n; i > 0; i--){
+        for(int j = 1; j <= n - i; j++)
+            printf(" ");
+        for(int j = 1; j <= i; j++)
+            printf("*");
+        puts("");
+    }
+}
+int main(){
+    int n; scanf("%d", &n);
+    //pyramid
+    for(int i = 1; i <= n; i++){
+        for(int j = 1; j <= i; j++)
+            printf("10");
+        puts("");
+    }
+    for(int i = n - 1; i >= 1; i--){
+        for(int j = 1; j <= i; j++)
+            printf("10");
+        puts('');
+    }
+}
+int main(){
+    int n; scanf("%d", &n);
+    //pyramid
+    for(int i = 1; i <= n; i++){
+        for(int j = 1; j <= n - i; j++)
+            printf(" ");
+        for(int j = 1; j <= i; j++)
+            printf("*");
+        puts("");
+    }
+    for(int i = n; i >= 1; i--){
+        for(int j = 1; j <= n - i; j++)
+            printf(" ");
+        for(int j = 1; j <= i; j++)
+            printf("*");
+        puts("");
+    }
+}
+int main(){
+    int n; scanf("%d", &n);
+    //pyramid
+    for(int i = 1; i <= n; i++){
+        for(int j = 1; j <= n; j++){
+            if(i == 1 || i == n || j == 1 || j == n) printf("*");
+            else printf(" ");
+        }
+        puts("");
+    }
+    for(int i = 1; i <= n; i++){
+        for(int j = 1; j <= n; j++){
+            if(i == j || i == n || j == 1) printf("*");
+            else printf(" ");
+        }
+        puts("");
+    }
+}
+int main(){
+    int n; scanf("%d", &n);
+    for(int i = n; i >= 0; i--){
+        for(int j = i; j >= 0; j--)
+            printf("*");
+        puts('');
+    }
+    for(int i = 0; i < n; i++){
+        for(int j = 0; j <= i; j++)
+            printf("*");
+        puts("");
+    }
+}
+int main(){
+    int n; scanf("%d", &n);
+    for(int i = 1; i <= n; i++){
+        for(int j = 1; j <= n - i; j++)
+            printf(" ");
+        for(int j = 1; j <= i; j++)
+            printf("%d", j);
+        for(int j = i - 1; j >= 1; j--)
+            printf("%d", j);
+        puts('');
+    }
+    for(int i = n; i >= 1; i--){
+        for(int j = 1; j <= n - i; j++)
+            printf(" ");
+        for(int j = 1; j <= i; j++)
+            printf("%d", j);
+        for(int j = i - 1; j >= 1; j--)
+            printf("%d", j);
+        puts("");
+    }
+}
+int main(){
+    int n; scanf("%d", &n);
+    for(int i = 1; i <= n; i++){
+        for(int j = 1; j <= n; j++){
+            if(i == j || i + j == n + 1) printf("*");
+            else printf(" ");
+        }
+        puts("");
+    }
+    for(int i = 1; i <= n; i++){
+        for(int j = 1; j <= n; j++){
+            if(i == j || i == n || j == 1) printf("*");
+            else printf(" ");
+        }
+        puts("");
+    }
+}
+int main(){
+    int n; scanf("%d", &n);
+    for(int i = 1; i <= n; i++){
+        for(int j = 1; j <= n - i; j++)
+            printf(" ");
+        for(int j = 1; j <= i; j++)
+            printf("%d", j);
+            //printf("%d", n - i + 1);
+        puts("");
+    }
+    /**/
+    for(int i = 1; i <= n; i++){
+        for(int j = 1; j < i; j++)
+            printf(" ");
+        for(int j = i; j <= n; j++)
+            printf("%d", i);
+        puts("");
+    }
+    /**/
+    for(int i = n; i >= 1; i--){
+        for(int j = n; j > i; j--)
+            printf(" ");
+        for(int j = 1; j <= i; j++)
+            printf("%d", i);
+        puts("");
+    }
+    /**/
+    for(int i = n; i >= 1; i--){
+        for(int j = i; j < n; j++)
+            printf(" ");
+        for(int j = i; j >= 1; j--)
+            printf("%d", j);
+        puts("");
+    }
+    /**/
+    for(int i = 1; i <= n; i++){
+        for(int j = i; j < n; j++)
+            printf(" ");
+        for(int j = i; j >= 1; j--)
+            printf("%d ", j);
+        puts("");
+    }
+    /**/
+    for(int i = 1; i <= n; i++){
+        for(int j = 1; j < i; j++)
+            printf(" ");
+        for(int j = 1; j <= n - i + 1; j++)
+            printf("%d ", j);
+        puts("");
+    }
+    /**/
+    for(int i = 1; i <= n; i++){
+        for(int j = 1; j <= n - i; j++)
+            printf(" ");
+        for(int j = 1; j <= i; j++)
+            printf("%d ", j);
+        puts("");
+    }
+    /**/
+    for(int i = 1; i <= n; i++){
+        for(int j = 1; j <= n - i; j++)
+            printf(" ");
+        for(int j = 1; j <= i; j++)
+            printf("%d", n - i + 1);
+        puts("");
+    }
+    /**/
+    for(int i = 1; i <= n; i++){
+        for(int j = 1; j < i; j++)
+            printf(" ");
+        for(int j = 1; j <= n - i + 1; j++)
+            printf("%d", j);
+        puts("");
+    }
+    /**/
+    for(int i = 1; i <= n; i++){
+        for(int j = i; j <= n - i; j++)
+            printf(" ");
+        for(int j = i; j >= 1; j--)
+            printf("%d", j);
+        puts("");
+    }
+    /**/
+    for(int i = n; i >= 1; i--){
+        for(int j = i; j <= n - i; j++)
+            printf(" ");
+        for(int j = i; j >= 1; j--)
+            printf("%d", j);
+        puts("");
+    }
+    /**/
+    for(int i = n; i >= 1; i--){
+        for(int j = n; j > i; j--)
+            printf(" ");
+        for(int j = 1; j <= i; j++)
+            printf("%d", i);
+        puts("");
+    }
+    /**/
+    for(int i = 1; i <= n; i++){
+        for(int j = 1; j < i; j++)
+            printf(" ");
+        for(int j = i; j <= n; j++)
+            printf("%d", i);
+        puts("");
+    }
+    /**/
+    for(int i = 1; i <= n; i++){
+        for(int j = 1; j <= n - i; j++)
+            printf(" ");
+        for(int j = 1; j <= i; j++)
+            printf("%d", n - i + 1);
+        puts("");
+    }
+}
+int main(){
+    int n; scanf("%d", &n);
+    for(int i = n; i >= 1; i--){
+        for(int j = i; j >= 1; j--)
+            printf("%d ", j);
+        puts("");
+    }
+    /**/
+    for(int i = 1; i <= n; i++){
+        for(int j = i; j <= n; j++)
+            printf("%d ", i);
+        puts("");
+    }
+    /**/
+    for(int i = n; i >= 1; i--){
+        for(int j = 1; j <= i; j++)
+            printf("%d", i);
+        puts("");
+    }
+    /**/
+    for(int i = 1; i <= n; i++){
+        for(int j = i; j >= 1; j--)
+            printf("%d", j);
+        puts("");
+    }
+    /**/
+    for(int i = 1; i <= n; i++){
+        for(int j = i; j <= n - i + 1; j++)
+            printf("%d ", j);
+        puts("");
+    }
+    /**/
+    for(int i = 1; i <= n; i++){
+        for(int j = 1; j <= i; j++)
+            printf("%d ", j);
+        puts("");
+    }
+    /**/
+    for(int i = 1; i <= n; i++){
+        for(int j = 1; j <= i; j++)
+            printf("%d", n - i + 1);
+        puts("");
+    }
+    /**/
+    for(int i = 1; i <= n; i++){
+        for(int j = 1; j <= i; j++)
+            printf("%d", j);
+        puts("");
+    }
+    /**/
+    for(int i = 1; i <= n; i++){
+        for(int j = 1; j <= n - i + 1; j++)
+            printf("%d", j);
+        puts("");
+    }
+    /**/
+    for(int i = 1; i <= n; i++){
+        for(int j = i; j >= 1; j--)
+            printf("%d", j);
+        puts("");
+    }
+    /**/
+    for(int i = 1; i <= n; i++){
+        for(int j = i; j <= n; j++)
+            printf("%d", i);
+        puts('');
+    }
+    for(int i = n; i >= 1; i--){
+        for(int j = i; j >= 1; j--)
+            printf("%d", j);
+        puts("");
+    }
+    for(int i = n; i >= 1; i--){
+        for(int j = 1; j <= i; j++)
+            printf("%d", i);
+        puts("");
+    }
+}
