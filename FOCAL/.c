@@ -1889,3 +1889,42 @@ int main(){
         puts("");
     }
 }
+#include<stdio.h>
+int main(){
+    int stud; scanf("%d", &stud);
+    float Attendence, Assingment, CT, Mid, Final;
+    float MidConvMark, FinalConvMark, TotalMark;
+    for(int i = 0; i < stud; i++){
+        puts("Attendence: "); scanf("%f", &Attendence);
+        puts("Assingment: ");  scanf("%f", &Assingment);
+        puts("ClassTest: "); scanf("%f", &CT);
+        puts("Mid(Out Of 50): "); scanf("%f", &Mid);
+        puts("Final(Out Of 100): "); scanf("%f", &Final);
+        MidConvMark = (Mid * 30)/50;
+        FinalConvMark = (Final * 40)/100;
+        TotalMark = Attendence + Assingment + CT + MidConvMark + FinalConvMark;
+        int count = i + 1;
+        if(TotalMark >= 90)
+            printf("Student %d: A", count);
+        else if(TotalMark >= 86 && TotalMark < 90)
+            printf("Student %d: A-", count);
+        else if(TotalMark >= 82 && TotalMark < 86)
+            printf("Student %d: B+", count);
+        else if(TotalMark >= 78 && TotalMark < 82)
+            printf("Student %d: B", count);
+        else if(TotalMark >= 74 && TotalMark < 78)
+            printf("Student %d: B-", count);
+        else if(TotalMark >= 70 && TotalMark < 74)
+            printf("Student %d: C+", count);
+        else if(TotalMark >= 66 && TotalMark < 70)
+            printf("Student %d: C", count);
+        else if(TotalMark >= 62 && TotalMark < 66)
+            printf("Student %d: C-", count);
+        else if(TotalMark >= 58 && TotalMark < 62)
+            printf("Student %d: D+", count);
+        else if(TotalMark >= 55 && TotalMark < 58)
+            printf("Student %d: D", count);
+        else
+            printf("Student %d: F", count);
+    }
+}
