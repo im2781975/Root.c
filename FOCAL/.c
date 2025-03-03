@@ -1827,3 +1827,38 @@ int main(){
         puts("");
     }
 }
+#include<stdio.h>
+int main(){
+    int i = 0;
+    while(i != 10){
+        printf("%d ", i); i++;
+    }
+    puts("");
+    do{
+        printf("%d ", i); i++;
+    }while(i != 20);
+    puts("");
+    for(; i < 30; i++)
+        printf("%d ", i);
+    puts("");
+    int cnt = 1;
+    do{
+        printf("%d ", cnt);
+    }while(++cnt <= 10);
+}
+#include<stdio.h>
+int x = 12;
+void add(){
+    x = 34;
+    printf("\nEnter values: ");
+    int a, b; scanf("%d%d", &a, &b);
+    int sum = a + b; printf("%d ", sum);
+    printf("%d ", x); x += 2;
+    printf("%d ", x);
+}
+int main(){
+    int x = 5;
+    printf("%d ", x);
+    add();
+    printf("%d ", x);
+}
