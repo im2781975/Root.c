@@ -1862,3 +1862,30 @@ int main(){
     add();
     printf("%d ", x);
 }
+#include<stdio.h>
+int IsPrime(int n){
+    if(n < 2) return 0;
+    else{
+        for(int i = 2; i * i <= n; i++){
+            if(n % i == 0) return 0;
+        }
+        return 1;
+    }
+}
+int main(){
+    int n; scanf("%d", &n);
+    int CntPrime = 0, cur = 2;
+    int needPrime = (n * (n + 1))/2;
+    int prime[needPrime];
+    while(CntPrime < needPrime){
+        if(IsPrime(cur))
+            prime[++CntPrime] = cur;
+        cur++;
+    }
+    int idx = 0;
+    for(int i = 1; i <= n; i++){
+        for(int j = 0; j < i; j++)
+            printf("%d ", prime[idx++]);
+        puts("");
+    }
+}
