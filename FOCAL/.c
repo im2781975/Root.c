@@ -2665,3 +2665,110 @@ int main(){
     ld n; scanf("%lld", &n);
     (sevenPresent(n) == 1 && DigitSum(n) > 10 && LastDigit(n) == 1)? puts("Succeeded ") : puts("Failed");
 }
+#include<stdio.h>
+int prime(int x){
+    if(x == 0) return 0;
+    else if(x == 1) return 1;
+    else {
+        for(int i = 2; i < x; i++){
+            if(x % i == 0)
+                return 0;
+        }
+        return 1;
+    }
+}
+int main(){
+    int x; scanf("%d", &x);
+    (prime(x) == 1)? printf("%d is prime", x) : puts("its composite");
+}
+#include<stdio.h>
+int gcd(int a, int b){
+    for(int i = a; i >= 1; i--){
+        if(a % i == 0 && b % i == 0)
+            return i;
+    }
+}
+int lcm(int a, int b){
+    for(int i = a; ; i++){
+        if(i % a == 0 && i % b == 0)
+            return i;
+    }
+    //return (a * b) / gcd(a, b);
+}
+int main(){
+    int a, b; scanf("%d%d", &a, &b);
+    printf("LCM(%d, %d): %d\nGCD(%d, %d): %d", a, b, lcm(a, b), a, b, gcd(a, b));
+}
+#include<stdio.h>
+int Isvowel(char x){
+    if(x >= 'A' && x <= 'Z') x += 32;
+    if(x == 'a' || x == 'e' || x == 'i' || x == 'o' || x == 'u') return 1;
+    else return 0;
+}
+int main(){
+    char x = getchar();
+    getchar();
+    (Isvowel(x) == 1) ? puts("vowel") : puts("Consonent");
+}
+#include<stdio.h>
+//Nth Largest
+void sortArr(int arr[], int n){
+    for(int i = 0; i < n; i++){
+        for(int j = 0; j < n - i - 1; j++){
+            if(arr[j] > arr[j + 1]){
+                int tmp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = tmp;
+            }
+        }
+    }
+}
+int main(){
+    int n, pos; scanf("%d%d", &n, &pos);;
+    int arr[n];
+    for(int i = 0; i < n; i++)
+        scanf("%d", &arr[i]);
+    if(pos < 1 || pos > n){
+        puts("Invalid Input");
+        return 1;
+    }
+    sortArr(arr, n);
+    int nthLargest = arr[n - pos];
+    int nthSmallest = arr[pos - 1];
+    printf("Largest element is: %d\nSmallest Element is: %d", nthLargest, nthSmallest);
+}
+#include<stdio.h>
+int Leap(int n){
+    if(n % 400 == 0 || (n % 100 != 0 && n % 4 == 0)) return 1;
+    else return 0;
+}
+int IsDistinct(int n){
+    int x, counter[10] = {0};
+    while(n > 0){
+        x = n % 10;
+        counter[x]++; n /= 10;
+    }
+    for(int i = 0; i < 10; i++){
+        printf("%d = %d\n", i, counter[i]);
+        if(counter[i] > 1) return 0;
+    }
+    return 1;
+}
+int main(){
+    int n; scanf("%d", &n);
+    (Leap(n) == 1 && IsDistinct(n) == 1) ? puts("Beautiful") : puts("Not Beautiful");
+}
+#include<stdio.h>
+// sqrt {|x - 3| + (y + 4) * (y + 4)}
+int absolute(int x){
+    if(x >= 0) return x;
+    else return (-1) * x;
+}
+float FindRoot(int x, int y){
+    int tmp = absolute(x - 3) + (y + 4) * (y + 4);
+    return sqrt(tmp);
+}
+int main(){
+    int x, y; scanf("%d%d", &x, &y);
+    printf("res is: %0.2f", FindRoot(x, y));
+}
