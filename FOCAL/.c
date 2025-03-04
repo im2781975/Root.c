@@ -2304,3 +2304,49 @@ int main(){
     }
     else puts("Invalid");
 }
+#include<stdio.h>
+int PrintSum(int init, int n, int *arr){
+    if(init == n)
+        return 0;
+    return arr[init] + PrintSum(init + 1, n, arr);
+}
+int arrSum(int n, int *arr){
+    if(n == 0)
+        return 0; 
+    return arr[0] + arrSum(n - 1, arr + 1);
+}
+void print(int i, int n){
+    if(i > n)
+        return;
+    printf("%d ", i);
+    print(i + 1, n);
+}
+int printSum(int i, int n){
+    if(i > n)
+        return 0;
+    return i + printSum(i + 1, n);
+}
+int DigitSum(int i, int n, int *arr){
+    if(i > n)
+        return 0;
+    int LastDigit = arr[i] % 10;
+    return LastDigit + DigitSum(i + 1, n, arr);
+}
+void prints(int i, int n){
+    if(i > n)
+        return;
+    printf("%d ", i);
+    print(i + 1, n);
+}
+int main(){
+    int n; scanf("%d", &n);
+    int arr[n];
+    for(int i = 0; i < n; i++)
+        scanf("%d", &arr[i]);
+    printf("%d", PrintSum(0, n, arr));
+    printf("%d", arrSum(n, arr));
+    print(1, n);
+    prints(1, n);
+    printf("%d", printSum(1, n));
+    printf("%d", DigitSum(0, n, arr));
+}
