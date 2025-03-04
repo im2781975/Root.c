@@ -2520,3 +2520,143 @@ int main(){
         i++;
     }
 }
+#include<stdio.h>
+//every four rapper He give us 1 chocklet.if we buy n chocklet how many chocklet how many chock we eat
+int main(){
+    int n; scanf("%d", &n);
+    int chock = n, pack = n;
+    printf("%s%10s\n", "chocklet", "packet");
+    while(pack >= 4){
+        chock += pack / 4;
+        pack = (pack / 4) + (pack % 4);
+        printf("%d%13d\n", chock, pack);
+    }
+}
+#include<stdio.h>
+//Grade Policy
+char GetGrade(int mark){
+    if(mark >= 0 && mark <= 39) return 'F';
+    else if(mark >= 40 && mark <= 59) return 'C';
+    else if(mark >= 60 && mark <= 79) return 'B';
+    else return 'A';
+}
+int main(){
+    int mark; scanf("%d", &mark);
+    printf("Grade is: %c\n", GetGrade(mark));
+}
+#include<stdio.h>
+//reads N which is the summation of 4 consecutive even numbers.
+//Print the 4 consecutive even numbers whose summation is N.
+int ConsecutiveEven(int n){
+    for(int i = 1; i <= n; i++){
+        int sum = i + (i + 2) + (i + 4) + (i + 6);
+        if(sum == n){
+            printf("%d %d %d %d\n", i, i + 2, i + 4, i + 6);
+            break;
+        }
+    }
+}
+int main(){
+    int t; scanf("%d", &t);
+    while(t--){
+        int n; scanf("%d", &n);
+        ConsecutiveEven(n);
+    }
+}
+#include<stdio.h>
+//Fib Series
+int main(){
+    int n, a = 0, b = 1;
+    scanf("%d", &n);
+    printf("%d %d ", a, b);
+    for(int i = 2; i <= n; i++){
+        printf("%d ", a + b);
+        int tmp = a + b;
+        a = b; b = tmp;
+    }
+}
+#include<stdio.h>
+//Find ratio two factorial numbers
+int factorial(int a){
+    int fact = 1;
+    for(int i = 1; i <= n; i++){
+        fact *= i;
+    }
+    return fact;
+}
+float calculateRatio(int a, int b){
+    double x = (double)factorial(a);
+    double y = (double)factorial(b);
+    (x < y) ? return (x / y) : return (y / x);
+}
+int main(){
+    int a, b; scanf("%d%d", &a, &b);
+    printf("ratio is: %0.f", calculateRatio(a, b));
+}
+#include<stdio.h>
+// 1+2+3-4-5-6+7+8+9-10-11-......N. print Nth sum
+int main(){
+    int n; scanf("%d", &n);
+    int sum = 0, flag = 1;
+    for(int i = 1; i <= n; i++){
+        sum += i * flag;
+        if(i % 3 == 0){
+            if(flag == 1)
+                flag = -1;
+            else if(flag == -1)
+                flag = 1;
+        }
+    }
+    printf("%d", sum);
+}
+#include<stdio.h>
+int sum(int a, int b){
+    return a + b;
+}
+int mult(int a, int b){
+    return a * b;
+}
+int main(){
+    int a = sum(5, 13); printf("%d\n", a);
+    int b = mult(2, 15); printf("%d ", b);
+}
+#include<stdio.h>
+//Find Area Of Circle
+float area(float r){
+    float Area = 3.1416 * r * r;
+    return Area;
+}
+int main(){
+    float r; scanf("%f", &r);
+    printf("Area of Circle is: %f", area(r));
+    int a, b; scanf("%d%d", &a, &b);
+    printf("Power is: %f\n", pow(a, b));
+    printf("Root is: %f\n", sqrt(a));
+    printf("Abs is: %d\n", abs(b));
+    printf("Sine value is: %.2f", sin(3.1416 / a));
+}
+#include<stdio.h>
+typedef long long int ld;
+int sevenPresent(ld n){
+    while(n > 0){
+        if(n % 10 == 7) return 1;
+        n /= 10;
+    }
+}
+int DigitSum(ld n){
+    int sum = 0;
+    while(n > 0){
+        sum += n % 10;
+        n /= 10;
+    }
+    return sum;
+}
+int LastDigit(ld x){
+    int a = x % 10;
+    if(a == 2 || a == 3 || a == 5 || a == 7) return 1;
+    else return 0;
+}
+int main(){
+    ld n; scanf("%lld", &n);
+    (sevenPresent(n) == 1 && DigitSum(n) > 10 && LastDigit(n) == 1)? puts("Succeeded ") : puts("Failed");
+}
