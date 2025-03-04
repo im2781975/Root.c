@@ -2592,6 +2592,11 @@ float calculateRatio(int a, int b){
 int main(){
     int a, b; scanf("%d%d", &a, &b);
     printf("ratio is: %0.f", calculateRatio(a, b));
+    int n, r; scanf("%d%d", &n, &r);
+    printf("Factorial are: %d", fact(n));
+    int perm = fact(n) / fact(n - r);
+    int comb = fact(n) / (fact(n - r) * fact(r));
+    printf("\n%dC%d = %d\n%dP%d = %d\n", n, r, comb, n, r, perm);
 }
 #include<stdio.h>
 // 1+2+3-4-5-6+7+8+9-10-11-......N. print Nth sum
