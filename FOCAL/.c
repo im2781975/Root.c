@@ -2500,9 +2500,23 @@ float Operation(char ch, int a, int b){
     }
     else puts("Invalid Input");
 }
+#include<stdio.h>
 int main(){
     int a, b; scanf("%d%d", &a, &b);
     getchar();
     char ch; scanf("%c", &ch);
     printf("%0.2f", Operation(ch, a, b));
+}
+#include<stdio.h>
+int main(){
+    puts("Enter saldo Iniziale, Addebiti, Accrediti, limiti: ")
+    int saldo, spese, accrediti, limiti; 
+    scanf("%d%d%d%d", &saldo, &spese, &accrediti, &limiti);
+    saldo += addebiti - accrediti;
+    (saldo > limiti)? puts("Limiti Superato") : puts("Limiti Non Superato");
+    int n = 2147483642, i = 1;
+    while(i <= 10){
+        printf("%d ", n + i);
+        i++;
+    }
 }
