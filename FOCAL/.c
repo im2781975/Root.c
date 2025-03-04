@@ -2772,3 +2772,29 @@ int main(){
     int x, y; scanf("%d%d", &x, &y);
     printf("res is: %0.2f", FindRoot(x, y));
 }
+#include<stdio.h>
+int main(){
+    int n; scanf("%d", &n);
+    if(n > 0){
+        for(int i = n; i >= (-1) * n; i--)
+            printf("%d ", i);
+    }
+    else {
+        for(int i = n; i <= (-1) * n; i++)
+            printf("%d ", i);
+    }
+}
+#include<stdio.h>
+//count not equal
+int main(){
+    int n, trg; scanf("%d%d", &n, &trg);
+    int arr[n];
+    for(int i = 0; i < n; i++)
+        scanf("%d", &arr[i]);
+    int cnt = 0;
+    for(int i = 0; i < n; i++){
+        if(arr[i] != trg)
+            cnt++;
+    }
+    printf("%d", cnt);
+}
