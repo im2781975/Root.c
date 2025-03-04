@@ -2376,3 +2376,23 @@ int main(){
     int n; scanf("%d", &n);
     printf("%d\n%d\n%d\n%d\n", sum(n), fact(n), printRev(n), print(n));
 }
+#include<stdio.h>
+void func1(int a){
+    printf("You have entered %d\n", a);
+}
+void func2(int b){
+    printf("\nYou have entered %d\n", b);
+}
+void func3(int c){
+    printf("\nYou have entered %d\n", c);
+}
+int main(){
+    void(*f[3])(int) = {func1, func2, func3};
+    puts("Enter Number between 0 and 2, 3 for end: ");
+    size_t choice; scanf("%u", &choice);
+    while(choice >= 0 && choice < 3){
+        (*f[choice])(choice);
+        puts("Enter Number between 0 and 2, 3 for end: ");
+        scanf("%u", &choice);
+    }
+}
