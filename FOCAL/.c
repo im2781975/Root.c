@@ -2396,3 +2396,113 @@ int main(){
         scanf("%u", &choice);
     }
 }
+#include<stdio.h>
+void Power(int x, int y, int cnt, int res){
+    while(cnt > y){
+        printf("%d", res);
+        return;
+    }
+    res *= x; cnt++;
+    Power(x, y, cnt, res);
+}
+int powerr(int x, int y){
+    if(y == 0)
+        return 1;
+    return x * power(x, --y);
+}
+int main(){
+    int x, y; scanf("%d%d", &x, &y);
+    int res = 1, cnt = 1;
+    Power(x, y, cnt, res);
+    printf("%d", powerr(x, y));
+}
+#include<stdio.h>
+int main(){
+    int n; scanf("%d", &n);
+    int *arr[n];
+    for(int i = 0; i < n; i++)
+        scanf("%d", (arr + i));
+    for(int i = 0; i < n; i++)
+        printf("%d ", *(arr + i));
+}
+#include<stdio.h>
+void find(int *arr, int n, int *max, int *min){
+    *max = arr[0]; *min = arr[0];
+    for(int i = 1; i < n; i++){
+        if(arr[i] > *max)
+            *max = arr[i];
+        else if(arr[i] < *min)
+            *min = arr[i];
+    }
+}
+int main(){
+    int arr[] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+    int n = sizeof(arr) / sizeof(arr[0]);
+    int max, min;
+    find(arr, n, &max, &min);
+    printf("Max is: %d\nMin is: %d", max, min);
+}
+#include<stdio.h>
+// find avg of two integers
+int swap(int *a, int *b){
+    int tmp = *a; *a = *b; *b = tmp;
+}
+int main(){
+    int x, y; scanf("%d%d", &x, &y);
+    swap(&x, &y);
+    int *p = &x, *q = &y;
+    float sum = ((*p + *q) / 2.0);
+    printf("%0.2f", sum);
+}
+#include<stdio.h>
+//Add the Digits which is Divisible by ten
+int main(){
+    int n; scanf("%d", &n);
+    int arr[n], sum = 0;
+    for(int i = 0; i < n; i++)
+        scanf("%d", &arr[i]);
+    for(int i = 0; i < n; i++){
+        if(arr[i] % 10 == 0)
+            sum += arr[i];
+    }
+    printf("%d", sum);
+}
+#include<stdio.h>
+//Sum the first & last digit
+int SumOf(int n){
+    int sum1 = n % 10;
+    int sum2 = n/1000;
+    int ans = sum1 + sum2;
+    return ans;
+}
+int main(){
+    int n; scanf("%d", &n);
+    int ans = 0;
+    for(int i = 0; i < n; i++){
+        int x; scanf("%d", &x);
+        ans += SumOf(x);
+    }
+    printf("%d", ans);
+    //Divisors
+    for(int i = 1; i <= n; i++){
+        if(n % i == 0)
+            printf("%d ", i);
+    }
+}
+#include<stdio.h>
+float Operation(char ch, int a, int b){
+    if(ch == '+') return (a + b);
+    else if(ch == '-') return abs(a - b);
+    else if(ch == '*') return (a * b);
+    else if(ch == '/'){
+        if(a > b) return (float)a / b;
+        else return (float)b / a;
+    }
+    else puts("Invalid Input");
+}
+int main(){
+    int a, b; scanf("%d%d", &a, &b);
+    getchar();
+    char ch; scanf("%c", &ch);
+    printf("%0.2f", Operation(ch, a, b));
+}
