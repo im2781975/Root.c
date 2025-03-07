@@ -441,3 +441,31 @@ int main(){
     char str[100]; scanf("%s", str);
     (is_binary(strlen(str), str) == 1) ? puts("Yes") : puts("No");
 }
+#include<stdio.h>
+//calculate the cost of the string[a = 1..z = 26] is a power of two or not
+int delta(int len, char str[]){
+    int arr[1000], ans = 0, flag = 9999;
+    for(int i = 0; i < len; i++)
+        arr[i] = (int)(str[i] - 96);
+    for(int i = 0; i < len; i++)
+        ans += arr[i];
+    int res = 1;
+    while(1){
+        if(res == ans){
+            flag = 1; break;
+        }
+        else if(res > ans){
+            flag = 0; break;
+        }
+        res *= 2;
+    }
+    if(flag == 1) return 1;
+    else if(flag == 0) return 0;
+}
+int main(){
+    char str[100]; scanf("%s", str);
+    if(delta(strlen(str), str) == 1)
+        puts("Yes");
+    else if(delta(strlen(str), str) == 0)
+        puts("No");
+}
