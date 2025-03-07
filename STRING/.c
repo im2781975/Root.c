@@ -276,6 +276,12 @@ int main(){
             country[i] = 'a' + (country[i] - 'A');
     }
     printf("%s", country); */
+    /*
+    char line[80];
+    scanf("%79[^\n]", line);
+    printf("%s\n", line);
+    char ch; ch = getchar();
+    printf("%c", ch); */
     
     // shift char
     char str[100];
