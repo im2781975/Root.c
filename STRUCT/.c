@@ -68,8 +68,7 @@ struct student *create(struct student *std, int id, char arr[]){
 }
 void print(struct student *std){
     printf("id : %d\nName : %s\nName_Length: %d\nAllocated_Struct_size: %d\n\n",
-    std -> id, std -> name, std -> nameLen,
-           std -> size);
+    std -> id, std -> name, std -> nameLen, std -> size);
 }
 int main(){
     struct student *a, *b;
