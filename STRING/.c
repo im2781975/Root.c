@@ -350,3 +350,25 @@ int main(){
     }
     printf("%d", cnt);
 }
+#include<stdio.h>
+//alphabet position
+int main(){
+    int cnt = 0;
+    char str[] = "abcdefghijklmnopqrstuvwxyz";
+    while(str[cnt] != '\0'){
+        int pos = (str[cnt] - 'a') + 1;
+        printf("(%c %d) ", str[cnt], pos);
+        cnt++;
+    }
+}
+#include<stdio.h>
+// change the cases of the characters.If it is capital, change it to small and if is small change it to capital 
+int main(){
+    char str[100]; scanf("%s", &str);
+    for(int i = 0; i < strlen(str); i++){
+        if(str[i] >= 'a' && str[i] <= 'z')
+            printf("%c ", str[i] - 32)
+        if(str[i] >= 'A' && str[i] <= 'Z')
+            printf("%c ", str[i] + 32);
+    }
+}
