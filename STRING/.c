@@ -120,6 +120,47 @@ int main(){
     printf("%s", str);
 }
 #include<stdio.h>
+//concatenate string
+int main(){
+    char rin[1000]; scanf("%s", rin);
+    int n; scanf("%d", &n);
+    for(int i = 0; i < n - 1; i++){
+        char ing[50]; scanf("%s", &ing);
+        int len = 0; 
+        while(rin[len] != '\0')
+            ++len;
+        rin[len] = ' ';
+        ++len;
+        for(int j = 0; ing[j] != '\0'; ++j, ++len)
+            rin[len] = ing[j];
+        rin[len] = '\0';
+    }
+    puts(rin);
+}
+#include<stdio.h>
+//concatenate
+char ans[1000]; int k = 0;
+void catenate(int len, char str[]){
+    if(k > 0){
+        ans[k] = ' ';
+        k++;
+    }
+    for(int j = 0; j < len; j++){
+        ans[k++] = str[j];
+    }
+}
+int main(){
+    int n, len; scanf("%d", &n);
+    char str[100];
+    for(int i = 0; i < n; i++){
+        scanf("%s", str);
+        catenate(strlen(str), str);
+    }
+    ans[k] = '\0';
+    printf("%s", ans);
+    return 0;
+}
+#include<stdio.h>
 //Grade Count
 int main(){
     unsigned int countA = 0, countB = 0, countC = 0, countD = 0, countF = 0;
