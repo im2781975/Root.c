@@ -50,5 +50,34 @@ int main(){
         printf("Employe with id = %d isn't elegibile for Increament", emp[i].id);
     }
 }
-
-
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+struct student{
+    int id, nameLen, size;
+    char name[0];
+};
+struct student *create(struct student *std, int id, char arr[]){
+    std = malloc(sizeof(*std) + sizeof(char) * strlen(arr));
+    std -> id = id;
+    std -> nameLen = strlen(arr);
+    strcpy(std -> name, arr);
+    std -> size = (sizeof(*std) + sizeof(char) * strlen(std -> name));
+ 
+    return std;
+}
+void print(struct student *std){
+    printf("id : %d\nName : %s\nName_Length: %d\nAllocated_Struct_size: %d\n\n",
+    std -> id, std -> name, std -> nameLen,
+           std -> size);
+}
+int main(){
+    struct student *a, *b;
+    a = create(a, 523, "Sanjayulsha");
+    b = create(b, 535, "Cherry");
+    print(a); print(b);
+    printf("Size of Struct student: %lu\n",
+           sizeof(struct student));
+    printf("Size of Struct pointer: %lu", sizeof(a));
+    return 0;
+}
