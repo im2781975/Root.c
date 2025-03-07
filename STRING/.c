@@ -567,3 +567,217 @@ int main(){
     }
     printf("%d", vowel);
 }
+#include<stdio.h>
+// find a particular char in a string and call that function to find each of 1,9, and 7 in the given string
+int checkDig(char str[], char digit){
+    for(int i = 0; i < strlen(str); i++){
+        if(str[i] == digit)
+            return 1;
+    }
+    return 0;
+}
+int main(){
+    char str[100]; scanf("%s", &str);
+    (checkDig(str, '1') == 1 && checkDig(str, '7') == 1 && checkDig(str, '9') == 1) ? puts("Yes") : puts("No");
+}
+#include<stdio.h>
+//print unique char
+int main(){
+    char str[100], res[233];
+    scanf("%s", str); int k = 0;
+    for(int i = 0; i < strlen(str); i++){
+        if(str[i] != str[i + 1])
+            res[k++] = str[i];
+    }
+    res[k] = '\0';
+    printf("%s", res);
+}
+#include<stdio.h>
+// Shift all the characters of a string by the numerical value
+int main(){
+    char str[100]; scanf("%s", str);
+    int k; scanf("%d", &k);
+    for(int i = 0; i < strlen(str); i++){
+        int val = str[i];
+        if(val + k <= 122)
+            printf("%c", val + k);
+        else{
+            int rem = ((val + k) - 122) % 26;
+            (rem == 0) ? printf("z") : printf("%c", rem + 96);
+        }
+    }
+}
+//print smaller
+int main(){
+    char ch[100]; fgets(ch, sizeof(ch), stdin);
+    for(int i = 0; ch[i] != '\0'; i++){
+        if(ch[i] >= 'a' && ch[i] <= 'z')
+            ch[i] -= 32;
+    }
+    puts(ch);
+}
+#include<stdio.h>
+//make the string decimal value in uppercase
+int main(){
+    char str[1000]; scanf("%s", str);
+    for(int i = 0; i < strlen(str); i++){
+        if(((int)(str[i])) % 2 == 0)
+            str[i] = str[i] - 32;
+    }
+    printf("%s", str);
+}
+#include<stdio.h>
+int main() {
+    char str[1020];
+    while (fgets(str, sizeof(str), stdin)){
+        size_t len = strlen(str);
+        if (str[len - 1] == '\n'){
+            str[len - 1] = '\0'; len--;
+        }
+        if (len == 1 && str[0] == '0') 
+            break;
+        int rem = 0;
+        for (int i = 0; i < len; i++) {
+            rem = (rem * 10 + (str[i] - '0')) % 17;
+        }
+        (rem == 0)? puts("1") : puts("0");
+    }
+    return 0;
+}
+#include<stdio.h>
+// print the odd pos char in twice & even position once
+int main(){
+    char str[100]; scanf("%s", &str);
+    int len = strlen(str);
+    for (int j = 0; j < n; j++){
+       if ((j + 1) % 2 == 0)
+            printf("%c%c", str[j], str[j]);
+       else if ((j + 1) % 2 != 0){
+            printf("%c", str[j]);
+       }
+    }
+}
+#include<stdio.h>
+// sort the string in ascending order using frequency array
+int main(){
+    char str[100]; scanf("%s", &str);
+    int arr[27] = {0}, i = 0;
+    while(str[i] != '\0'){
+        if(str[i] >= 'a' && str[i] <= 'z')
+            arr[str[i] - 97]++;
+        i++;
+    }
+    for(int i = 0; i < 27; i++)
+        printf("(%d %d) ", i, arr[i]);
+    printf("\n");
+    for(int i = 0; i < 27; i++)
+    {
+        if(arr[i] > 0){
+            for(int j = 1; j <= arr[i]; j++)
+                printf("%c ", 97 + i);
+        }
+    }
+}
+#include<stdio.h>
+//sort the string on the basis of count in descending order
+int main(){
+    char str[100]; scanf("%s", str);
+    int arr[27], ix, mx;
+    for(i = 0; i < 26; i++) {
+        arr[i] = 0;
+    }
+    for(int i = 0; i < 26; i++)
+        arr[i] = 0;
+    int len = strlen(str);
+    for(int i = 0; i < len; i++){
+        ix = str[i] - 'a';
+        arr[ix]++;
+    }
+    for(int i = 0; i < 26; i++){
+        printf("(%c %d) ", (char)i + 'a',  arr[i]);
+    printf("\n");
+    int j = 0;
+    while(j < len){
+        mx = 0;
+        for(int i = 0; i < 26; i++) {
+            if(arr[i] > mx) {
+                mx = arr[i];
+                ix = i;
+            }
+        }
+        while(mx--) {
+            str[j] = (char)(ix + 'a');
+            j++;
+        }
+        arr[ix] = 0;
+    }
+    printf("%s\n",str);
+    return 0;
+}
+#include<stdio.h>
+//sort the string in descending order on the basis of count of characters by using frequency array
+int main(){
+    char str[] = "bbbbaccddd";
+    int len = strlen(str), largest = 26;
+    int freq[largest + 1];
+    for(int i = 0; i <= largest; i++)
+        freq[i] = 0;
+    for(int i = 0; i < len; i++)
+        freq[(str[i] - 'a') + 1]++;
+    int total=0;
+    for(int i = 1; i <= 26; i++){
+        if(freq[i] >= 1)
+            total++;
+    }
+    int nxt = 0;
+    while(nxt != total){
+        int max = -1, index = -1;
+        char ch;
+        for(int i = 1; i <= 26; i++){
+            if(freq[i] > max){
+                max = freq[i];
+                ch = i + 96;
+                index = i;
+            }
+        }
+        for(int i = 1; i <= max; i++)
+            printf("%c", ch);
+        freq[index] = 0;
+        nxt++;
+    }
+    puts("");
+}
+#include<stdio.h>
+//check upper or lower
+int main(){
+    char ch ='W';
+    if (ch >= 'a' && ch <= 'z') 
+        printf("%c is lower case\n", ch);
+    if(ch >='A' && ch <='Z')
+        printf("%c is upper case\n",ch);
+    /**/
+    int x = 'A';
+    while (x <= 'Z'){
+        printf("%c = %d\n", x, x);
+        x++;
+    }
+}
+#include<stdio.h>
+int main(){
+    char ing[1000];
+    while (scanf("%s", ing) != EOF) {
+        int sum = 0, res = 0;     
+        int len = strlen(ing);
+        for (int i = 0; i < len; i++) {
+            int ch = ing[i];
+            if (ch >= 'a' && ch <= 'z')
+                sum += ch - 'a' + 1;     
+            else if (ch >= 'A' && ch <= 'Z')
+                sum += ch - 'A' + 27;
+            else if (ch >= '0' && ch <= '9')
+                sum += ch - '0';         
+            res = (res * 10 + (ch - '0')) % 5;
+        }
+        printf("%d\n", res);
+    }
+}
