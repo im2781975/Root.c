@@ -1,4 +1,18 @@
 #include<stdio.h>
+int main(){
+    char ch;
+    puts("Enter char: ('q' for quit)");
+    while((ch = getchar())!= 'q'){
+        if(ch != '\n'){
+            printf("Char is: %c", ch);
+            puts("\nEnter char: ");
+        }
+    }/*
+    char str[20];
+    scanf("%19s", str);
+    printf("%s", str); */
+}
+#include<stdio.h>
 #include<string.h>
 void copy1(char *a, char *b){
     for(int i = 0; (a[i] = b[i]) != '\0'; i++){}
