@@ -13,6 +13,20 @@ int main(){
     printf("%s", str); */
 }
 #include<stdio.h>
+#define SIZE 20
+int main(){
+    char str[SIZE];
+    char arr[] = "Here i am";
+    puts("Ente String: ");
+    //scanf("%19s", &str);
+    fgets(str, SIZE, stdin);
+    printf("string str[] is: %s", str);
+    printf("\nstring arr[] is: %s", arr);
+    puts("\nString with space between char is: ");
+    for(size_t i = 0; i < SIZE && str[i]!= '\0'; ++i)
+        printf("%c", str[i]);
+}
+#include<stdio.h>
 #include<string.h>
 void copy1(char *a, char *b){
     for(int i = 0; (a[i] = b[i]) != '\0'; i++){}
@@ -38,9 +52,23 @@ int main(){
     while(ring[i] != '\0'){
         printf("%c", ring[i]); i++;
     }
+    char *ch = "Hello";
+    copy1(ring, ch);
+    printf("%s", ring);
 }
-include<stdio.h>
+#include<stdio.h>
 #include<string.h>
+#define SIZE 80
+void concat(char *str, const char *ing){
+    while(*str != '\0')
+        ++str;
+    for(;*str = *ing; ++str, ++ing){}
+    /* while(*ing != '\0'){
+        *str = *ing; 
+        str++; ing++;
+    }
+    *str = '\0'; */
+}
 void strnCat(char *str, char *ing, int n){
     int i = 0, j = 0, len = 0;
     while(str[i] != '\0'){
@@ -70,11 +98,24 @@ void strrev(char *str, char *ing, int len){
         ing[j] = ing[len - 1];
         j++; i++; len--;
     }
-printf("\nReverse of %s is: %s", str, ing);
+    printf("\nReverse of %s is: %s", str, ing);
+}
+int length(char *arr){
+    int len = 0, i = 0;
+    while(arr[i]!= '\0'){
+        len++; i++;
+    }
+    printf("Length of the string is: %d", len);
 }
 int main(){
     char str[32] = "molla", ing[] = " vai";
     strnCat(str, ing, 2);
     int len = strlen(str);
     strrev(str, ing, len);
+    length(str);
+    
+    char str[SZ], ring[SZ];
+    scanf("%79s%79s", &str, &ring);
+    concat(str, ring);
+    printf("%s", str);
 }
