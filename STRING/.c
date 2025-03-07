@@ -120,6 +120,24 @@ int main(){
     printf("%s", str);
 }
 #include<stdio.h>
+//Reverse string
+int main(){
+    char str[100]; scanf("%s", str);
+    int len = 0, i = 0;
+    while(str[i] != '\0'){
+        i++; len++;
+    }/*
+    for(i = 0, j = len - 1; i < len / 2; i++, j--){
+        char tmp = str[i];
+        str[i] = str[j];
+        str[j] = tmp;
+    }
+    printf("%s", str); */
+    for(i = len - 1; i >= 0; i--)
+        printf("%c ", str[i]);
+    return 0;
+}
+#include<stdio.h>
 //concatenate string
 int main(){
     char rin[1000]; scanf("%s", rin);
