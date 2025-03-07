@@ -469,3 +469,57 @@ int main(){
     else if(delta(strlen(str), str) == 0)
         puts("No");
 }
+#include<stdio.h>
+//calculate the cost of the string[a = 1..z = 26] is a power of two or not
+int check(int cnt){
+    int res;
+    while(cnt != 1){
+        int rem = cnt % 2;
+        cnt /= 2;
+        if(rem != 0){
+            res = 0; break;
+        }
+        res++;
+    }
+    return res;
+}
+#include<stdio.h>
+int main(){
+    int cnt = 0;
+    char str[100]; scanf("%s", str);
+    for(int i = 0; str[i]!= '\0'; i++)
+        cnt += str[i] - 'a' + 1;
+    int res = check(cnt);
+    if(res != 0){
+        puts("Yes");
+        printf("cost->2^%d\n", res);
+    }
+    else puts("No");
+}
+#include<stdio.h>
+//count vowel & consonent
+int main(){
+    int vowel = 0, conso = 0;
+    char str[100]; scanf("%s", str);
+    getchar();
+    for(int i = 0; i < strlen(str); i++){
+        if(str[i] == 'a' || str[i] == 'e' || str[i] == 'i' || str[i] == 'o' || str[i] == 'u')
+            vowel++;
+        else conso++;
+    }
+    printf("Vowel - %d\n", vowel);
+    printf("Consonant - %d\n", conso);
+}
+#include<stdio.h>
+//count vowel
+int main(){
+    char ch[25];
+    int i = 0, vowel = 0;
+    fgets(ch, sizeof(ch), stdin);
+    while(ch[i] != '\0'){
+        if(ch[i] == "a" || ch[i] == "e" || ch[i] == "i" || ch[i] == "o" || ch[i] == "u")
+            vowel++;
+        i++;
+    }
+    printf("%d", vowel);
+}
