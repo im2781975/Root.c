@@ -413,3 +413,19 @@ int main(){
             printf("%c ", str[i] + 32);
     }
 }
+#include<stdio.h>
+// find out wheather the string wis a binary string or not.[binary string contains only 0 & 1]
+int is_binary(int len, char str[]){
+    int flag = 0;
+    for(int i = 0; i < len; i++){
+        if(str[i] != '0' && str[i] != '1')
+            flag++;
+    }
+    if(flag == 0) return 1;
+    else return 2;
+}
+int main(){
+    int flag =0;
+    char str[100]; scanf("%s", str);
+    (is_binary(strlen(str), str) == 1) ? puts("Yes") : puts("No");
+}
