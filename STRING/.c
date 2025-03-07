@@ -1,5 +1,12 @@
 #include<stdio.h>
-char strCpy(char *str, char *ing){
+#include<string.h>
+void copy1(char *a, char *b){
+    for(int i = 0; (a[i] = b[i]) != '\0'; i++){}
+}
+void copy2(char *a, const char *b){
+    for(;(*a = *b) != '\0'; ++a, ++b){}
+}
+void strCpy(char *str, char *ing){
     int i = 0, j = 0;
     while(str[i] != '\0')
         ing[j++] = str[i++];
@@ -8,10 +15,17 @@ char strCpy(char *str, char *ing){
 }
 int main(){
     char str[100], ing[100];
-    scanf("%s", &str);
+    scanf("%s", str);
     strCpy(str, ing);
+    char ring[100];
+    //copy1(ring, ing);
+    copy2(ring, ing);
+    int i = 0;
+    while(ring[i] != '\0'){
+        printf("%c", ring[i]); i++;
+    }
 }
-#include<stdio.h>
+include<stdio.h>
 #include<string.h>
 void strnCat(char *str, char *ing, int n){
     int i = 0, j = 0, len = 0;
