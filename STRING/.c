@@ -2,7 +2,7 @@
 int main(){
     char ch;
     puts("Enter char: ('q' for quit)");
-    while((ch = getchar())!= 'q'){
+    while((ch = getchar()) != 'q'){
         if(ch != '\n'){
             printf("Char is: %c", ch);
             puts("\nEnter char: ");
@@ -280,7 +280,7 @@ int main(){
     // shift char
     char str[100];
     fgets(str, sizeof(str), stdin);
-    for(int i = 0; str[i]!= '\0'; i++){
+    for(int i = 0; str[i] != '\0'; i++){
         str[i] = str[i] + 2;
     }
     printf("%s", str);
@@ -453,6 +453,15 @@ int main(){
         if(str[i] >= 'A' && str[i] <= 'Z')
             printf("%c ", str[i] + 32);
     }
+    /**/
+    // char country[] = {'B', 'a', 'n', 'g', 'l', 'a', 'd', 'e', 's', 'h'};
+    char country[] = "Bangladesh";
+    int length = strlen(country);
+    for(int i = 0; i < length; i++){
+        if(country[i] >= 'a' && country[i] <= 'z')
+            country[i] = 'A' + (country[i] - 'a');
+    }
+    printf("Modified string: %s\n", country);
 }
 #include<stdio.h>
 // find out wheather the string wis a binary string or not.[binary string contains only 0 & 1]
