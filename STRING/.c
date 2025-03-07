@@ -332,6 +332,17 @@ int main(){
     (flag == 0) ? puts("Yes") : puts("No");
 }
 #include<stdio.h>
+int main() {
+    int t; scanf("%d", &t);
+    char str[100];
+    getchar();  
+    while (t--) {
+        fgets(str, sizeof(str), stdin); 
+        str[strcspn(str, "\n")] = '\0';
+        printf("%s\n", str);
+    }
+}
+#include<stdio.h>
 #define SZ 128
 int main(){
     char str[10][10];
