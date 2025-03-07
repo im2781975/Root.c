@@ -176,3 +176,141 @@ int main(){
     ing[copyCnt] = '\0';
     (TestPalindrome(ing, 0, copyCnt - 1))? printf("%s is palindrome", str): printf("%s isn't palindrome", str);
 }
+#include<stdio.h>
+int main(){
+    int n; scanf("%d", &n);
+    char str[100][100];
+    getchar();
+    for(int i = 0; i < n; i++)
+        fgets(str[i], sizeof(str[i]), stdin);
+    for(int i = 0; i < n; i++)
+        printf("%s\n", str[i]);
+    /*   
+    char ing[n][100];
+    getchar();
+    for(int i = 0; i < n; i++){
+        printf("Enter line %d: ", i + 1);
+        fgets(ing[i], sizeof(ing[i]), stdin);
+    }
+    for(int i = 0; i < n; i++)
+        printf("%s\n", ing[i]); */
+    /*    
+    char ring[100];
+    getchar();
+    for(int i = 0; i < n; i++){
+        printf("Enter line %d: ", i + 1);
+        fgets(ring, sizeof(ring), stdin);
+        printf("%s\n", ring);
+    } */
+    /*
+    char str[SIZE], ing[SIZE] = "Lateral";
+    scanf("%19s", str);
+    printf("str is: %s\ning is: %s\n", str, ing);
+    for(size_t i = 0; i < SIZE && str[i] != '\0'; ++i)
+        printf("%c ", str[i]); */
+    /*
+    char country[] = {'A', 'R', 'A', 'B'};
+    int len = 4;
+    printf("%s\n", country);
+    for(int i = 0; i < len; i++){
+        if(country[i] >= 65 && country[i] <= 90)
+            country[i] = 'a' + (country[i] - 'A');
+    }
+    printf("%s", country); */
+    
+    // shift char
+    char str[100];
+    fgets(str, sizeof(str), stdin);
+    for(int i = 0; str[i]!= '\0'; i++){
+        str[i] = str[i] + 2;
+    }
+    printf("%s", str);
+    
+    //strcat
+    char str[100], buffer[1000] = " ";
+    getchar();
+    for(int i = 0; i < n; i++){
+        fgets(str, sizeof(str), stdin);
+        strcat(buffer, str);
+    }
+    printf("%s", buffer);
+    
+    //length
+    char str[100];
+    while(fgets(str, sizeof(str), stdin)){
+        int cnt = 0;
+        for(int i = 0; str[i] != '\0'; i++){
+            if(((str[i] >= 'a' && str[i] <= 'z') || (str[i] >= 'A' && str[i] <= 'Z')) && ((str[i + 1] >= 'A' && str[i + 1] <= 'Z') || (str[i + 1] >= 'a' && str[i + 1] <= 'z')))
+                cnt++;
+        }
+        printf("%d", cnt);
+    }
+}
+#include<stdio.h>
+// Not Palindrome
+int main(){
+    char str[21];
+    while(scanf("%s", &str) != EOF){
+        int l = 0, r = strlen(str) - 1, cnt = 0;
+        while(l < r){
+            if(str[l] != str[r])
+                cnt++;
+            l++; r--;
+        }
+        printf("%d", cnt);
+    }
+}
+#include<stdio.h>
+#define SZ 128
+int main(){
+    char str[10][10];
+    int i = 0, total = 0;
+    while(i < 10){
+        printf("Input line %d: ", i + 1);
+        if (fgets(str[i], SZ, stdin) != NULL){
+            //Remove newline if present
+            str[i][strcspn(str[i], "\n")] = '\0';
+            i++;
+        }
+        else
+            break;
+    }
+    total = i;
+    for(int i = 0; i < total; i++)
+        printf(" %s\n", str[i]);
+    puts("");
+}
+#include<stdio.h>
+#include<string.h>
+int main(){
+    char str[50] = {'\0'}, arr[50] = "Best";
+    strcpy(str, "Hello");
+    int x = strlen(str) * (0.5);
+    for(int i = 0; str[i] != '\0'; ++i)
+        str[x + i] = arr[i];
+    printf("arr = %s\tstr = %s\n", arr, str);
+    strncpy(str, arr, 4);
+    printf("str = %s\tarr = %s\n", str, arr);
+    strcat(str, arr);
+    printf("str = %s\tarr = %s\n", str, arr);
+    (strcmp(arr, str) > 0)?strcat(str, " Flash") : strcat(arr, "lash");
+    printf("str = %s\tarr = %s\n", str, arr);
+}
+#include<stdio.h>
+void func(char *str, int d){
+    for(int i = 0; i < strlen(str); ++i){
+        char ch = str[i];
+        if(ch >= 'a' && ch <= 'z')
+            str[i] = 'a' + (ch - 'a' + d) % 26;
+        else if(ch >= 'A' && ch <= 'Z')
+            str[i] = 'A' + (ch - 'A' + d) % 26;
+    }
+}
+int main(){
+    char str[50]; strcpy(str, "message");
+    puts(str);
+    strcat(str, " Send"); puts(str);
+    func(str, 2); puts(str);
+    strcpy(str, "# AhYaT"); puts(str);
+    func(str, 2); puts(str);
+}
