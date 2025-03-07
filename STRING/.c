@@ -302,6 +302,18 @@ int main(){
     }
 }
 #include<stdio.h>
+// check palindrome
+int main(){
+    int flag =0;
+    char str[100]; scanf("%s", str);
+    int len = strlen(str);
+    for(int i = 0; i < len / 2; i++){
+        if(str[i] != '0' && str[len - i - 1] != '1')
+            flag = 1;
+    }
+    (flag == 0) ? puts("Yes") : puts("No");
+}
+#include<stdio.h>
 #define SZ 128
 int main(){
     char str[10][10];
