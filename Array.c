@@ -5,8 +5,7 @@ size_t getsize(float *ptr){
 }
 int main(){
     float arr[sz];
-    printf("%u", sizeof(arr));
-    printf("%u", getsize(arr));
+    printf("%u %u", sizeof(arr), getsize(arr));
 }
 #include<stdio.h>
 //Access Elements
