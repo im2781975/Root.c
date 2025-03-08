@@ -38,31 +38,20 @@ int main(){
         printf("%4u%13d\n", i, arr[i]);
 }
 #include<stdio.h>
-//Bubble sort
+//Bubble
 void swap(int *a, int *b){
     int tmp = *a; *a = *b; *b = tmp;
 }
-int bubbleSort(int *arr, size_t n){
-    for(size_t pass = 0; pass < n - 1; pass++){
+int bubble(int *arr, int n){
+    for(size_t i = 0; i < n - 1; i++){
         for(size_t j = 0; j < n - 1; j++){
             if(arr[j] > arr[j + 1])
                 swap(&arr[j], &arr[j + 1]);
         }
     }
 }
-int main(){
-    int arr[] = {2, 6, 4, 8, 10, 12, 89, 68, 45, 37};
-    int n = sizeof(arr) / sizeof(arr[0]);
-    bubbleSort(arr, n);
-    for(size_t i = 0; i < n; i++)
-        printf("%d ", arr[i]);
-}
-#include<stdio.h>
-// sort elements
-int main(){
-    int arr[] = {2, 6, 4, 8, 10, 12, 89, 68, 45, 37};
-    int n = sizeof(arr) / sizeof(arr[0]);
-    for(size_t i = 1; i < n; i++){
+void sortval(int *arr, int n){
+    for(size_t i = 1; i < n / 2 + 1; i++){
         for(size_t j = 0; j < n - 1; j++){
             if(arr[j] > arr[j + 1]){
                 int tmp = arr[j];
@@ -71,6 +60,12 @@ int main(){
             }
         }
     }
+}
+int main(){
+    int arr[] = {2, 6, 4, 8, 10, 12, 89, 68, 45, 37};
+    int n = sizeof(arr) / sizeof(arr[0]);
+    bubble(arr, n);
+    sortval(arr, n);
     for(size_t i = 0; i < n; i++)
         printf("%d ", arr[i]);
 }
