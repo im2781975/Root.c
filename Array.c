@@ -163,7 +163,7 @@ int main(){
     int n; scanf("%d", &n);
     int arr[n];
     for(int i = 0; i < n; i++)
-        scanf("%d", &n);
+        scanf("%d", &arr[i]);
     int x = IsBeauti(arr, n);
     if(n % 2 != 0) n += 1;
     (x >= n / 2) ? puts("Beautiful") : puts("Ugly");
