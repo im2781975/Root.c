@@ -96,30 +96,29 @@ int main(){
     }
 }
 #include<stdio.h>
-//static & non static
+//static & non static compare
 void statik(){
-    static int arr[3];
-    for(size_t i = 0; i < 3; i++)
-        printf("arr[%u] = %u\t", i, arr[i]);
-    puts("");
-    for(size_t i = 0; i < 3; i++)
-        printf("arr[%u] = %u\t", i, arr[i] += 5);
-    puts("");
-}
-void staticNo(){
+    puts("Non static: ");
     int arr[3] = {0, 0, 0};
-    for(size_t i = 0; i < 3; i++)
-        printf("arr[%u] = %u\t", i, arr[i]);
-    puts("");
-    for(size_t i = 0; i < 3; i++)
-        printf("arr[%u] = %u\t", i, arr[i] += 5);
-    puts("");
+    printf("%s%6s\n", "Idx","val");
+    for(int i = 0; i < 3; i++)
+        printf("%d%7d\n", i, arr[i]);
+    for(int i = 0; i < 3; i++)
+        printf("%d%7d\n", i, arr[i] += 5);
+    
+    puts("static: ");
+    static int ray[3] = {0, 0, 0};
+    printf("%s%6s\n", "Idx","val");
+    for(int i = 0; i < 3; i++)
+        printf("%d%7d\n", i, ray[i]);
+    for(int i = 0; i < 3; i++)
+        printf("%d%7d\n", i, ray[i] += 5);
 }
 int main(){
-    statik(); statik();
-    staticNo(); staticNo();
+    for(int i = 0; i < 5; i++)
+        statik();
 }
-#include<stdio.h>
+include<stdio.h>
 // sum of first two elements
 int main(){
     int n; scanf("%d", &n);
